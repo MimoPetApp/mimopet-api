@@ -1,1 +1,0 @@
-# mimo-pet-api
