@@ -1,0 +1,69 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trainings",
+  "info": {
+    "name": "Training",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "author": {
+      "type": "string",
+      "required": true
+    },
+    "published": {
+      "type": "date",
+      "required": true
+    },
+    "rating": {
+      "type": "decimal",
+      "required": true
+    },
+    "thumbnail": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "curriculum": {
+      "type": "dynamiczone",
+      "components": [
+        "curriculum.article",
+        "curriculum.lecture"
+      ],
+      "required": true
+    },
+    "users": {
+      "plugin": "users-permissions",
+      "collection": "user",
+      "via": "trainings",
+      "dominant": true
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "adults",
+        "puppy",
+        "premium"
+      ],
+      "required": true
+    }
+  }
+}
