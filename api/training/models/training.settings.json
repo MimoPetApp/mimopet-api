@@ -42,7 +42,7 @@
       "required": true,
       "pluginOptions": {}
     },
-    "curriculum": {
+    "steps": {
       "type": "dynamiczone",
       "components": [
         "curriculum.article",
