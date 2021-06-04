@@ -24,6 +24,10 @@
       "plugin": "upload",
       "required": true,
       "pluginOptions": {}
+    },
+    "users_completed": {
+      "plugin": "users-permissions",
+      "collection": "user"
     }
   }
 }

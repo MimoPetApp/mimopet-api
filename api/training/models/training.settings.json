@@ -48,13 +48,7 @@
         "curriculum.article",
         "curriculum.lecture"
       ],
-      "required": true
-    },
-    "users": {
-      "plugin": "users-permissions",
-      "collection": "user",
-      "via": "trainings",
-      "dominant": true
+      "required": false
     },
     "category": {
       "type": "enumeration",
@@ -64,6 +58,10 @@
         "premium"
       ],
       "required": true
+    },
+    "subscriptions": {
+      "via": "training",
+      "collection": "subscriptions"
     }
   }
 }

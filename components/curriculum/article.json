@@ -17,6 +17,10 @@
     "description": {
       "type": "string",
       "required": true
+    },
+    "users_completed": {
+      "plugin": "users-permissions",
+      "collection": "user"
     }
   }
 }

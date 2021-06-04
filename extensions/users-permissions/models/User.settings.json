@@ -59,9 +59,9 @@
       "plugin": "users-permissions",
       "configurable": false
     },
-    "trainings": {
-      "via": "users",
-      "collection": "training"
+    "subscriptions": {
+      "via": "users_permissions_user",
+      "collection": "subscriptions"
     }
   }
 }
