@@ -16,7 +16,7 @@
       "model": "training",
       "via": "subscriptions"
     },
-    "users_permissions_user": {
+    "user": {
       "plugin": "users-permissions",
       "model": "user",
       "via": "subscriptions"
