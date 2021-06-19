@@ -1293,6 +1293,153 @@
           "is_premium": {
             "type": "boolean",
             "default": false
+          },
+          "pets": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "breed",
+                "is_main",
+                "image",
+                "type",
+                "gender",
+                "is_adopted",
+                "is_neutered",
+                "is_deficiency"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "breed": {
+                  "type": "string"
+                },
+                "birthday": {
+                  "type": "string"
+                },
+                "is_main": {
+                  "type": "boolean"
+                },
+                "user": {
+                  "type": "string"
+                },
+                "image": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "canine"
+                  ]
+                },
+                "gender": {
+                  "type": "string",
+                  "enum": [
+                    "male",
+                    "female"
+                  ]
+                },
+                "is_adopted": {
+                  "type": "boolean"
+                },
+                "is_neutered": {
+                  "type": "boolean"
+                },
+                "is_deficiency": {
+                  "type": "boolean"
+                },
+                "ownership_time": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "image": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "hash",
+                "mime",
+                "size",
+                "url",
+                "provider"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "alternativeText": {
+                  "type": "string"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "integer"
+                },
+                "height": {
+                  "type": "integer"
+                },
+                "formats": {
+                  "type": "object"
+                },
+                "hash": {
+                  "type": "string"
+                },
+                "ext": {
+                  "type": "string"
+                },
+                "mime": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "number"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "previewUrl": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "provider_metadata": {
+                  "type": "object"
+                },
+                "related": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -1355,6 +1502,12 @@
           "is_premium": {
             "type": "boolean",
             "default": false
+          },
+          "pets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "created_by": {
             "type": "string"

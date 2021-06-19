@@ -639,6 +639,18 @@
               "is_premium": {
                 "type": "boolean"
               },
+              "pets": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "image": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "created_by": {
                 "type": "string"
               },

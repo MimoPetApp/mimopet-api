@@ -1,82 +1,19 @@
 {
   "paths": {
-    "/users-permissions/roles/{id}": {
+    "/pet-timelines": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve a role depending on its id",
+        "description": "",
         "responses": {
           "200": {
             "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UsersPermissionsRole"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "UsersPermissions - Role"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      }
-    },
-    "/users-permissions/roles": {
-      "get": {
-        "deprecated": false,
-        "description": "Retrieve all role documents",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/UsersPermissionsRole"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
                   }
                 }
               }
@@ -115,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "UsersPermissions - Role"
+          "Pet-timeline"
         ],
         "parameters": [
           {
@@ -258,143 +195,7 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new role",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UsersPermissionsRole"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "UsersPermissions - Role"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewUsersPermissionsRole"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/users-permissions/roles/{role}": {
-      "put": {
-        "deprecated": false,
-        "description": "Update a role",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UsersPermissionsRole"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "UsersPermissions - Role"
-        ],
-        "parameters": [
-          {
-            "name": "role",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewUsersPermissionsRole"
-              }
-            }
-          }
-        }
-      },
-      "delete": {
-        "deprecated": false,
-        "description": "Delete a role",
+        "description": "Create a new record",
         "responses": {
           "200": {
             "description": "response",
@@ -443,11 +244,275 @@
         },
         "summary": "",
         "tags": [
-          "UsersPermissions - Role"
+          "Pet-timeline"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewPet-timeline"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pet-timelines/count": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Pet-timeline"
+        ],
+        "parameters": []
+      }
+    },
+    "/pet-timelines/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Pet-timeline"
         ],
         "parameters": [
           {
-            "name": "role",
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "put": {
+        "deprecated": false,
+        "description": "Update a record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Pet-timeline"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewPet-timeline"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "delete": {
+        "deprecated": false,
+        "description": "Delete a record",
+        "responses": {
+          "200": {
+            "description": "deletes a single record based on the ID supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Pet-timeline"
+        ],
+        "parameters": [
+          {
+            "name": "id",
             "in": "path",
             "description": "",
             "deprecated": false,
@@ -462,189 +527,120 @@
   },
   "components": {
     "schemas": {
-      "UsersPermissionsRole": {
+      "Pet-timeline": {
         "required": [
           "id",
-          "name"
+          "title"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "name": {
+          "title": {
+            "type": "string"
+          },
+          "date": {
             "type": "string",
-            "minLength": 3
+            "format": "date"
           },
-          "description": {
-            "type": "string"
-          },
-          "type": {
-            "type": "string"
-          },
-          "permissions": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "type",
-                "controller",
-                "action",
-                "enabled",
-                "name",
-                "genre",
-                "birthday"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "type": {
-                  "type": "string"
-                },
-                "controller": {
-                  "type": "string"
-                },
-                "action": {
-                  "type": "string"
-                },
-                "enabled": {
-                  "type": "boolean"
-                },
-                "policy": {
-                  "type": "string"
-                },
-                "role": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "genre": {
-                  "type": "string",
-                  "enum": [
-                    "male",
-                    "female"
-                  ]
-                },
-                "birthday": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
+          "pet": {
+            "required": [
+              "id",
+              "name",
+              "breed",
+              "is_main",
+              "image",
+              "type",
+              "gender",
+              "is_adopted",
+              "is_neutered",
+              "is_deficiency"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "breed": {
+                "type": "string"
+              },
+              "birthday": {
+                "type": "string"
+              },
+              "is_main": {
+                "type": "boolean"
+              },
+              "user": {
+                "type": "string"
+              },
+              "image": {
+                "type": "array",
+                "items": {
                   "type": "string"
                 }
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "canine"
+                ]
+              },
+              "gender": {
+                "type": "string",
+                "enum": [
+                  "male",
+                  "female"
+                ]
+              },
+              "is_adopted": {
+                "type": "boolean"
+              },
+              "is_neutered": {
+                "type": "boolean"
+              },
+              "is_deficiency": {
+                "type": "boolean"
+              },
+              "ownership_time": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
           },
-          "users": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "username",
-                "email"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "username": {
-                  "type": "string"
-                },
-                "email": {
-                  "type": "string"
-                },
-                "provider": {
-                  "type": "string"
-                },
-                "password": {
-                  "type": "string"
-                },
-                "resetPasswordToken": {
-                  "type": "string"
-                },
-                "confirmationToken": {
-                  "type": "string"
-                },
-                "confirmed": {
-                  "type": "boolean"
-                },
-                "blocked": {
-                  "type": "boolean"
-                },
-                "role": {
-                  "type": "string"
-                },
-                "subscriptions": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "birthday": {
-                  "type": "string"
-                },
-                "gender": {
-                  "type": "string",
-                  "enum": [
-                    "male",
-                    "female"
-                  ]
-                },
-                "is_premium": {
-                  "type": "boolean"
-                },
-                "pets": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "image": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
           }
         }
       },
-      "NewUsersPermissionsRole": {
+      "NewPet-timeline": {
         "required": [
-          "name"
+          "title"
         ],
         "properties": {
-          "name": {
+          "title": {
+            "type": "string"
+          },
+          "date": {
             "type": "string",
-            "minLength": 3
+            "format": "date"
           },
-          "description": {
+          "pet": {
             "type": "string"
           },
-          "type": {
-            "type": "string"
-          },
-          "permissions": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "users": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
           },
           "created_by": {
             "type": "string"
@@ -656,9 +652,5 @@
       }
     }
   },
-  "tags": [
-    {
-      "name": "UsersPermissions - Role"
-    }
-  ]
+  "tags": []
 }

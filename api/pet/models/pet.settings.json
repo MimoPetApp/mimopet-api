@@ -1,0 +1,82 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pets",
+  "info": {
+    "name": "Pet",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "breed": {
+      "type": "string",
+      "required": true
+    },
+    "birthday": {
+      "type": "date",
+      "required": false
+    },
+    "is_main": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "user": {
+      "via": "pets",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "image": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "canine"
+      ],
+      "required": true
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "male",
+        "female"
+      ],
+      "required": true
+    },
+    "is_adopted": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "is_neutered": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "is_deficiency": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "ownership_time": {
+      "type": "date",
+      "required": false
+    }
+  }
+}

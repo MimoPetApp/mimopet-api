@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/pet-timelines",
+      "handler": "pet-timeline.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/pet-timelines/count",
+      "handler": "pet-timeline.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/pet-timelines/:id",
+      "handler": "pet-timeline.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/pet-timelines",
+      "handler": "pet-timeline.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/pet-timelines/:id",
+      "handler": "pet-timeline.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/pet-timelines/:id",
+      "handler": "pet-timeline.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

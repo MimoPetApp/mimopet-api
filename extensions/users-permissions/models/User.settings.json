@@ -77,6 +77,20 @@
       "type": "boolean",
       "default": false,
       "required": false
+    },
+    "pets": {
+      "via": "user",
+      "collection": "pet"
+    },
+    "image": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
     }
   }
 }
