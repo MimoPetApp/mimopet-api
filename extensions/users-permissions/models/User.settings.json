@@ -62,6 +62,21 @@
     "subscriptions": {
       "via": "user",
       "collection": "subscriptions"
+    },
+    "birthday": {
+      "type": "date"
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "male",
+        "female"
+      ]
+    },
+    "is_premium": {
+      "type": "boolean",
+      "default": false,
+      "required": false
     }
   }
 }

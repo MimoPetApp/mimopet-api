@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "subscriptions",
   "info": {
-    "name": "Subscriptions",
+    "name": "Subscription",
     "description": ""
   },
   "options": {
@@ -17,9 +17,9 @@
       "via": "subscriptions"
     },
     "user": {
+      "via": "subscriptions",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "subscriptions"
+      "model": "user"
     }
   }
 }
