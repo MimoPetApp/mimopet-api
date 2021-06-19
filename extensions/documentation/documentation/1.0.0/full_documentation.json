@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "06/19/2021 5:42:33 PM"
+    "x-generation-date": "06/19/2021 7:24:31 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3408,6 +3408,19 @@
                   "type": "string"
                 }
               },
+              "birthday": {
+                "type": "string"
+              },
+              "gender": {
+                "type": "string",
+                "enum": [
+                  "male",
+                  "female"
+                ]
+              },
+              "is_premium": {
+                "type": "boolean"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -3610,6 +3623,19 @@
                               "type": "string"
                             }
                           },
+                          "birthday": {
+                            "type": "string"
+                          },
+                          "gender": {
+                            "type": "string",
+                            "enum": [
+                              "male",
+                              "female"
+                            ]
+                          },
+                          "is_premium": {
+                            "type": "boolean"
+                          },
                           "created_by": {
                             "type": "string"
                           },
@@ -3755,6 +3781,19 @@
                             "items": {
                               "type": "string"
                             }
+                          },
+                          "birthday": {
+                            "type": "string"
+                          },
+                          "gender": {
+                            "type": "string",
+                            "enum": [
+                              "male",
+                              "female"
+                            ]
+                          },
+                          "is_premium": {
+                            "type": "boolean"
                           },
                           "created_by": {
                             "type": "string"
@@ -3914,6 +3953,19 @@
                               "type": "string"
                             }
                           },
+                          "birthday": {
+                            "type": "string"
+                          },
+                          "gender": {
+                            "type": "string",
+                            "enum": [
+                              "male",
+                              "female"
+                            ]
+                          },
+                          "is_premium": {
+                            "type": "boolean"
+                          },
                           "created_by": {
                             "type": "string"
                           },
@@ -4059,6 +4111,19 @@
                             "items": {
                               "type": "string"
                             }
+                          },
+                          "birthday": {
+                            "type": "string"
+                          },
+                          "gender": {
+                            "type": "string",
+                            "enum": [
+                              "male",
+                              "female"
+                            ]
+                          },
+                          "is_premium": {
+                            "type": "boolean"
                           },
                           "created_by": {
                             "type": "string"
@@ -4227,6 +4292,19 @@
                     "type": "string"
                   }
                 },
+                "birthday": {
+                  "type": "string"
+                },
+                "gender": {
+                  "type": "string",
+                  "enum": [
+                    "male",
+                    "female"
+                  ]
+                },
+                "is_premium": {
+                  "type": "boolean"
+                },
                 "created_by": {
                   "type": "string"
                 },
@@ -4367,6 +4445,21 @@
                 }
               }
             }
+          },
+          "birthday": {
+            "type": "string",
+            "format": "date"
+          },
+          "gender": {
+            "type": "string",
+            "enum": [
+              "male",
+              "female"
+            ]
+          },
+          "is_premium": {
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -4414,6 +4507,21 @@
             "items": {
               "type": "string"
             }
+          },
+          "birthday": {
+            "type": "string",
+            "format": "date"
+          },
+          "gender": {
+            "type": "string",
+            "enum": [
+              "male",
+              "female"
+            ]
+          },
+          "is_premium": {
+            "type": "boolean",
+            "default": false
           },
           "created_by": {
             "type": "string"

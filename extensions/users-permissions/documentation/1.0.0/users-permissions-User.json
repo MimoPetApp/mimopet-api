@@ -1278,6 +1278,21 @@
                 }
               }
             }
+          },
+          "birthday": {
+            "type": "string",
+            "format": "date"
+          },
+          "gender": {
+            "type": "string",
+            "enum": [
+              "male",
+              "female"
+            ]
+          },
+          "is_premium": {
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -1325,6 +1340,21 @@
             "items": {
               "type": "string"
             }
+          },
+          "birthday": {
+            "type": "string",
+            "format": "date"
+          },
+          "gender": {
+            "type": "string",
+            "enum": [
+              "male",
+              "female"
+            ]
+          },
+          "is_premium": {
+            "type": "boolean",
+            "default": false
           },
           "created_by": {
             "type": "string"

@@ -583,6 +583,19 @@
                     "type": "string"
                   }
                 },
+                "birthday": {
+                  "type": "string"
+                },
+                "gender": {
+                  "type": "string",
+                  "enum": [
+                    "male",
+                    "female"
+                  ]
+                },
+                "is_premium": {
+                  "type": "boolean"
+                },
                 "created_by": {
                   "type": "string"
                 },
