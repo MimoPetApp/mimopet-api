@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "terms_of_uses",
+  "info": {
+    "name": "Terms of Use"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "terms": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}
