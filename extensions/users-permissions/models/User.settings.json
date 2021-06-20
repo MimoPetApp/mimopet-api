@@ -91,6 +91,10 @@
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
+    },
+    "invoices": {
+      "via": "user",
+      "collection": "invoice"
     }
   }
 }

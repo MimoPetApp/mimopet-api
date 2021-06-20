@@ -707,6 +707,12 @@
                               "type": "string"
                             }
                           },
+                          "invoices": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
                           "created_by": {
                             "type": "string"
                           },
@@ -873,6 +879,12 @@
                             }
                           },
                           "image": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "invoices": {
                             "type": "array",
                             "items": {
                               "type": "string"
@@ -1061,6 +1073,12 @@
                               "type": "string"
                             }
                           },
+                          "invoices": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
                           "created_by": {
                             "type": "string"
                           },
@@ -1227,6 +1245,12 @@
                             }
                           },
                           "image": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "invoices": {
                             "type": "array",
                             "items": {
                               "type": "string"

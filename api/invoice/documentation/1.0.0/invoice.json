@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/pets": {
+    "/invoices": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Pet"
+                    "$ref": "#/components/schemas/Invoice"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Pet"
+          "Invoice"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Pet"
+                  "$ref": "#/components/schemas/Invoice"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Pet"
+          "Invoice"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPet"
+                "$ref": "#/components/schemas/NewInvoice"
               }
             }
           }
         }
       }
     },
-    "/pets/count": {
+    "/invoices/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Pet"
+          "Invoice"
         ],
         "parameters": []
       }
     },
-    "/pets/{id}": {
+    "/invoices/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Pet"
+                  "$ref": "#/components/schemas/Invoice"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Pet"
+          "Invoice"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Pet"
+                  "$ref": "#/components/schemas/Invoice"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Pet"
+          "Invoice"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPet"
+                "$ref": "#/components/schemas/NewInvoice"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Pet"
+          "Invoice"
         ],
         "parameters": [
           {
@@ -514,36 +514,96 @@
   },
   "components": {
     "schemas": {
-      "Pet": {
+      "Invoice": {
         "required": [
           "id",
-          "name",
-          "breed",
-          "is_main",
-          "image",
-          "type",
-          "gender",
-          "is_adopted",
-          "is_neutered",
-          "is_deficiency"
+          "title",
+          "date",
+          "image"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "name": {
+          "title": {
             "type": "string"
           },
-          "breed": {
-            "type": "string"
+          "price": {
+            "type": "number"
           },
-          "birthday": {
+          "date": {
             "type": "string",
             "format": "date"
           },
-          "is_main": {
-            "type": "boolean",
-            "default": false
+          "image": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "hash",
+                "mime",
+                "size",
+                "url",
+                "provider"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "alternativeText": {
+                  "type": "string"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "integer"
+                },
+                "height": {
+                  "type": "integer"
+                },
+                "formats": {
+                  "type": "object"
+                },
+                "hash": {
+                  "type": "string"
+                },
+                "ext": {
+                  "type": "string"
+                },
+                "mime": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "number"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "previewUrl": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "provider_metadata": {
+                  "type": "object"
+                },
+                "related": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "user": {
             "required": [
@@ -627,168 +687,30 @@
               }
             }
           },
-          "image": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "name",
-                "hash",
-                "mime",
-                "size",
-                "url",
-                "provider"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "alternativeText": {
-                  "type": "string"
-                },
-                "caption": {
-                  "type": "string"
-                },
-                "width": {
-                  "type": "integer"
-                },
-                "height": {
-                  "type": "integer"
-                },
-                "formats": {
-                  "type": "object"
-                },
-                "hash": {
-                  "type": "string"
-                },
-                "ext": {
-                  "type": "string"
-                },
-                "mime": {
-                  "type": "string"
-                },
-                "size": {
-                  "type": "number"
-                },
-                "url": {
-                  "type": "string"
-                },
-                "previewUrl": {
-                  "type": "string"
-                },
-                "provider": {
-                  "type": "string"
-                },
-                "provider_metadata": {
-                  "type": "object"
-                },
-                "related": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "type": {
-            "type": "string",
-            "enum": [
-              "canine"
-            ]
-          },
-          "gender": {
-            "type": "string",
-            "enum": [
-              "male",
-              "female"
-            ]
-          },
-          "is_adopted": {
-            "type": "boolean",
-            "default": false
-          },
-          "is_neutered": {
-            "type": "boolean",
-            "default": false
-          },
-          "is_deficiency": {
-            "type": "boolean",
-            "default": false
-          },
-          "ownership_time": {
-            "type": "string",
-            "format": "date"
-          },
           "published_at": {
             "type": "string",
             "format": "date-time"
           }
         }
       },
-      "NewPet": {
+      "NewInvoice": {
         "required": [
-          "name",
-          "breed",
-          "is_main",
-          "type",
-          "gender",
-          "is_adopted",
-          "is_neutered",
-          "is_deficiency"
+          "title",
+          "date"
         ],
         "properties": {
-          "name": {
+          "title": {
             "type": "string"
           },
-          "breed": {
-            "type": "string"
+          "price": {
+            "type": "number"
           },
-          "birthday": {
+          "date": {
             "type": "string",
             "format": "date"
-          },
-          "is_main": {
-            "type": "boolean",
-            "default": false
           },
           "user": {
             "type": "string"
-          },
-          "type": {
-            "type": "string",
-            "enum": [
-              "canine"
-            ]
-          },
-          "gender": {
-            "type": "string",
-            "enum": [
-              "male",
-              "female"
-            ]
-          },
-          "is_adopted": {
-            "type": "boolean",
-            "default": false
-          },
-          "is_neutered": {
-            "type": "boolean",
-            "default": false
-          },
-          "is_deficiency": {
-            "type": "boolean",
-            "default": false
-          },
-          "ownership_time": {
-            "type": "string",
-            "format": "date"
           },
           "published_at": {
             "type": "string",
@@ -806,7 +728,7 @@
   },
   "tags": [
     {
-      "name": "Pet"
+      "name": "Invoice"
     }
   ]
 }
