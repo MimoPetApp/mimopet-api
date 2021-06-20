@@ -642,12 +642,6 @@
               "role": {
                 "type": "string"
               },
-              "subscriptions": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
               "birthday": {
                 "type": "string"
               },
@@ -674,6 +668,12 @@
                 }
               },
               "invoices": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "trainings": {
                 "type": "array",
                 "items": {
                   "type": "string"

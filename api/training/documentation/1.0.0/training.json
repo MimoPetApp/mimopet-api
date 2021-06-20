@@ -676,12 +676,6 @@
                           "role": {
                             "type": "string"
                           },
-                          "subscriptions": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
                           "birthday": {
                             "type": "string"
                           },
@@ -708,6 +702,12 @@
                             }
                           },
                           "invoices": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "trainings": {
                             "type": "array",
                             "items": {
                               "type": "string"
@@ -853,12 +853,6 @@
                           "role": {
                             "type": "string"
                           },
-                          "subscriptions": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
                           "birthday": {
                             "type": "string"
                           },
@@ -885,6 +879,12 @@
                             }
                           },
                           "invoices": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "trainings": {
                             "type": "array",
                             "items": {
                               "type": "string"
@@ -917,34 +917,6 @@
               "puppy",
               "premium"
             ]
-          },
-          "subscriptions": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "training": {
-                  "type": "string"
-                },
-                "user": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
           },
           "published_at": {
             "type": "string",
@@ -1042,12 +1014,6 @@
                           "role": {
                             "type": "string"
                           },
-                          "subscriptions": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
                           "birthday": {
                             "type": "string"
                           },
@@ -1074,6 +1040,12 @@
                             }
                           },
                           "invoices": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "trainings": {
                             "type": "array",
                             "items": {
                               "type": "string"
@@ -1219,12 +1191,6 @@
                           "role": {
                             "type": "string"
                           },
-                          "subscriptions": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
                           "birthday": {
                             "type": "string"
                           },
@@ -1251,6 +1217,12 @@
                             }
                           },
                           "invoices": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "trainings": {
                             "type": "array",
                             "items": {
                               "type": "string"
@@ -1283,12 +1255,6 @@
               "puppy",
               "premium"
             ]
-          },
-          "subscriptions": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "published_at": {
             "type": "string",

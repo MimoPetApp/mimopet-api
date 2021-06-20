@@ -59,10 +59,6 @@
       "plugin": "users-permissions",
       "configurable": false
     },
-    "subscriptions": {
-      "via": "user",
-      "collection": "subscriptions"
-    },
     "birthday": {
       "type": "date"
     },
@@ -95,6 +91,9 @@
     "invoices": {
       "via": "user",
       "collection": "invoice"
+    },
+    "trainings": {
+      "collection": "training"
     }
   }
 }

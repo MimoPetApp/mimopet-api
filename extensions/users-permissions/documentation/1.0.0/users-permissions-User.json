@@ -1251,34 +1251,6 @@
               }
             }
           },
-          "subscriptions": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "training": {
-                  "type": "string"
-                },
-                "user": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "birthday": {
             "type": "string",
             "format": "date"
@@ -1483,6 +1455,64 @@
                 }
               }
             }
+          },
+          "trainings": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "title",
+                "description",
+                "author",
+                "published",
+                "rating",
+                "thumbnail",
+                "category"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "author": {
+                  "type": "string"
+                },
+                "published": {
+                  "type": "string"
+                },
+                "rating": {
+                  "type": "number"
+                },
+                "thumbnail": {
+                  "type": "string"
+                },
+                "steps": {
+                  "type": "dynamiczone"
+                },
+                "category": {
+                  "type": "string",
+                  "enum": [
+                    "adults",
+                    "puppy",
+                    "premium"
+                  ]
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       },
@@ -1525,12 +1555,6 @@
           "role": {
             "type": "string"
           },
-          "subscriptions": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
           "birthday": {
             "type": "string",
             "format": "date"
@@ -1553,6 +1577,12 @@
             }
           },
           "invoices": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "trainings": {
             "type": "array",
             "items": {
               "type": "string"

@@ -33,9 +33,9 @@
       "pluginOptions": {}
     },
     "user": {
+      "via": "invoices",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "invoices"
+      "model": "user"
     }
   }
 }
