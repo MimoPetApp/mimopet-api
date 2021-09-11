@@ -489,7 +489,10 @@
                 "type",
                 "controller",
                 "action",
-                "enabled"
+                "enabled",
+                "name",
+                "genre",
+                "birthday"
               ],
               "properties": {
                 "id": {
@@ -574,14 +577,12 @@
                 "role": {
                   "type": "string"
                 },
-                "birthday": {
-                  "type": "string"
-                },
                 "gender": {
                   "type": "string",
                   "enum": [
-                    "male",
-                    "female"
+                    "MALE",
+                    "FEMALE",
+                    "NONBINARY"
                   ]
                 },
                 "is_premium": {
@@ -606,6 +607,15 @@
                   }
                 },
                 "trainings": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "birthday": {
+                  "type": "integer"
+                },
+                "modules": {
                   "type": "array",
                   "items": {
                     "type": "string"

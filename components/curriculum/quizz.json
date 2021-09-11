@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_curriculum_quizzes",
+  "info": {
+    "name": "quizz",
+    "icon": "question",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "alternatives": {
+      "type": "json",
+      "required": true
+    }
+  }
+}

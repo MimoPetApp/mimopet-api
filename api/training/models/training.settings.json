@@ -46,7 +46,9 @@
       "type": "dynamiczone",
       "components": [
         "curriculum.article",
-        "curriculum.lecture"
+        "curriculum.lecture",
+        "curriculum.quizz",
+        "curriculum.repetitions"
       ],
       "required": false
     },
@@ -58,6 +60,10 @@
         "premium"
       ],
       "required": true
+    },
+    "modules": {
+      "via": "trainings",
+      "collection": "module"
     }
   }
 }

@@ -550,8 +550,6 @@
               "breed",
               "is_main",
               "image",
-              "type",
-              "gender",
               "is_adopted",
               "is_neutered",
               "is_deficiency"
@@ -564,9 +562,6 @@
                 "type": "string"
               },
               "breed": {
-                "type": "string"
-              },
-              "birthday": {
                 "type": "string"
               },
               "is_main": {
@@ -605,6 +600,15 @@
               },
               "ownership_time": {
                 "type": "string"
+              },
+              "age": {
+                "type": "string",
+                "enum": [
+                  "SIX_MONTS",
+                  "EIGHTEEN_MONTS",
+                  "ADULT",
+                  "SENIOR"
+                ]
               },
               "published_at": {
                 "type": "string"

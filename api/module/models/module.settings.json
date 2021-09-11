@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "modules",
+  "info": {
+    "name": "Module",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "trainings": {
+      "via": "modules",
+      "collection": "training",
+      "dominant": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "users": {
+      "via": "modules",
+      "plugin": "users-permissions",
+      "collection": "user"
+    }
+  }
+}

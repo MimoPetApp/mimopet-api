@@ -59,14 +59,12 @@
       "plugin": "users-permissions",
       "configurable": false
     },
-    "birthday": {
-      "type": "date"
-    },
     "gender": {
       "type": "enumeration",
       "enum": [
-        "male",
-        "female"
+        "MALE",
+        "FEMALE",
+        "NONBINARY"
       ]
     },
     "is_premium": {
@@ -94,6 +92,14 @@
     },
     "trainings": {
       "collection": "training"
+    },
+    "birthday": {
+      "type": "integer"
+    },
+    "modules": {
+      "collection": "module",
+      "via": "users",
+      "dominant": true
     }
   }
 }

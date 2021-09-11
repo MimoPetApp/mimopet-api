@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sessions",
+  "info": {
+    "name": "Sessions",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "days": {
+      "type": "dynamiczone",
+      "components": [
+        "curriculum.article",
+        "curriculum.lecture",
+        "curriculum.quizz"
+      ]
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}

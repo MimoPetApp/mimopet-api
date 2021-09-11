@@ -1251,15 +1251,12 @@
               }
             }
           },
-          "birthday": {
-            "type": "string",
-            "format": "date"
-          },
           "gender": {
             "type": "string",
             "enum": [
-              "male",
-              "female"
+              "MALE",
+              "FEMALE",
+              "NONBINARY"
             ]
           },
           "is_premium": {
@@ -1275,8 +1272,6 @@
                 "breed",
                 "is_main",
                 "image",
-                "type",
-                "gender",
                 "is_adopted",
                 "is_neutered",
                 "is_deficiency"
@@ -1289,9 +1284,6 @@
                   "type": "string"
                 },
                 "breed": {
-                  "type": "string"
-                },
-                "birthday": {
                   "type": "string"
                 },
                 "is_main": {
@@ -1330,6 +1322,15 @@
                 },
                 "ownership_time": {
                   "type": "string"
+                },
+                "age": {
+                  "type": "string",
+                  "enum": [
+                    "SIX_MONTS",
+                    "EIGHTEEN_MONTS",
+                    "ADULT",
+                    "SENIOR"
+                  ]
                 },
                 "published_at": {
                   "type": "string"
@@ -1502,6 +1503,53 @@
                     "premium"
                   ]
                 },
+                "modules": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "birthday": {
+            "type": "integer"
+          },
+          "modules": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "trainings": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "name": {
+                  "type": "string"
+                },
+                "users": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -1555,15 +1603,12 @@
           "role": {
             "type": "string"
           },
-          "birthday": {
-            "type": "string",
-            "format": "date"
-          },
           "gender": {
             "type": "string",
             "enum": [
-              "male",
-              "female"
+              "MALE",
+              "FEMALE",
+              "NONBINARY"
             ]
           },
           "is_premium": {
@@ -1583,6 +1628,15 @@
             }
           },
           "trainings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "birthday": {
+            "type": "integer"
+          },
+          "modules": {
             "type": "array",
             "items": {
               "type": "string"

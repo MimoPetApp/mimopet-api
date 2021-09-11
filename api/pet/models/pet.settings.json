@@ -20,10 +20,6 @@
       "type": "string",
       "required": true
     },
-    "birthday": {
-      "type": "date",
-      "required": false
-    },
     "is_main": {
       "type": "boolean",
       "default": false,
@@ -49,7 +45,7 @@
       "enum": [
         "canine"
       ],
-      "required": true
+      "required": false
     },
     "gender": {
       "type": "enumeration",
@@ -57,7 +53,7 @@
         "male",
         "female"
       ],
-      "required": true
+      "required": false
     },
     "is_adopted": {
       "type": "boolean",
@@ -77,6 +73,15 @@
     "ownership_time": {
       "type": "date",
       "required": false
+    },
+    "age": {
+      "type": "enumeration",
+      "enum": [
+        "SIX_MONTS",
+        "EIGHTEEN_MONTS",
+        "ADULT",
+        "SENIOR"
+      ]
     }
   }
 }

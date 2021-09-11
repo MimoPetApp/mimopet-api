@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/trainings": {
+    "/sessions": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find all the sessions's records",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve sessions document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Training"
+                    "$ref": "#/components/schemas/Sessions"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Training"
+          "Sessions"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new record",
+        "description": "Create a new sessions record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve sessions document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Training"
+                  "$ref": "#/components/schemas/Sessions"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Training"
+          "Sessions"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewTraining"
+                "$ref": "#/components/schemas/NewSessions"
               }
             }
           }
         }
       }
     },
-    "/trainings/count": {
+    "/sessions/count": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Retrieve the numver of sessions documents",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve sessions document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Training"
+          "Sessions"
         ],
         "parameters": []
       }
     },
-    "/trainings/{id}": {
+    "/sessions/{id}": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find one sessions record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve sessions document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Training"
+                  "$ref": "#/components/schemas/Sessions"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Training"
+          "Sessions"
         ],
         "parameters": [
           {
@@ -376,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a record",
+        "description": "Update a single sessions record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve sessions document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Training"
+                  "$ref": "#/components/schemas/Sessions"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Training"
+          "Sessions"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewTraining"
+                "$ref": "#/components/schemas/NewSessions"
               }
             }
           }
@@ -449,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a record",
+        "description": "Delete a single sessions record",
         "responses": {
           "200": {
-            "description": "deletes a single record based on the ID supplied",
+            "description": "deletes a single sessions based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Training"
+          "Sessions"
         ],
         "parameters": [
           {
@@ -514,105 +514,15 @@
   },
   "components": {
     "schemas": {
-      "Training": {
+      "Sessions": {
         "required": [
-          "id",
-          "title",
-          "description",
-          "author",
-          "published",
-          "rating",
-          "thumbnail",
-          "category"
+          "id"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "title": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "author": {
-            "type": "string"
-          },
-          "published": {
-            "type": "string",
-            "format": "date"
-          },
-          "rating": {
-            "type": "number"
-          },
-          "thumbnail": {
-            "required": [
-              "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "alternativeText": {
-                "type": "string"
-              },
-              "caption": {
-                "type": "string"
-              },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
-                "type": "string"
-              },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number"
-              },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "provider_metadata": {
-                "type": "object"
-              },
-              "related": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "steps": {
+          "days": {
             "type": "array",
             "items": {
               "oneOf": [
@@ -623,8 +533,7 @@
                       "enum": [
                         "curriculum.article",
                         "curriculum.lecture",
-                        "curriculum.quizz",
-                        "curriculum.repetitions"
+                        "curriculum.quizz"
                       ]
                     },
                     "id": {
@@ -745,8 +654,7 @@
                       "enum": [
                         "curriculum.article",
                         "curriculum.lecture",
-                        "curriculum.quizz",
-                        "curriculum.repetitions"
+                        "curriculum.quizz"
                       ]
                     },
                     "id": {
@@ -932,8 +840,7 @@
                       "enum": [
                         "curriculum.article",
                         "curriculum.lecture",
-                        "curriculum.quizz",
-                        "curriculum.repetitions"
+                        "curriculum.quizz"
                       ]
                     },
                     "id": {
@@ -955,188 +862,12 @@
                     "description",
                     "alternatives"
                   ]
-                },
-                {
-                  "properties": {
-                    "__component": {
-                      "type": "string",
-                      "enum": [
-                        "curriculum.article",
-                        "curriculum.lecture",
-                        "curriculum.quizz",
-                        "curriculum.repetitions"
-                      ]
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "video": {
-                      "type": "array",
-                      "items": {
-                        "required": [
-                          "id",
-                          "name",
-                          "hash",
-                          "mime",
-                          "size",
-                          "url",
-                          "provider"
-                        ],
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "alternativeText": {
-                            "type": "string"
-                          },
-                          "caption": {
-                            "type": "string"
-                          },
-                          "width": {
-                            "type": "integer"
-                          },
-                          "height": {
-                            "type": "integer"
-                          },
-                          "formats": {
-                            "type": "object"
-                          },
-                          "hash": {
-                            "type": "string"
-                          },
-                          "ext": {
-                            "type": "string"
-                          },
-                          "mime": {
-                            "type": "string"
-                          },
-                          "size": {
-                            "type": "number"
-                          },
-                          "url": {
-                            "type": "string"
-                          },
-                          "previewUrl": {
-                            "type": "string"
-                          },
-                          "provider": {
-                            "type": "string"
-                          },
-                          "provider_metadata": {
-                            "type": "object"
-                          },
-                          "related": {
-                            "type": "string"
-                          },
-                          "created_by": {
-                            "type": "string"
-                          },
-                          "updated_by": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    },
-                    "author": {
-                      "type": "string"
-                    },
-                    "publish_date": {
-                      "type": "string",
-                      "format": "date"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "subtitle": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "sessions": {
-                      "type": "array",
-                      "items": {
-                        "required": [
-                          "id"
-                        ],
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "days": {
-                            "type": "dynamiczone"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "published_at": {
-                            "type": "string"
-                          },
-                          "created_by": {
-                            "type": "string"
-                          },
-                          "updated_by": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    }
-                  },
-                  "required": [
-                    "id"
-                  ]
                 }
               ]
             }
           },
-          "category": {
-            "type": "string",
-            "enum": [
-              "adults",
-              "puppy",
-              "premium"
-            ]
-          },
-          "modules": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "name"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "trainings": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "name": {
-                  "type": "string"
-                },
-                "users": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
+          "name": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -1144,33 +875,9 @@
           }
         }
       },
-      "NewTraining": {
-        "required": [
-          "title",
-          "description",
-          "author",
-          "published",
-          "rating",
-          "category"
-        ],
+      "NewSessions": {
         "properties": {
-          "title": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "author": {
-            "type": "string"
-          },
-          "published": {
-            "type": "string",
-            "format": "date"
-          },
-          "rating": {
-            "type": "number"
-          },
-          "steps": {
+          "days": {
             "type": "array",
             "items": {
               "oneOf": [
@@ -1181,8 +888,7 @@
                       "enum": [
                         "curriculum.article",
                         "curriculum.lecture",
-                        "curriculum.quizz",
-                        "curriculum.repetitions"
+                        "curriculum.quizz"
                       ]
                     },
                     "id": {
@@ -1303,8 +1009,7 @@
                       "enum": [
                         "curriculum.article",
                         "curriculum.lecture",
-                        "curriculum.quizz",
-                        "curriculum.repetitions"
+                        "curriculum.quizz"
                       ]
                     },
                     "id": {
@@ -1490,8 +1195,7 @@
                       "enum": [
                         "curriculum.article",
                         "curriculum.lecture",
-                        "curriculum.quizz",
-                        "curriculum.repetitions"
+                        "curriculum.quizz"
                       ]
                     },
                     "id": {
@@ -1513,156 +1217,12 @@
                     "description",
                     "alternatives"
                   ]
-                },
-                {
-                  "properties": {
-                    "__component": {
-                      "type": "string",
-                      "enum": [
-                        "curriculum.article",
-                        "curriculum.lecture",
-                        "curriculum.quizz",
-                        "curriculum.repetitions"
-                      ]
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "video": {
-                      "type": "array",
-                      "items": {
-                        "required": [
-                          "id",
-                          "name",
-                          "hash",
-                          "mime",
-                          "size",
-                          "url",
-                          "provider"
-                        ],
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "alternativeText": {
-                            "type": "string"
-                          },
-                          "caption": {
-                            "type": "string"
-                          },
-                          "width": {
-                            "type": "integer"
-                          },
-                          "height": {
-                            "type": "integer"
-                          },
-                          "formats": {
-                            "type": "object"
-                          },
-                          "hash": {
-                            "type": "string"
-                          },
-                          "ext": {
-                            "type": "string"
-                          },
-                          "mime": {
-                            "type": "string"
-                          },
-                          "size": {
-                            "type": "number"
-                          },
-                          "url": {
-                            "type": "string"
-                          },
-                          "previewUrl": {
-                            "type": "string"
-                          },
-                          "provider": {
-                            "type": "string"
-                          },
-                          "provider_metadata": {
-                            "type": "object"
-                          },
-                          "related": {
-                            "type": "string"
-                          },
-                          "created_by": {
-                            "type": "string"
-                          },
-                          "updated_by": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    },
-                    "author": {
-                      "type": "string"
-                    },
-                    "publish_date": {
-                      "type": "string",
-                      "format": "date"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "subtitle": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "sessions": {
-                      "type": "array",
-                      "items": {
-                        "required": [
-                          "id"
-                        ],
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "days": {
-                            "type": "dynamiczone"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "published_at": {
-                            "type": "string"
-                          },
-                          "created_by": {
-                            "type": "string"
-                          },
-                          "updated_by": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    }
-                  },
-                  "required": [
-                    "id"
-                  ]
                 }
               ]
             }
           },
-          "category": {
-            "type": "string",
-            "enum": [
-              "adults",
-              "puppy",
-              "premium"
-            ]
-          },
-          "modules": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "name": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -1680,7 +1240,7 @@
   },
   "tags": [
     {
-      "name": "Training"
+      "name": "Sessions"
     }
   ]
 }

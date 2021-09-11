@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_curriculum_repetitions",
+  "info": {
+    "name": "Repetitions",
+    "icon": "redo",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "video": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "author": {
+      "type": "string"
+    },
+    "publish_date": {
+      "type": "date"
+    },
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "sessions": {
+      "collection": "sessions"
+    }
+  }
+}

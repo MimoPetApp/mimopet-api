@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/pets": {
+    "/modules": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Pet"
+                    "$ref": "#/components/schemas/Module"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Pet"
+          "Module"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Pet"
+                  "$ref": "#/components/schemas/Module"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Pet"
+          "Module"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPet"
+                "$ref": "#/components/schemas/NewModule"
               }
             }
           }
         }
       }
     },
-    "/pets/count": {
+    "/modules/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Pet"
+          "Module"
         ],
         "parameters": []
       }
     },
-    "/pets/{id}": {
+    "/modules/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Pet"
+                  "$ref": "#/components/schemas/Module"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Pet"
+          "Module"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Pet"
+                  "$ref": "#/components/schemas/Module"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Pet"
+          "Module"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPet"
+                "$ref": "#/components/schemas/NewModule"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Pet"
+          "Module"
         ],
         "parameters": [
           {
@@ -514,179 +514,68 @@
   },
   "components": {
     "schemas": {
-      "Pet": {
+      "Module": {
         "required": [
           "id",
-          "name",
-          "breed",
-          "is_main",
-          "image",
-          "is_adopted",
-          "is_neutered",
-          "is_deficiency"
+          "name"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "name": {
-            "type": "string"
-          },
-          "breed": {
-            "type": "string"
-          },
-          "is_main": {
-            "type": "boolean",
-            "default": false
-          },
-          "user": {
-            "required": [
-              "id",
-              "username",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmationToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "gender": {
-                "type": "string",
-                "enum": [
-                  "MALE",
-                  "FEMALE",
-                  "NONBINARY"
-                ]
-              },
-              "is_premium": {
-                "type": "boolean"
-              },
-              "pets": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "image": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "invoices": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "trainings": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "birthday": {
-                "type": "integer"
-              },
-              "modules": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "image": {
+          "trainings": {
             "type": "array",
             "items": {
               "required": [
                 "id",
-                "name",
-                "hash",
-                "mime",
-                "size",
-                "url",
-                "provider"
+                "title",
+                "description",
+                "author",
+                "published",
+                "rating",
+                "thumbnail",
+                "category"
               ],
               "properties": {
                 "id": {
                   "type": "string"
                 },
-                "name": {
+                "title": {
                   "type": "string"
                 },
-                "alternativeText": {
+                "description": {
                   "type": "string"
                 },
-                "caption": {
+                "author": {
                   "type": "string"
                 },
-                "width": {
-                  "type": "integer"
-                },
-                "height": {
-                  "type": "integer"
-                },
-                "formats": {
-                  "type": "object"
-                },
-                "hash": {
+                "published": {
                   "type": "string"
                 },
-                "ext": {
-                  "type": "string"
-                },
-                "mime": {
-                  "type": "string"
-                },
-                "size": {
+                "rating": {
                   "type": "number"
                 },
-                "url": {
+                "thumbnail": {
                   "type": "string"
                 },
-                "previewUrl": {
-                  "type": "string"
+                "steps": {
+                  "type": "dynamiczone"
                 },
-                "provider": {
-                  "type": "string"
+                "category": {
+                  "type": "string",
+                  "enum": [
+                    "adults",
+                    "puppy",
+                    "premium"
+                  ]
                 },
-                "provider_metadata": {
-                  "type": "object"
+                "modules": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
-                "related": {
+                "published_at": {
                   "type": "string"
                 },
                 "created_by": {
@@ -698,43 +587,100 @@
               }
             }
           },
-          "type": {
-            "type": "string",
-            "enum": [
-              "canine"
-            ]
+          "name": {
+            "type": "string"
           },
-          "gender": {
-            "type": "string",
-            "enum": [
-              "male",
-              "female"
-            ]
-          },
-          "is_adopted": {
-            "type": "boolean",
-            "default": false
-          },
-          "is_neutered": {
-            "type": "boolean",
-            "default": false
-          },
-          "is_deficiency": {
-            "type": "boolean",
-            "default": false
-          },
-          "ownership_time": {
-            "type": "string",
-            "format": "date"
-          },
-          "age": {
-            "type": "string",
-            "enum": [
-              "SIX_MONTS",
-              "EIGHTEEN_MONTS",
-              "ADULT",
-              "SENIOR"
-            ]
+          "users": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "username",
+                "email"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "username": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                },
+                "resetPasswordToken": {
+                  "type": "string"
+                },
+                "confirmationToken": {
+                  "type": "string"
+                },
+                "confirmed": {
+                  "type": "boolean"
+                },
+                "blocked": {
+                  "type": "boolean"
+                },
+                "role": {
+                  "type": "string"
+                },
+                "gender": {
+                  "type": "string",
+                  "enum": [
+                    "MALE",
+                    "FEMALE",
+                    "NONBINARY"
+                  ]
+                },
+                "is_premium": {
+                  "type": "boolean"
+                },
+                "pets": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "image": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "invoices": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "trainings": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "birthday": {
+                  "type": "integer"
+                },
+                "modules": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "published_at": {
             "type": "string",
@@ -742,66 +688,25 @@
           }
         }
       },
-      "NewPet": {
+      "NewModule": {
         "required": [
-          "name",
-          "breed",
-          "is_main",
-          "is_adopted",
-          "is_neutered",
-          "is_deficiency"
+          "name"
         ],
         "properties": {
+          "trainings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "name": {
             "type": "string"
           },
-          "breed": {
-            "type": "string"
-          },
-          "is_main": {
-            "type": "boolean",
-            "default": false
-          },
-          "user": {
-            "type": "string"
-          },
-          "type": {
-            "type": "string",
-            "enum": [
-              "canine"
-            ]
-          },
-          "gender": {
-            "type": "string",
-            "enum": [
-              "male",
-              "female"
-            ]
-          },
-          "is_adopted": {
-            "type": "boolean",
-            "default": false
-          },
-          "is_neutered": {
-            "type": "boolean",
-            "default": false
-          },
-          "is_deficiency": {
-            "type": "boolean",
-            "default": false
-          },
-          "ownership_time": {
-            "type": "string",
-            "format": "date"
-          },
-          "age": {
-            "type": "string",
-            "enum": [
-              "SIX_MONTS",
-              "EIGHTEEN_MONTS",
-              "ADULT",
-              "SENIOR"
-            ]
+          "users": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "published_at": {
             "type": "string",
@@ -819,7 +724,7 @@
   },
   "tags": [
     {
-      "name": "Pet"
+      "name": "Module"
     }
   ]
 }
