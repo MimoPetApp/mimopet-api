@@ -8,5 +8,10 @@
 module.exports = {
   find: async (ctx) => {
     return await strapi.query("pet").find({ user: ctx.state.user.id });
-  }
+  },
+  create: async (ctx) => {
+    return await strapi
+      .query("pet")
+      .create({ ...ctx.request.body, user: ctx.state.user.id });
+  },
 };
