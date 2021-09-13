@@ -531,9 +531,9 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "curriculum.article",
-                        "curriculum.lecture",
-                        "curriculum.quizz"
+                        "steps.article",
+                        "steps.lecture",
+                        "steps.quizz"
                       ]
                     },
                     "id": {
@@ -639,6 +639,22 @@
                           }
                         }
                       }
+                    },
+                    "type": {
+                      "type": "string",
+                      "default": "article",
+                      "enum": [
+                        "article",
+                        "lecture",
+                        "quizz",
+                        "repetitions",
+                        "slide",
+                        "feedback"
+                      ]
+                    },
+                    "duration": {
+                      "type": "integer",
+                      "default": 5
                     }
                   },
                   "required": [
@@ -652,9 +668,9 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "curriculum.article",
-                        "curriculum.lecture",
-                        "curriculum.quizz"
+                        "steps.article",
+                        "steps.lecture",
+                        "steps.quizz"
                       ]
                     },
                     "id": {
@@ -824,6 +840,22 @@
                           }
                         }
                       }
+                    },
+                    "type": {
+                      "type": "string",
+                      "default": "lecture",
+                      "enum": [
+                        "article",
+                        "lecture",
+                        "quizz",
+                        "repetitions",
+                        "slide",
+                        "feedback"
+                      ]
+                    },
+                    "duration": {
+                      "type": "integer",
+                      "default": 5
                     }
                   },
                   "required": [
@@ -838,15 +870,15 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "curriculum.article",
-                        "curriculum.lecture",
-                        "curriculum.quizz"
+                        "steps.article",
+                        "steps.lecture",
+                        "steps.quizz"
                       ]
                     },
                     "id": {
                       "type": "string"
                     },
-                    "name": {
+                    "title": {
                       "type": "string"
                     },
                     "description": {
@@ -854,11 +886,27 @@
                     },
                     "alternatives": {
                       "type": "object"
+                    },
+                    "type": {
+                      "type": "string",
+                      "default": "quizz",
+                      "enum": [
+                        "article",
+                        "lecture",
+                        "quizz",
+                        "repetitions",
+                        "slide",
+                        "feedback"
+                      ]
+                    },
+                    "duration": {
+                      "type": "integer",
+                      "default": 5
                     }
                   },
                   "required": [
                     "id",
-                    "name",
+                    "title",
                     "description",
                     "alternatives"
                   ]
@@ -886,9 +934,9 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "curriculum.article",
-                        "curriculum.lecture",
-                        "curriculum.quizz"
+                        "steps.article",
+                        "steps.lecture",
+                        "steps.quizz"
                       ]
                     },
                     "id": {
@@ -994,6 +1042,22 @@
                           }
                         }
                       }
+                    },
+                    "type": {
+                      "type": "string",
+                      "default": "article",
+                      "enum": [
+                        "article",
+                        "lecture",
+                        "quizz",
+                        "repetitions",
+                        "slide",
+                        "feedback"
+                      ]
+                    },
+                    "duration": {
+                      "type": "integer",
+                      "default": 5
                     }
                   },
                   "required": [
@@ -1007,9 +1071,9 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "curriculum.article",
-                        "curriculum.lecture",
-                        "curriculum.quizz"
+                        "steps.article",
+                        "steps.lecture",
+                        "steps.quizz"
                       ]
                     },
                     "id": {
@@ -1179,6 +1243,22 @@
                           }
                         }
                       }
+                    },
+                    "type": {
+                      "type": "string",
+                      "default": "lecture",
+                      "enum": [
+                        "article",
+                        "lecture",
+                        "quizz",
+                        "repetitions",
+                        "slide",
+                        "feedback"
+                      ]
+                    },
+                    "duration": {
+                      "type": "integer",
+                      "default": 5
                     }
                   },
                   "required": [
@@ -1193,15 +1273,15 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "curriculum.article",
-                        "curriculum.lecture",
-                        "curriculum.quizz"
+                        "steps.article",
+                        "steps.lecture",
+                        "steps.quizz"
                       ]
                     },
                     "id": {
                       "type": "string"
                     },
-                    "name": {
+                    "title": {
                       "type": "string"
                     },
                     "description": {
@@ -1209,11 +1289,27 @@
                     },
                     "alternatives": {
                       "type": "object"
+                    },
+                    "type": {
+                      "type": "string",
+                      "default": "quizz",
+                      "enum": [
+                        "article",
+                        "lecture",
+                        "quizz",
+                        "repetitions",
+                        "slide",
+                        "feedback"
+                      ]
+                    },
+                    "duration": {
+                      "type": "integer",
+                      "default": 5
                     }
                   },
                   "required": [
                     "id",
-                    "name",
+                    "title",
                     "description",
                     "alternatives"
                   ]

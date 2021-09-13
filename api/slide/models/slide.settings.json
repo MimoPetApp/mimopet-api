@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "sessions",
+  "collectionName": "slides",
   "info": {
-    "name": "Sessions",
+    "name": "Slide",
     "description": ""
   },
   "options": {
@@ -12,16 +12,15 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "days": {
+    "items": {
       "type": "dynamiczone",
       "components": [
-        "steps.article",
-        "steps.lecture",
-        "steps.quizz"
+        "utils.slide-item"
       ]
     },
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     }
   }
 }

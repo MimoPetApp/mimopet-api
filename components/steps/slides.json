@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_steps_slides",
+  "info": {
+    "name": "Slides",
+    "icon": "images",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "users_completed": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "article",
+        "lecture",
+        "quizz",
+        "repetitions",
+        "slide",
+        "feedback"
+      ],
+      "default": "slide"
+    },
+    "duration": {
+      "type": "integer",
+      "default": 5,
+      "min": 0
+    },
+    "slides": {
+      "collection": "slide"
+    }
+  }
+}
