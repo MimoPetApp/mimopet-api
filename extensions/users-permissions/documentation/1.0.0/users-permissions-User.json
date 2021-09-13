@@ -1464,11 +1464,8 @@
                 "id",
                 "title",
                 "description",
-                "author",
                 "published",
-                "rating",
-                "thumbnail",
-                "category"
+                "thumbnail"
               ],
               "properties": {
                 "id": {
@@ -1480,14 +1477,8 @@
                 "description": {
                   "type": "string"
                 },
-                "author": {
-                  "type": "string"
-                },
                 "published": {
                   "type": "string"
-                },
-                "rating": {
-                  "type": "number"
                 },
                 "thumbnail": {
                   "type": "string"
@@ -1495,19 +1486,17 @@
                 "steps": {
                   "type": "dynamiczone"
                 },
-                "category": {
-                  "type": "string",
-                  "enum": [
-                    "adults",
-                    "puppy",
-                    "premium"
-                  ]
-                },
                 "modules": {
                   "type": "array",
                   "items": {
                     "type": "string"
                   }
+                },
+                "minimum": {
+                  "type": "integer"
+                },
+                "maximum": {
+                  "type": "integer"
                 },
                 "published_at": {
                   "type": "string"
@@ -1529,10 +1518,42 @@
             "items": {
               "required": [
                 "id",
-                "name"
+                "title",
+                "description",
+                "author",
+                "published",
+                "rating",
+                "category",
+                "thumbnail"
               ],
               "properties": {
                 "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "author": {
+                  "type": "string"
+                },
+                "published": {
+                  "type": "string"
+                },
+                "rating": {
+                  "type": "number"
+                },
+                "category": {
+                  "type": "string",
+                  "enum": [
+                    "adults",
+                    "puppy",
+                    "premium"
+                  ]
+                },
+                "thumbnail": {
                   "type": "string"
                 },
                 "trainings": {
@@ -1540,9 +1561,6 @@
                   "items": {
                     "type": "string"
                   }
-                },
-                "name": {
-                  "type": "string"
                 },
                 "users": {
                   "type": "array",

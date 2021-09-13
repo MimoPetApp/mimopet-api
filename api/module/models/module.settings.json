@@ -12,14 +12,49 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "author": {
+      "type": "string",
+      "required": true
+    },
+    "published": {
+      "type": "date",
+      "required": true
+    },
+    "rating": {
+      "type": "decimal",
+      "required": true
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "adults",
+        "puppy",
+        "premium"
+      ],
+      "required": true
+    },
+    "thumbnail": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
     "trainings": {
       "via": "modules",
       "collection": "training",
       "dominant": true
-    },
-    "name": {
-      "type": "string",
-      "required": true
     },
     "users": {
       "via": "modules",

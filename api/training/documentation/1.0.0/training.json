@@ -519,11 +519,8 @@
           "id",
           "title",
           "description",
-          "author",
           "published",
-          "rating",
-          "thumbnail",
-          "category"
+          "thumbnail"
         ],
         "properties": {
           "id": {
@@ -535,15 +532,9 @@
           "description": {
             "type": "string"
           },
-          "author": {
-            "type": "string"
-          },
           "published": {
             "type": "string",
             "format": "date"
-          },
-          "rating": {
-            "type": "number"
           },
           "thumbnail": {
             "required": [
@@ -612,6 +603,14 @@
               }
             }
           },
+          "minimum": {
+            "type": "integer",
+            "default": 5
+          },
+          "maximum": {
+            "type": "integer",
+            "default": 10
+          },
           "steps": {
             "type": "array",
             "items": {
@@ -621,10 +620,11 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "curriculum.article",
-                        "curriculum.lecture",
-                        "curriculum.quizz",
-                        "curriculum.repetitions"
+                        "steps.article",
+                        "steps.lecture",
+                        "steps.quizz",
+                        "steps.repetitions",
+                        "steps.slides"
                       ]
                     },
                     "id": {
@@ -730,6 +730,22 @@
                           }
                         }
                       }
+                    },
+                    "type": {
+                      "type": "string",
+                      "default": "article",
+                      "enum": [
+                        "article",
+                        "lecture",
+                        "quizz",
+                        "repetitions",
+                        "slide",
+                        "feedback"
+                      ]
+                    },
+                    "duration": {
+                      "type": "integer",
+                      "default": 5
                     }
                   },
                   "required": [
@@ -743,10 +759,11 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "curriculum.article",
-                        "curriculum.lecture",
-                        "curriculum.quizz",
-                        "curriculum.repetitions"
+                        "steps.article",
+                        "steps.lecture",
+                        "steps.quizz",
+                        "steps.repetitions",
+                        "steps.slides"
                       ]
                     },
                     "id": {
@@ -916,6 +933,22 @@
                           }
                         }
                       }
+                    },
+                    "type": {
+                      "type": "string",
+                      "default": "lecture",
+                      "enum": [
+                        "article",
+                        "lecture",
+                        "quizz",
+                        "repetitions",
+                        "slide",
+                        "feedback"
+                      ]
+                    },
+                    "duration": {
+                      "type": "integer",
+                      "default": 5
                     }
                   },
                   "required": [
@@ -930,16 +963,17 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "curriculum.article",
-                        "curriculum.lecture",
-                        "curriculum.quizz",
-                        "curriculum.repetitions"
+                        "steps.article",
+                        "steps.lecture",
+                        "steps.quizz",
+                        "steps.repetitions",
+                        "steps.slides"
                       ]
                     },
                     "id": {
                       "type": "string"
                     },
-                    "name": {
+                    "title": {
                       "type": "string"
                     },
                     "description": {
@@ -947,11 +981,27 @@
                     },
                     "alternatives": {
                       "type": "object"
+                    },
+                    "type": {
+                      "type": "string",
+                      "default": "quizz",
+                      "enum": [
+                        "article",
+                        "lecture",
+                        "quizz",
+                        "repetitions",
+                        "slide",
+                        "feedback"
+                      ]
+                    },
+                    "duration": {
+                      "type": "integer",
+                      "default": 5
                     }
                   },
                   "required": [
                     "id",
-                    "name",
+                    "title",
                     "description",
                     "alternatives"
                   ]
@@ -961,10 +1011,11 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "curriculum.article",
-                        "curriculum.lecture",
-                        "curriculum.quizz",
-                        "curriculum.repetitions"
+                        "steps.article",
+                        "steps.lecture",
+                        "steps.quizz",
+                        "steps.repetitions",
+                        "steps.slides"
                       ]
                     },
                     "id": {
@@ -1083,6 +1134,182 @@
                           }
                         }
                       }
+                    },
+                    "type": {
+                      "type": "string",
+                      "default": "repetitions",
+                      "enum": [
+                        "article",
+                        "lecture",
+                        "quizz",
+                        "repetitions",
+                        "slide",
+                        "feedback"
+                      ]
+                    },
+                    "duration": {
+                      "type": "integer",
+                      "default": 5
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "steps.article",
+                        "steps.lecture",
+                        "steps.quizz",
+                        "steps.repetitions",
+                        "steps.slides"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "users_completed": {
+                      "required": [
+                        "id",
+                        "username",
+                        "email"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "username": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string"
+                        },
+                        "provider": {
+                          "type": "string"
+                        },
+                        "password": {
+                          "type": "string"
+                        },
+                        "resetPasswordToken": {
+                          "type": "string"
+                        },
+                        "confirmationToken": {
+                          "type": "string"
+                        },
+                        "confirmed": {
+                          "type": "boolean"
+                        },
+                        "blocked": {
+                          "type": "boolean"
+                        },
+                        "role": {
+                          "type": "string"
+                        },
+                        "gender": {
+                          "type": "string",
+                          "enum": [
+                            "MALE",
+                            "FEMALE",
+                            "NONBINARY"
+                          ]
+                        },
+                        "is_premium": {
+                          "type": "boolean"
+                        },
+                        "pets": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "image": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "invoices": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "trainings": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "birthday": {
+                          "type": "integer"
+                        },
+                        "modules": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "type": {
+                      "type": "string",
+                      "default": "slide",
+                      "enum": [
+                        "article",
+                        "lecture",
+                        "quizz",
+                        "repetitions",
+                        "slide",
+                        "feedback"
+                      ]
+                    },
+                    "duration": {
+                      "type": "integer",
+                      "default": 5
+                    },
+                    "slides": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "id",
+                          "name"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "items": {
+                            "type": "dynamiczone"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "published_at": {
+                            "type": "string"
+                          },
+                          "created_by": {
+                            "type": "string"
+                          },
+                          "updated_by": {
+                            "type": "string"
+                          }
+                        }
+                      }
                     }
                   },
                   "required": [
@@ -1092,23 +1319,47 @@
               ]
             }
           },
-          "category": {
-            "type": "string",
-            "enum": [
-              "adults",
-              "puppy",
-              "premium"
-            ]
-          },
           "modules": {
             "type": "array",
             "items": {
               "required": [
                 "id",
-                "name"
+                "title",
+                "description",
+                "author",
+                "published",
+                "rating",
+                "category",
+                "thumbnail"
               ],
               "properties": {
                 "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "author": {
+                  "type": "string"
+                },
+                "published": {
+                  "type": "string"
+                },
+                "rating": {
+                  "type": "number"
+                },
+                "category": {
+                  "type": "string",
+                  "enum": [
+                    "adults",
+                    "puppy",
+                    "premium"
+                  ]
+                },
+                "thumbnail": {
                   "type": "string"
                 },
                 "trainings": {
@@ -1116,9 +1367,6 @@
                   "items": {
                     "type": "string"
                   }
-                },
-                "name": {
-                  "type": "string"
                 },
                 "users": {
                   "type": "array",
@@ -1148,10 +1396,7 @@
         "required": [
           "title",
           "description",
-          "author",
-          "published",
-          "rating",
-          "category"
+          "published"
         ],
         "properties": {
           "title": {
@@ -1160,15 +1405,17 @@
           "description": {
             "type": "string"
           },
-          "author": {
-            "type": "string"
-          },
           "published": {
             "type": "string",
             "format": "date"
           },
-          "rating": {
-            "type": "number"
+          "minimum": {
+            "type": "integer",
+            "default": 5
+          },
+          "maximum": {
+            "type": "integer",
+            "default": 10
           },
           "steps": {
             "type": "array",
@@ -1179,10 +1426,11 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "curriculum.article",
-                        "curriculum.lecture",
-                        "curriculum.quizz",
-                        "curriculum.repetitions"
+                        "steps.article",
+                        "steps.lecture",
+                        "steps.quizz",
+                        "steps.repetitions",
+                        "steps.slides"
                       ]
                     },
                     "id": {
@@ -1288,6 +1536,22 @@
                           }
                         }
                       }
+                    },
+                    "type": {
+                      "type": "string",
+                      "default": "article",
+                      "enum": [
+                        "article",
+                        "lecture",
+                        "quizz",
+                        "repetitions",
+                        "slide",
+                        "feedback"
+                      ]
+                    },
+                    "duration": {
+                      "type": "integer",
+                      "default": 5
                     }
                   },
                   "required": [
@@ -1301,10 +1565,11 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "curriculum.article",
-                        "curriculum.lecture",
-                        "curriculum.quizz",
-                        "curriculum.repetitions"
+                        "steps.article",
+                        "steps.lecture",
+                        "steps.quizz",
+                        "steps.repetitions",
+                        "steps.slides"
                       ]
                     },
                     "id": {
@@ -1474,6 +1739,22 @@
                           }
                         }
                       }
+                    },
+                    "type": {
+                      "type": "string",
+                      "default": "lecture",
+                      "enum": [
+                        "article",
+                        "lecture",
+                        "quizz",
+                        "repetitions",
+                        "slide",
+                        "feedback"
+                      ]
+                    },
+                    "duration": {
+                      "type": "integer",
+                      "default": 5
                     }
                   },
                   "required": [
@@ -1488,16 +1769,17 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "curriculum.article",
-                        "curriculum.lecture",
-                        "curriculum.quizz",
-                        "curriculum.repetitions"
+                        "steps.article",
+                        "steps.lecture",
+                        "steps.quizz",
+                        "steps.repetitions",
+                        "steps.slides"
                       ]
                     },
                     "id": {
                       "type": "string"
                     },
-                    "name": {
+                    "title": {
                       "type": "string"
                     },
                     "description": {
@@ -1505,11 +1787,27 @@
                     },
                     "alternatives": {
                       "type": "object"
+                    },
+                    "type": {
+                      "type": "string",
+                      "default": "quizz",
+                      "enum": [
+                        "article",
+                        "lecture",
+                        "quizz",
+                        "repetitions",
+                        "slide",
+                        "feedback"
+                      ]
+                    },
+                    "duration": {
+                      "type": "integer",
+                      "default": 5
                     }
                   },
                   "required": [
                     "id",
-                    "name",
+                    "title",
                     "description",
                     "alternatives"
                   ]
@@ -1519,10 +1817,11 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "curriculum.article",
-                        "curriculum.lecture",
-                        "curriculum.quizz",
-                        "curriculum.repetitions"
+                        "steps.article",
+                        "steps.lecture",
+                        "steps.quizz",
+                        "steps.repetitions",
+                        "steps.slides"
                       ]
                     },
                     "id": {
@@ -1641,6 +1940,182 @@
                           }
                         }
                       }
+                    },
+                    "type": {
+                      "type": "string",
+                      "default": "repetitions",
+                      "enum": [
+                        "article",
+                        "lecture",
+                        "quizz",
+                        "repetitions",
+                        "slide",
+                        "feedback"
+                      ]
+                    },
+                    "duration": {
+                      "type": "integer",
+                      "default": 5
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "steps.article",
+                        "steps.lecture",
+                        "steps.quizz",
+                        "steps.repetitions",
+                        "steps.slides"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "users_completed": {
+                      "required": [
+                        "id",
+                        "username",
+                        "email"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "username": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string"
+                        },
+                        "provider": {
+                          "type": "string"
+                        },
+                        "password": {
+                          "type": "string"
+                        },
+                        "resetPasswordToken": {
+                          "type": "string"
+                        },
+                        "confirmationToken": {
+                          "type": "string"
+                        },
+                        "confirmed": {
+                          "type": "boolean"
+                        },
+                        "blocked": {
+                          "type": "boolean"
+                        },
+                        "role": {
+                          "type": "string"
+                        },
+                        "gender": {
+                          "type": "string",
+                          "enum": [
+                            "MALE",
+                            "FEMALE",
+                            "NONBINARY"
+                          ]
+                        },
+                        "is_premium": {
+                          "type": "boolean"
+                        },
+                        "pets": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "image": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "invoices": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "trainings": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "birthday": {
+                          "type": "integer"
+                        },
+                        "modules": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "type": {
+                      "type": "string",
+                      "default": "slide",
+                      "enum": [
+                        "article",
+                        "lecture",
+                        "quizz",
+                        "repetitions",
+                        "slide",
+                        "feedback"
+                      ]
+                    },
+                    "duration": {
+                      "type": "integer",
+                      "default": 5
+                    },
+                    "slides": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "id",
+                          "name"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "items": {
+                            "type": "dynamiczone"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "published_at": {
+                            "type": "string"
+                          },
+                          "created_by": {
+                            "type": "string"
+                          },
+                          "updated_by": {
+                            "type": "string"
+                          }
+                        }
+                      }
                     }
                   },
                   "required": [
@@ -1649,14 +2124,6 @@
                 }
               ]
             }
-          },
-          "category": {
-            "type": "string",
-            "enum": [
-              "adults",
-              "puppy",
-              "premium"
-            ]
           },
           "modules": {
             "type": "array",
