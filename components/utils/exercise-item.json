@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_utils_exercise_items",
+  "info": {
+    "name": "Exercise Item",
+    "icon": "volleyball-ball"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "session": {
+      "model": "session"
+    },
+    "is_complete": {
+      "type": "boolean"
+    }
+  }
+}

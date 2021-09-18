@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "exercises",
+  "info": {
+    "name": "Exercise"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "author": {
+      "type": "string",
+      "required": true
+    },
+    "min_duration": {
+      "type": "integer",
+      "default": 10
+    },
+    "max_duration": {
+      "type": "integer",
+      "default": 20
+    },
+    "items": {
+      "type": "dynamiczone",
+      "components": [
+        "utils.exercise-item"
+      ],
+      "required": false
+    }
+  }
+}

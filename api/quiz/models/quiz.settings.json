@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quizzes",
+  "info": {
+    "name": "Quiz",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "items": {
+      "type": "dynamiczone",
+      "components": [
+        "utils.quiz-item"
+      ]
+    }
+  }
+}

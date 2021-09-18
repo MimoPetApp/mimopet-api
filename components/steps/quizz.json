@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_curriculum_quizzes",
+  "collectionName": "components_steps_quiz_steps",
   "info": {
-    "name": "quizz",
+    "name": "Quiz Step",
     "icon": "question",
     "description": ""
   },
@@ -12,29 +12,26 @@
       "required": true
     },
     "description": {
-      "type": "string",
-      "required": true
-    },
-    "alternatives": {
-      "type": "json",
-      "required": true
+      "type": "string"
     },
     "type": {
       "type": "enumeration",
       "enum": [
-        "article",
-        "lecture",
-        "quizz",
-        "repetitions",
+        "video",
+        "quiz",
+        "exercise",
         "slide",
         "feedback"
       ],
-      "default": "quizz"
+      "default": "quiz"
     },
     "duration": {
       "type": "integer",
       "default": 5,
       "min": 0
+    },
+    "quizzes": {
+      "model": "quiz"
     }
   }
 }

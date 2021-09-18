@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "09/12/2021 2:33:49 PM"
+    "x-generation-date": "09/18/2021 8:48:38 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -749,7 +749,7 @@
         ]
       }
     },
-    "/invoices": {
+    "/exercises": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -761,7 +761,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Invoice"
+                    "$ref": "#/components/schemas/Exercise"
                   }
                 }
               }
@@ -800,7 +800,7 @@
         },
         "summary": "",
         "tags": [
-          "Invoice"
+          "Exercise"
         ],
         "parameters": [
           {
@@ -950,7 +950,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Invoice"
+                  "$ref": "#/components/schemas/Exercise"
                 }
               }
             }
@@ -988,7 +988,7 @@
         },
         "summary": "",
         "tags": [
-          "Invoice"
+          "Exercise"
         ],
         "requestBody": {
           "description": "",
@@ -996,14 +996,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewInvoice"
+                "$ref": "#/components/schemas/NewExercise"
               }
             }
           }
         }
       }
     },
-    "/invoices/count": {
+    "/exercises/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -1055,12 +1055,12 @@
         },
         "summary": "",
         "tags": [
-          "Invoice"
+          "Exercise"
         ],
         "parameters": []
       }
     },
-    "/invoices/{id}": {
+    "/exercises/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -1070,7 +1070,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Invoice"
+                  "$ref": "#/components/schemas/Exercise"
                 }
               }
             }
@@ -1108,7 +1108,7 @@
         },
         "summary": "",
         "tags": [
-          "Invoice"
+          "Exercise"
         ],
         "parameters": [
           {
@@ -1132,7 +1132,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Invoice"
+                  "$ref": "#/components/schemas/Exercise"
                 }
               }
             }
@@ -1170,7 +1170,7 @@
         },
         "summary": "",
         "tags": [
-          "Invoice"
+          "Exercise"
         ],
         "requestBody": {
           "description": "",
@@ -1178,7 +1178,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewInvoice"
+                "$ref": "#/components/schemas/NewExercise"
               }
             }
           }
@@ -1244,7 +1244,518 @@
         },
         "summary": "",
         "tags": [
-          "Invoice"
+          "Exercise"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/feedbacks": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Feedback"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Feedback"
+        ],
+        "parameters": [
+          {
+            "name": "_limit",
+            "in": "query",
+            "required": false,
+            "description": "Maximum number of results possible",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_sort",
+            "in": "query",
+            "required": false,
+            "description": "Sort according to a specific field.",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_start",
+            "in": "query",
+            "required": false,
+            "description": "Skip a specific number of entries (especially useful for pagination)",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "=",
+            "in": "query",
+            "required": false,
+            "description": "Get entries that matches exactly your input",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_ne",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are not equals to something",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lt",
+            "in": "query",
+            "required": false,
+            "description": "Get record that are lower than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are lower than or equal to a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gt",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than  or equal a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_contains",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_containss",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains (case sensitive) a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_in",
+            "in": "query",
+            "required": false,
+            "description": "Get records that matches any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_nin",
+            "in": "query",
+            "required": false,
+            "description": "Get records that doesn't match any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          }
+        ]
+      },
+      "post": {
+        "deprecated": false,
+        "description": "Create a new record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Feedback"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Feedback"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewFeedback"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/feedbacks/count": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Feedback"
+        ],
+        "parameters": []
+      }
+    },
+    "/feedbacks/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Feedback"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Feedback"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "put": {
+        "deprecated": false,
+        "description": "Update a record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Feedback"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Feedback"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewFeedback"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "delete": {
+        "deprecated": false,
+        "description": "Delete a record",
+        "responses": {
+          "200": {
+            "description": "deletes a single record based on the ID supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Feedback"
         ],
         "parameters": [
           {
@@ -2806,19 +3317,19 @@
         ]
       }
     },
-    "/sessions": {
+    "/quizzes": {
       "get": {
         "deprecated": false,
-        "description": "Find all the sessions's records",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve sessions document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Sessions"
+                    "$ref": "#/components/schemas/Quiz"
                   }
                 }
               }
@@ -2857,7 +3368,7 @@
         },
         "summary": "",
         "tags": [
-          "Sessions"
+          "Quiz"
         ],
         "parameters": [
           {
@@ -3000,14 +3511,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new sessions record",
+        "description": "Create a new record",
         "responses": {
           "200": {
-            "description": "Retrieve sessions document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Sessions"
+                  "$ref": "#/components/schemas/Quiz"
                 }
               }
             }
@@ -3045,7 +3556,7 @@
         },
         "summary": "",
         "tags": [
-          "Sessions"
+          "Quiz"
         ],
         "requestBody": {
           "description": "",
@@ -3053,20 +3564,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewSessions"
+                "$ref": "#/components/schemas/NewQuiz"
               }
             }
           }
         }
       }
     },
-    "/sessions/count": {
+    "/quizzes/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the numver of sessions documents",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve sessions document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
@@ -3112,22 +3623,22 @@
         },
         "summary": "",
         "tags": [
-          "Sessions"
+          "Quiz"
         ],
         "parameters": []
       }
     },
-    "/sessions/{id}": {
+    "/quizzes/{id}": {
       "get": {
         "deprecated": false,
-        "description": "Find one sessions record",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve sessions document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Sessions"
+                  "$ref": "#/components/schemas/Quiz"
                 }
               }
             }
@@ -3165,7 +3676,7 @@
         },
         "summary": "",
         "tags": [
-          "Sessions"
+          "Quiz"
         ],
         "parameters": [
           {
@@ -3182,14 +3693,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single sessions record",
+        "description": "Update a record",
         "responses": {
           "200": {
-            "description": "Retrieve sessions document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Sessions"
+                  "$ref": "#/components/schemas/Quiz"
                 }
               }
             }
@@ -3227,7 +3738,7 @@
         },
         "summary": "",
         "tags": [
-          "Sessions"
+          "Quiz"
         ],
         "requestBody": {
           "description": "",
@@ -3235,7 +3746,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewSessions"
+                "$ref": "#/components/schemas/NewQuiz"
               }
             }
           }
@@ -3255,10 +3766,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single sessions record",
+        "description": "Delete a record",
         "responses": {
           "200": {
-            "description": "deletes a single sessions based on the ID supplied",
+            "description": "deletes a single record based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -3301,7 +3812,518 @@
         },
         "summary": "",
         "tags": [
-          "Sessions"
+          "Quiz"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/sessions": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Session"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Session"
+        ],
+        "parameters": [
+          {
+            "name": "_limit",
+            "in": "query",
+            "required": false,
+            "description": "Maximum number of results possible",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_sort",
+            "in": "query",
+            "required": false,
+            "description": "Sort according to a specific field.",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_start",
+            "in": "query",
+            "required": false,
+            "description": "Skip a specific number of entries (especially useful for pagination)",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "=",
+            "in": "query",
+            "required": false,
+            "description": "Get entries that matches exactly your input",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_ne",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are not equals to something",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lt",
+            "in": "query",
+            "required": false,
+            "description": "Get record that are lower than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are lower than or equal to a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gt",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than  or equal a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_contains",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_containss",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains (case sensitive) a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_in",
+            "in": "query",
+            "required": false,
+            "description": "Get records that matches any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_nin",
+            "in": "query",
+            "required": false,
+            "description": "Get records that doesn't match any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          }
+        ]
+      },
+      "post": {
+        "deprecated": false,
+        "description": "Create a new record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Session"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Session"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewSession"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sessions/count": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Session"
+        ],
+        "parameters": []
+      }
+    },
+    "/sessions/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Session"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Session"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "put": {
+        "deprecated": false,
+        "description": "Update a record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Session"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Session"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewSession"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "delete": {
+        "deprecated": false,
+        "description": "Delete a record",
+        "responses": {
+          "200": {
+            "description": "deletes a single record based on the ID supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Session"
         ],
         "parameters": [
           {
@@ -4636,6 +5658,517 @@
         "summary": "",
         "tags": [
           "Training"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/videos": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Video"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Video"
+        ],
+        "parameters": [
+          {
+            "name": "_limit",
+            "in": "query",
+            "required": false,
+            "description": "Maximum number of results possible",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_sort",
+            "in": "query",
+            "required": false,
+            "description": "Sort according to a specific field.",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_start",
+            "in": "query",
+            "required": false,
+            "description": "Skip a specific number of entries (especially useful for pagination)",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "=",
+            "in": "query",
+            "required": false,
+            "description": "Get entries that matches exactly your input",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_ne",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are not equals to something",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lt",
+            "in": "query",
+            "required": false,
+            "description": "Get record that are lower than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are lower than or equal to a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gt",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than  or equal a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_contains",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_containss",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains (case sensitive) a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_in",
+            "in": "query",
+            "required": false,
+            "description": "Get records that matches any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_nin",
+            "in": "query",
+            "required": false,
+            "description": "Get records that doesn't match any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          }
+        ]
+      },
+      "post": {
+        "deprecated": false,
+        "description": "Create a new record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Video"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Video"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewVideo"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/videos/count": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Video"
+        ],
+        "parameters": []
+      }
+    },
+    "/videos/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Video"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Video"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "put": {
+        "deprecated": false,
+        "description": "Update a record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Video"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Video"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewVideo"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "delete": {
+        "deprecated": false,
+        "description": "Delete a record",
+        "responses": {
+          "200": {
+            "description": "deletes a single record based on the ID supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Video"
         ],
         "parameters": [
           {
@@ -6918,184 +8451,82 @@
           }
         }
       },
-      "Invoice": {
+      "Exercise": {
         "required": [
           "id",
-          "title",
-          "date",
-          "image"
+          "name",
+          "author"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "title": {
+          "name": {
             "type": "string"
           },
-          "price": {
-            "type": "number"
+          "author": {
+            "type": "string"
           },
-          "date": {
-            "type": "string",
-            "format": "date"
+          "min_duration": {
+            "type": "integer",
+            "default": 10
           },
-          "image": {
+          "max_duration": {
+            "type": "integer",
+            "default": 20
+          },
+          "items": {
             "type": "array",
             "items": {
-              "required": [
-                "id",
-                "name",
-                "hash",
-                "mime",
-                "size",
-                "url",
-                "provider"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "alternativeText": {
-                  "type": "string"
-                },
-                "caption": {
-                  "type": "string"
-                },
-                "width": {
-                  "type": "integer"
-                },
-                "height": {
-                  "type": "integer"
-                },
-                "formats": {
-                  "type": "object"
-                },
-                "hash": {
-                  "type": "string"
-                },
-                "ext": {
-                  "type": "string"
-                },
-                "mime": {
-                  "type": "string"
-                },
-                "size": {
-                  "type": "number"
-                },
-                "url": {
-                  "type": "string"
-                },
-                "previewUrl": {
-                  "type": "string"
-                },
-                "provider": {
-                  "type": "string"
-                },
-                "provider_metadata": {
-                  "type": "object"
-                },
-                "related": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
+              "oneOf": [
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "utils.exercise-item"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "session": {
+                      "required": [
+                        "id"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "video": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "published_at": {
+                          "type": "string"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "is_complete": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
                 }
-              }
-            }
-          },
-          "user": {
-            "required": [
-              "id",
-              "username",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmationToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "gender": {
-                "type": "string",
-                "enum": [
-                  "MALE",
-                  "FEMALE",
-                  "NONBINARY"
-                ]
-              },
-              "is_premium": {
-                "type": "boolean"
-              },
-              "pets": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "image": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "invoices": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "trainings": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "birthday": {
-                "type": "integer"
-              },
-              "modules": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
+              ]
             }
           },
           "published_at": {
@@ -7104,24 +8535,173 @@
           }
         }
       },
-      "NewInvoice": {
+      "NewExercise": {
         "required": [
-          "title",
-          "date"
+          "name",
+          "author"
         ],
         "properties": {
-          "title": {
+          "name": {
             "type": "string"
           },
-          "price": {
-            "type": "number"
+          "author": {
+            "type": "string"
           },
-          "date": {
+          "min_duration": {
+            "type": "integer",
+            "default": 10
+          },
+          "max_duration": {
+            "type": "integer",
+            "default": 20
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "utils.exercise-item"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "session": {
+                      "required": [
+                        "id"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "video": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "published_at": {
+                          "type": "string"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "is_complete": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              ]
+            }
+          },
+          "published_at": {
             "type": "string",
-            "format": "date"
+            "format": "date-time"
           },
-          "user": {
+          "created_by": {
             "type": "string"
+          },
+          "updated_by": {
+            "type": "string"
+          }
+        }
+      },
+      "Feedback": {
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "utils.quiz-item"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "is_correct": {
+                      "type": "boolean",
+                      "default": false
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              ]
+            }
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "NewFeedback": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "utils.quiz-item"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "is_correct": {
+                      "type": "boolean",
+                      "default": false
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              ]
+            }
           },
           "published_at": {
             "type": "string",
@@ -7267,6 +8847,12 @@
                 "thumbnail": {
                   "type": "string"
                 },
+                "min_duration": {
+                  "type": "integer"
+                },
+                "max_duration": {
+                  "type": "integer"
+                },
                 "steps": {
                   "type": "dynamiczone"
                 },
@@ -7275,12 +8861,6 @@
                   "items": {
                     "type": "string"
                   }
-                },
-                "minimum": {
-                  "type": "integer"
-                },
-                "maximum": {
-                  "type": "integer"
                 },
                 "published_at": {
                   "type": "string"
@@ -7351,12 +8931,6 @@
                   }
                 },
                 "image": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "invoices": {
                   "type": "array",
                   "items": {
                     "type": "string"
@@ -7662,12 +9236,6 @@
                   "type": "string"
                 }
               },
-              "invoices": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
               "trainings": {
                 "type": "array",
                 "items": {
@@ -7878,7 +9446,7 @@
           }
         }
       },
-      "Sessions": {
+      "Quiz": {
         "required": [
           "id"
         ],
@@ -7886,7 +9454,10 @@
           "id": {
             "type": "string"
           },
-          "days": {
+          "name": {
+            "type": "string"
+          },
+          "items": {
             "type": "array",
             "items": {
               "oneOf": [
@@ -7895,9 +9466,7 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "steps.article",
-                        "steps.lecture",
-                        "steps.quizz"
+                        "utils.quiz-item"
                       ]
                     },
                     "id": {
@@ -7906,376 +9475,144 @@
                     "title": {
                       "type": "string"
                     },
-                    "content": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "users_completed": {
-                      "type": "array",
-                      "items": {
-                        "required": [
-                          "id",
-                          "username",
-                          "email"
-                        ],
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "username": {
-                            "type": "string"
-                          },
-                          "email": {
-                            "type": "string"
-                          },
-                          "provider": {
-                            "type": "string"
-                          },
-                          "password": {
-                            "type": "string"
-                          },
-                          "resetPasswordToken": {
-                            "type": "string"
-                          },
-                          "confirmationToken": {
-                            "type": "string"
-                          },
-                          "confirmed": {
-                            "type": "boolean"
-                          },
-                          "blocked": {
-                            "type": "boolean"
-                          },
-                          "role": {
-                            "type": "string"
-                          },
-                          "gender": {
-                            "type": "string",
-                            "enum": [
-                              "MALE",
-                              "FEMALE",
-                              "NONBINARY"
-                            ]
-                          },
-                          "is_premium": {
-                            "type": "boolean"
-                          },
-                          "pets": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "image": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "invoices": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "trainings": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "birthday": {
-                            "type": "integer"
-                          },
-                          "modules": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "created_by": {
-                            "type": "string"
-                          },
-                          "updated_by": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    },
-                    "type": {
-                      "type": "string",
-                      "default": "article",
-                      "enum": [
-                        "article",
-                        "lecture",
-                        "quizz",
-                        "repetitions",
-                        "slide",
-                        "feedback"
-                      ]
-                    },
-                    "duration": {
-                      "type": "integer",
-                      "default": 5
+                    "is_correct": {
+                      "type": "boolean",
+                      "default": false
                     }
                   },
                   "required": [
-                    "id",
-                    "title",
-                    "description"
-                  ]
-                },
-                {
-                  "properties": {
-                    "__component": {
-                      "type": "string",
-                      "enum": [
-                        "steps.article",
-                        "steps.lecture",
-                        "steps.quizz"
-                      ]
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "video": {
-                      "required": [
-                        "id",
-                        "name",
-                        "hash",
-                        "mime",
-                        "size",
-                        "url",
-                        "provider"
-                      ],
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "name": {
-                          "type": "string"
-                        },
-                        "alternativeText": {
-                          "type": "string"
-                        },
-                        "caption": {
-                          "type": "string"
-                        },
-                        "width": {
-                          "type": "integer"
-                        },
-                        "height": {
-                          "type": "integer"
-                        },
-                        "formats": {
-                          "type": "object"
-                        },
-                        "hash": {
-                          "type": "string"
-                        },
-                        "ext": {
-                          "type": "string"
-                        },
-                        "mime": {
-                          "type": "string"
-                        },
-                        "size": {
-                          "type": "number"
-                        },
-                        "url": {
-                          "type": "string"
-                        },
-                        "previewUrl": {
-                          "type": "string"
-                        },
-                        "provider": {
-                          "type": "string"
-                        },
-                        "provider_metadata": {
-                          "type": "object"
-                        },
-                        "related": {
-                          "type": "string"
-                        },
-                        "created_by": {
-                          "type": "string"
-                        },
-                        "updated_by": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "users_completed": {
-                      "type": "array",
-                      "items": {
-                        "required": [
-                          "id",
-                          "username",
-                          "email"
-                        ],
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "username": {
-                            "type": "string"
-                          },
-                          "email": {
-                            "type": "string"
-                          },
-                          "provider": {
-                            "type": "string"
-                          },
-                          "password": {
-                            "type": "string"
-                          },
-                          "resetPasswordToken": {
-                            "type": "string"
-                          },
-                          "confirmationToken": {
-                            "type": "string"
-                          },
-                          "confirmed": {
-                            "type": "boolean"
-                          },
-                          "blocked": {
-                            "type": "boolean"
-                          },
-                          "role": {
-                            "type": "string"
-                          },
-                          "gender": {
-                            "type": "string",
-                            "enum": [
-                              "MALE",
-                              "FEMALE",
-                              "NONBINARY"
-                            ]
-                          },
-                          "is_premium": {
-                            "type": "boolean"
-                          },
-                          "pets": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "image": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "invoices": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "trainings": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "birthday": {
-                            "type": "integer"
-                          },
-                          "modules": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "created_by": {
-                            "type": "string"
-                          },
-                          "updated_by": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    },
-                    "type": {
-                      "type": "string",
-                      "default": "lecture",
-                      "enum": [
-                        "article",
-                        "lecture",
-                        "quizz",
-                        "repetitions",
-                        "slide",
-                        "feedback"
-                      ]
-                    },
-                    "duration": {
-                      "type": "integer",
-                      "default": 5
-                    }
-                  },
-                  "required": [
-                    "id",
-                    "title",
-                    "description",
-                    "video"
-                  ]
-                },
-                {
-                  "properties": {
-                    "__component": {
-                      "type": "string",
-                      "enum": [
-                        "steps.article",
-                        "steps.lecture",
-                        "steps.quizz"
-                      ]
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "alternatives": {
-                      "type": "object"
-                    },
-                    "type": {
-                      "type": "string",
-                      "default": "quizz",
-                      "enum": [
-                        "article",
-                        "lecture",
-                        "quizz",
-                        "repetitions",
-                        "slide",
-                        "feedback"
-                      ]
-                    },
-                    "duration": {
-                      "type": "integer",
-                      "default": 5
-                    }
-                  },
-                  "required": [
-                    "id",
-                    "title",
-                    "description",
-                    "alternatives"
+                    "id"
                   ]
                 }
               ]
+            }
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "NewQuiz": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "utils.quiz-item"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "is_correct": {
+                      "type": "boolean",
+                      "default": false
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              ]
+            }
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "updated_by": {
+            "type": "string"
+          }
+        }
+      },
+      "Session": {
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "video": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
             }
           },
           "name": {
@@ -8287,400 +9624,8 @@
           }
         }
       },
-      "NewSessions": {
+      "NewSession": {
         "properties": {
-          "days": {
-            "type": "array",
-            "items": {
-              "oneOf": [
-                {
-                  "properties": {
-                    "__component": {
-                      "type": "string",
-                      "enum": [
-                        "steps.article",
-                        "steps.lecture",
-                        "steps.quizz"
-                      ]
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "content": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "users_completed": {
-                      "type": "array",
-                      "items": {
-                        "required": [
-                          "id",
-                          "username",
-                          "email"
-                        ],
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "username": {
-                            "type": "string"
-                          },
-                          "email": {
-                            "type": "string"
-                          },
-                          "provider": {
-                            "type": "string"
-                          },
-                          "password": {
-                            "type": "string"
-                          },
-                          "resetPasswordToken": {
-                            "type": "string"
-                          },
-                          "confirmationToken": {
-                            "type": "string"
-                          },
-                          "confirmed": {
-                            "type": "boolean"
-                          },
-                          "blocked": {
-                            "type": "boolean"
-                          },
-                          "role": {
-                            "type": "string"
-                          },
-                          "gender": {
-                            "type": "string",
-                            "enum": [
-                              "MALE",
-                              "FEMALE",
-                              "NONBINARY"
-                            ]
-                          },
-                          "is_premium": {
-                            "type": "boolean"
-                          },
-                          "pets": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "image": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "invoices": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "trainings": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "birthday": {
-                            "type": "integer"
-                          },
-                          "modules": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "created_by": {
-                            "type": "string"
-                          },
-                          "updated_by": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    },
-                    "type": {
-                      "type": "string",
-                      "default": "article",
-                      "enum": [
-                        "article",
-                        "lecture",
-                        "quizz",
-                        "repetitions",
-                        "slide",
-                        "feedback"
-                      ]
-                    },
-                    "duration": {
-                      "type": "integer",
-                      "default": 5
-                    }
-                  },
-                  "required": [
-                    "id",
-                    "title",
-                    "description"
-                  ]
-                },
-                {
-                  "properties": {
-                    "__component": {
-                      "type": "string",
-                      "enum": [
-                        "steps.article",
-                        "steps.lecture",
-                        "steps.quizz"
-                      ]
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "video": {
-                      "required": [
-                        "id",
-                        "name",
-                        "hash",
-                        "mime",
-                        "size",
-                        "url",
-                        "provider"
-                      ],
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "name": {
-                          "type": "string"
-                        },
-                        "alternativeText": {
-                          "type": "string"
-                        },
-                        "caption": {
-                          "type": "string"
-                        },
-                        "width": {
-                          "type": "integer"
-                        },
-                        "height": {
-                          "type": "integer"
-                        },
-                        "formats": {
-                          "type": "object"
-                        },
-                        "hash": {
-                          "type": "string"
-                        },
-                        "ext": {
-                          "type": "string"
-                        },
-                        "mime": {
-                          "type": "string"
-                        },
-                        "size": {
-                          "type": "number"
-                        },
-                        "url": {
-                          "type": "string"
-                        },
-                        "previewUrl": {
-                          "type": "string"
-                        },
-                        "provider": {
-                          "type": "string"
-                        },
-                        "provider_metadata": {
-                          "type": "object"
-                        },
-                        "related": {
-                          "type": "string"
-                        },
-                        "created_by": {
-                          "type": "string"
-                        },
-                        "updated_by": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "users_completed": {
-                      "type": "array",
-                      "items": {
-                        "required": [
-                          "id",
-                          "username",
-                          "email"
-                        ],
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "username": {
-                            "type": "string"
-                          },
-                          "email": {
-                            "type": "string"
-                          },
-                          "provider": {
-                            "type": "string"
-                          },
-                          "password": {
-                            "type": "string"
-                          },
-                          "resetPasswordToken": {
-                            "type": "string"
-                          },
-                          "confirmationToken": {
-                            "type": "string"
-                          },
-                          "confirmed": {
-                            "type": "boolean"
-                          },
-                          "blocked": {
-                            "type": "boolean"
-                          },
-                          "role": {
-                            "type": "string"
-                          },
-                          "gender": {
-                            "type": "string",
-                            "enum": [
-                              "MALE",
-                              "FEMALE",
-                              "NONBINARY"
-                            ]
-                          },
-                          "is_premium": {
-                            "type": "boolean"
-                          },
-                          "pets": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "image": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "invoices": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "trainings": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "birthday": {
-                            "type": "integer"
-                          },
-                          "modules": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "created_by": {
-                            "type": "string"
-                          },
-                          "updated_by": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    },
-                    "type": {
-                      "type": "string",
-                      "default": "lecture",
-                      "enum": [
-                        "article",
-                        "lecture",
-                        "quizz",
-                        "repetitions",
-                        "slide",
-                        "feedback"
-                      ]
-                    },
-                    "duration": {
-                      "type": "integer",
-                      "default": 5
-                    }
-                  },
-                  "required": [
-                    "id",
-                    "title",
-                    "description",
-                    "video"
-                  ]
-                },
-                {
-                  "properties": {
-                    "__component": {
-                      "type": "string",
-                      "enum": [
-                        "steps.article",
-                        "steps.lecture",
-                        "steps.quizz"
-                      ]
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "alternatives": {
-                      "type": "object"
-                    },
-                    "type": {
-                      "type": "string",
-                      "default": "quizz",
-                      "enum": [
-                        "article",
-                        "lecture",
-                        "quizz",
-                        "repetitions",
-                        "slide",
-                        "feedback"
-                      ]
-                    },
-                    "duration": {
-                      "type": "integer",
-                      "default": 5
-                    }
-                  },
-                  "required": [
-                    "id",
-                    "title",
-                    "description",
-                    "alternatives"
-                  ]
-                }
-              ]
-            }
-          },
           "name": {
             "type": "string"
           },
@@ -9053,11 +9998,11 @@
               }
             }
           },
-          "minimum": {
+          "min_duration": {
             "type": "integer",
             "default": 5
           },
-          "maximum": {
+          "max_duration": {
             "type": "integer",
             "default": 10
           },
@@ -9070,11 +10015,11 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "steps.article",
-                        "steps.lecture",
                         "steps.quizz",
-                        "steps.repetitions",
-                        "steps.slides"
+                        "steps.slides",
+                        "steps.exercise-step",
+                        "steps.feedback-step",
+                        "steps.video-step"
                       ]
                     },
                     "id": {
@@ -9083,112 +10028,16 @@
                     "title": {
                       "type": "string"
                     },
-                    "content": {
-                      "type": "string"
-                    },
                     "description": {
                       "type": "string"
                     },
-                    "users_completed": {
-                      "type": "array",
-                      "items": {
-                        "required": [
-                          "id",
-                          "username",
-                          "email"
-                        ],
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "username": {
-                            "type": "string"
-                          },
-                          "email": {
-                            "type": "string"
-                          },
-                          "provider": {
-                            "type": "string"
-                          },
-                          "password": {
-                            "type": "string"
-                          },
-                          "resetPasswordToken": {
-                            "type": "string"
-                          },
-                          "confirmationToken": {
-                            "type": "string"
-                          },
-                          "confirmed": {
-                            "type": "boolean"
-                          },
-                          "blocked": {
-                            "type": "boolean"
-                          },
-                          "role": {
-                            "type": "string"
-                          },
-                          "gender": {
-                            "type": "string",
-                            "enum": [
-                              "MALE",
-                              "FEMALE",
-                              "NONBINARY"
-                            ]
-                          },
-                          "is_premium": {
-                            "type": "boolean"
-                          },
-                          "pets": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "image": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "invoices": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "trainings": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "birthday": {
-                            "type": "integer"
-                          },
-                          "modules": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "created_by": {
-                            "type": "string"
-                          },
-                          "updated_by": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    },
                     "type": {
                       "type": "string",
-                      "default": "article",
+                      "default": "quiz",
                       "enum": [
-                        "article",
-                        "lecture",
-                        "quizz",
-                        "repetitions",
+                        "video",
+                        "quiz",
+                        "exercise",
                         "slide",
                         "feedback"
                       ]
@@ -9196,44 +10045,10 @@
                     "duration": {
                       "type": "integer",
                       "default": 5
-                    }
-                  },
-                  "required": [
-                    "id",
-                    "title",
-                    "description"
-                  ]
-                },
-                {
-                  "properties": {
-                    "__component": {
-                      "type": "string",
-                      "enum": [
-                        "steps.article",
-                        "steps.lecture",
-                        "steps.quizz",
-                        "steps.repetitions",
-                        "steps.slides"
-                      ]
                     },
-                    "id": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "video": {
+                    "quizzes": {
                       "required": [
-                        "id",
-                        "name",
-                        "hash",
-                        "mime",
-                        "size",
-                        "url",
-                        "provider"
+                        "id"
                       ],
                       "properties": {
                         "id": {
@@ -9242,46 +10057,10 @@
                         "name": {
                           "type": "string"
                         },
-                        "alternativeText": {
-                          "type": "string"
+                        "items": {
+                          "type": "dynamiczone"
                         },
-                        "caption": {
-                          "type": "string"
-                        },
-                        "width": {
-                          "type": "integer"
-                        },
-                        "height": {
-                          "type": "integer"
-                        },
-                        "formats": {
-                          "type": "object"
-                        },
-                        "hash": {
-                          "type": "string"
-                        },
-                        "ext": {
-                          "type": "string"
-                        },
-                        "mime": {
-                          "type": "string"
-                        },
-                        "size": {
-                          "type": "number"
-                        },
-                        "url": {
-                          "type": "string"
-                        },
-                        "previewUrl": {
-                          "type": "string"
-                        },
-                        "provider": {
-                          "type": "string"
-                        },
-                        "provider_metadata": {
-                          "type": "object"
-                        },
-                        "related": {
+                        "published_at": {
                           "type": "string"
                         },
                         "created_by": {
@@ -9291,121 +10070,11 @@
                           "type": "string"
                         }
                       }
-                    },
-                    "users_completed": {
-                      "type": "array",
-                      "items": {
-                        "required": [
-                          "id",
-                          "username",
-                          "email"
-                        ],
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "username": {
-                            "type": "string"
-                          },
-                          "email": {
-                            "type": "string"
-                          },
-                          "provider": {
-                            "type": "string"
-                          },
-                          "password": {
-                            "type": "string"
-                          },
-                          "resetPasswordToken": {
-                            "type": "string"
-                          },
-                          "confirmationToken": {
-                            "type": "string"
-                          },
-                          "confirmed": {
-                            "type": "boolean"
-                          },
-                          "blocked": {
-                            "type": "boolean"
-                          },
-                          "role": {
-                            "type": "string"
-                          },
-                          "gender": {
-                            "type": "string",
-                            "enum": [
-                              "MALE",
-                              "FEMALE",
-                              "NONBINARY"
-                            ]
-                          },
-                          "is_premium": {
-                            "type": "boolean"
-                          },
-                          "pets": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "image": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "invoices": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "trainings": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "birthday": {
-                            "type": "integer"
-                          },
-                          "modules": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "created_by": {
-                            "type": "string"
-                          },
-                          "updated_by": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    },
-                    "type": {
-                      "type": "string",
-                      "default": "lecture",
-                      "enum": [
-                        "article",
-                        "lecture",
-                        "quizz",
-                        "repetitions",
-                        "slide",
-                        "feedback"
-                      ]
-                    },
-                    "duration": {
-                      "type": "integer",
-                      "default": 5
                     }
                   },
                   "required": [
                     "id",
-                    "title",
-                    "description",
-                    "video"
+                    "title"
                   ]
                 },
                 {
@@ -9413,209 +10082,11 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "steps.article",
-                        "steps.lecture",
                         "steps.quizz",
-                        "steps.repetitions",
-                        "steps.slides"
-                      ]
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "alternatives": {
-                      "type": "object"
-                    },
-                    "type": {
-                      "type": "string",
-                      "default": "quizz",
-                      "enum": [
-                        "article",
-                        "lecture",
-                        "quizz",
-                        "repetitions",
-                        "slide",
-                        "feedback"
-                      ]
-                    },
-                    "duration": {
-                      "type": "integer",
-                      "default": 5
-                    }
-                  },
-                  "required": [
-                    "id",
-                    "title",
-                    "description",
-                    "alternatives"
-                  ]
-                },
-                {
-                  "properties": {
-                    "__component": {
-                      "type": "string",
-                      "enum": [
-                        "steps.article",
-                        "steps.lecture",
-                        "steps.quizz",
-                        "steps.repetitions",
-                        "steps.slides"
-                      ]
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "video": {
-                      "type": "array",
-                      "items": {
-                        "required": [
-                          "id",
-                          "name",
-                          "hash",
-                          "mime",
-                          "size",
-                          "url",
-                          "provider"
-                        ],
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "alternativeText": {
-                            "type": "string"
-                          },
-                          "caption": {
-                            "type": "string"
-                          },
-                          "width": {
-                            "type": "integer"
-                          },
-                          "height": {
-                            "type": "integer"
-                          },
-                          "formats": {
-                            "type": "object"
-                          },
-                          "hash": {
-                            "type": "string"
-                          },
-                          "ext": {
-                            "type": "string"
-                          },
-                          "mime": {
-                            "type": "string"
-                          },
-                          "size": {
-                            "type": "number"
-                          },
-                          "url": {
-                            "type": "string"
-                          },
-                          "previewUrl": {
-                            "type": "string"
-                          },
-                          "provider": {
-                            "type": "string"
-                          },
-                          "provider_metadata": {
-                            "type": "object"
-                          },
-                          "related": {
-                            "type": "string"
-                          },
-                          "created_by": {
-                            "type": "string"
-                          },
-                          "updated_by": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    },
-                    "author": {
-                      "type": "string"
-                    },
-                    "publish_date": {
-                      "type": "string",
-                      "format": "date"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "subtitle": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "sessions": {
-                      "type": "array",
-                      "items": {
-                        "required": [
-                          "id"
-                        ],
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "days": {
-                            "type": "dynamiczone"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "published_at": {
-                            "type": "string"
-                          },
-                          "created_by": {
-                            "type": "string"
-                          },
-                          "updated_by": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    },
-                    "type": {
-                      "type": "string",
-                      "default": "repetitions",
-                      "enum": [
-                        "article",
-                        "lecture",
-                        "quizz",
-                        "repetitions",
-                        "slide",
-                        "feedback"
-                      ]
-                    },
-                    "duration": {
-                      "type": "integer",
-                      "default": 5
-                    }
-                  },
-                  "required": [
-                    "id"
-                  ]
-                },
-                {
-                  "properties": {
-                    "__component": {
-                      "type": "string",
-                      "enum": [
-                        "steps.article",
-                        "steps.lecture",
-                        "steps.quizz",
-                        "steps.repetitions",
-                        "steps.slides"
+                        "steps.slides",
+                        "steps.exercise-step",
+                        "steps.feedback-step",
+                        "steps.video-step"
                       ]
                     },
                     "id": {
@@ -9687,12 +10158,6 @@
                             "type": "string"
                           }
                         },
-                        "invoices": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        },
                         "trainings": {
                           "type": "array",
                           "items": {
@@ -9720,10 +10185,9 @@
                       "type": "string",
                       "default": "slide",
                       "enum": [
-                        "article",
-                        "lecture",
-                        "quizz",
-                        "repetitions",
+                        "video",
+                        "quiz",
+                        "exercise",
                         "slide",
                         "feedback"
                       ]
@@ -9733,37 +10197,212 @@
                       "default": 5
                     },
                     "slides": {
-                      "type": "array",
-                      "items": {
-                        "required": [
-                          "id",
-                          "name"
-                        ],
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "items": {
-                            "type": "dynamiczone"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "published_at": {
-                            "type": "string"
-                          },
-                          "created_by": {
-                            "type": "string"
-                          },
-                          "updated_by": {
-                            "type": "string"
-                          }
+                      "required": [
+                        "id",
+                        "name"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "items": {
+                          "type": "dynamiczone"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "published_at": {
+                          "type": "string"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
                         }
                       }
                     }
                   },
                   "required": [
-                    "id"
+                    "id",
+                    "description"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "steps.quizz",
+                        "steps.slides",
+                        "steps.exercise-step",
+                        "steps.feedback-step",
+                        "steps.video-step"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string",
+                      "default": "exercise",
+                      "enum": [
+                        "video",
+                        "quiz",
+                        "exercise",
+                        "slide",
+                        "feedback"
+                      ]
+                    },
+                    "duration": {
+                      "type": "integer",
+                      "default": 5
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "title"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "steps.quizz",
+                        "steps.slides",
+                        "steps.exercise-step",
+                        "steps.feedback-step",
+                        "steps.video-step"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string",
+                      "default": "feedback",
+                      "enum": [
+                        "video",
+                        "quiz",
+                        "exercise",
+                        "slide",
+                        "feedback"
+                      ]
+                    },
+                    "duration": {
+                      "type": "integer",
+                      "default": 5
+                    },
+                    "feedback": {
+                      "required": [
+                        "id"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "items": {
+                          "type": "dynamiczone"
+                        },
+                        "published_at": {
+                          "type": "string"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "title"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "steps.quizz",
+                        "steps.slides",
+                        "steps.exercise-step",
+                        "steps.feedback-step",
+                        "steps.video-step"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string",
+                      "default": "video",
+                      "enum": [
+                        "video",
+                        "quiz",
+                        "exercise",
+                        "slide",
+                        "feedback"
+                      ]
+                    },
+                    "duration": {
+                      "type": "integer",
+                      "default": 5
+                    },
+                    "video": {
+                      "required": [
+                        "id",
+                        "item"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "item": {
+                          "type": "string"
+                        },
+                        "published_at": {
+                          "type": "string"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "title"
                   ]
                 }
               ]
@@ -9859,11 +10498,11 @@
             "type": "string",
             "format": "date"
           },
-          "minimum": {
+          "min_duration": {
             "type": "integer",
             "default": 5
           },
-          "maximum": {
+          "max_duration": {
             "type": "integer",
             "default": 10
           },
@@ -9876,11 +10515,11 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "steps.article",
-                        "steps.lecture",
                         "steps.quizz",
-                        "steps.repetitions",
-                        "steps.slides"
+                        "steps.slides",
+                        "steps.exercise-step",
+                        "steps.feedback-step",
+                        "steps.video-step"
                       ]
                     },
                     "id": {
@@ -9889,112 +10528,16 @@
                     "title": {
                       "type": "string"
                     },
-                    "content": {
-                      "type": "string"
-                    },
                     "description": {
                       "type": "string"
                     },
-                    "users_completed": {
-                      "type": "array",
-                      "items": {
-                        "required": [
-                          "id",
-                          "username",
-                          "email"
-                        ],
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "username": {
-                            "type": "string"
-                          },
-                          "email": {
-                            "type": "string"
-                          },
-                          "provider": {
-                            "type": "string"
-                          },
-                          "password": {
-                            "type": "string"
-                          },
-                          "resetPasswordToken": {
-                            "type": "string"
-                          },
-                          "confirmationToken": {
-                            "type": "string"
-                          },
-                          "confirmed": {
-                            "type": "boolean"
-                          },
-                          "blocked": {
-                            "type": "boolean"
-                          },
-                          "role": {
-                            "type": "string"
-                          },
-                          "gender": {
-                            "type": "string",
-                            "enum": [
-                              "MALE",
-                              "FEMALE",
-                              "NONBINARY"
-                            ]
-                          },
-                          "is_premium": {
-                            "type": "boolean"
-                          },
-                          "pets": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "image": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "invoices": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "trainings": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "birthday": {
-                            "type": "integer"
-                          },
-                          "modules": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "created_by": {
-                            "type": "string"
-                          },
-                          "updated_by": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    },
                     "type": {
                       "type": "string",
-                      "default": "article",
+                      "default": "quiz",
                       "enum": [
-                        "article",
-                        "lecture",
-                        "quizz",
-                        "repetitions",
+                        "video",
+                        "quiz",
+                        "exercise",
                         "slide",
                         "feedback"
                       ]
@@ -10002,44 +10545,10 @@
                     "duration": {
                       "type": "integer",
                       "default": 5
-                    }
-                  },
-                  "required": [
-                    "id",
-                    "title",
-                    "description"
-                  ]
-                },
-                {
-                  "properties": {
-                    "__component": {
-                      "type": "string",
-                      "enum": [
-                        "steps.article",
-                        "steps.lecture",
-                        "steps.quizz",
-                        "steps.repetitions",
-                        "steps.slides"
-                      ]
                     },
-                    "id": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "video": {
+                    "quizzes": {
                       "required": [
-                        "id",
-                        "name",
-                        "hash",
-                        "mime",
-                        "size",
-                        "url",
-                        "provider"
+                        "id"
                       ],
                       "properties": {
                         "id": {
@@ -10048,46 +10557,10 @@
                         "name": {
                           "type": "string"
                         },
-                        "alternativeText": {
-                          "type": "string"
+                        "items": {
+                          "type": "dynamiczone"
                         },
-                        "caption": {
-                          "type": "string"
-                        },
-                        "width": {
-                          "type": "integer"
-                        },
-                        "height": {
-                          "type": "integer"
-                        },
-                        "formats": {
-                          "type": "object"
-                        },
-                        "hash": {
-                          "type": "string"
-                        },
-                        "ext": {
-                          "type": "string"
-                        },
-                        "mime": {
-                          "type": "string"
-                        },
-                        "size": {
-                          "type": "number"
-                        },
-                        "url": {
-                          "type": "string"
-                        },
-                        "previewUrl": {
-                          "type": "string"
-                        },
-                        "provider": {
-                          "type": "string"
-                        },
-                        "provider_metadata": {
-                          "type": "object"
-                        },
-                        "related": {
+                        "published_at": {
                           "type": "string"
                         },
                         "created_by": {
@@ -10097,121 +10570,11 @@
                           "type": "string"
                         }
                       }
-                    },
-                    "users_completed": {
-                      "type": "array",
-                      "items": {
-                        "required": [
-                          "id",
-                          "username",
-                          "email"
-                        ],
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "username": {
-                            "type": "string"
-                          },
-                          "email": {
-                            "type": "string"
-                          },
-                          "provider": {
-                            "type": "string"
-                          },
-                          "password": {
-                            "type": "string"
-                          },
-                          "resetPasswordToken": {
-                            "type": "string"
-                          },
-                          "confirmationToken": {
-                            "type": "string"
-                          },
-                          "confirmed": {
-                            "type": "boolean"
-                          },
-                          "blocked": {
-                            "type": "boolean"
-                          },
-                          "role": {
-                            "type": "string"
-                          },
-                          "gender": {
-                            "type": "string",
-                            "enum": [
-                              "MALE",
-                              "FEMALE",
-                              "NONBINARY"
-                            ]
-                          },
-                          "is_premium": {
-                            "type": "boolean"
-                          },
-                          "pets": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "image": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "invoices": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "trainings": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "birthday": {
-                            "type": "integer"
-                          },
-                          "modules": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "created_by": {
-                            "type": "string"
-                          },
-                          "updated_by": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    },
-                    "type": {
-                      "type": "string",
-                      "default": "lecture",
-                      "enum": [
-                        "article",
-                        "lecture",
-                        "quizz",
-                        "repetitions",
-                        "slide",
-                        "feedback"
-                      ]
-                    },
-                    "duration": {
-                      "type": "integer",
-                      "default": 5
                     }
                   },
                   "required": [
                     "id",
-                    "title",
-                    "description",
-                    "video"
+                    "title"
                   ]
                 },
                 {
@@ -10219,209 +10582,11 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "steps.article",
-                        "steps.lecture",
                         "steps.quizz",
-                        "steps.repetitions",
-                        "steps.slides"
-                      ]
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "alternatives": {
-                      "type": "object"
-                    },
-                    "type": {
-                      "type": "string",
-                      "default": "quizz",
-                      "enum": [
-                        "article",
-                        "lecture",
-                        "quizz",
-                        "repetitions",
-                        "slide",
-                        "feedback"
-                      ]
-                    },
-                    "duration": {
-                      "type": "integer",
-                      "default": 5
-                    }
-                  },
-                  "required": [
-                    "id",
-                    "title",
-                    "description",
-                    "alternatives"
-                  ]
-                },
-                {
-                  "properties": {
-                    "__component": {
-                      "type": "string",
-                      "enum": [
-                        "steps.article",
-                        "steps.lecture",
-                        "steps.quizz",
-                        "steps.repetitions",
-                        "steps.slides"
-                      ]
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "video": {
-                      "type": "array",
-                      "items": {
-                        "required": [
-                          "id",
-                          "name",
-                          "hash",
-                          "mime",
-                          "size",
-                          "url",
-                          "provider"
-                        ],
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "alternativeText": {
-                            "type": "string"
-                          },
-                          "caption": {
-                            "type": "string"
-                          },
-                          "width": {
-                            "type": "integer"
-                          },
-                          "height": {
-                            "type": "integer"
-                          },
-                          "formats": {
-                            "type": "object"
-                          },
-                          "hash": {
-                            "type": "string"
-                          },
-                          "ext": {
-                            "type": "string"
-                          },
-                          "mime": {
-                            "type": "string"
-                          },
-                          "size": {
-                            "type": "number"
-                          },
-                          "url": {
-                            "type": "string"
-                          },
-                          "previewUrl": {
-                            "type": "string"
-                          },
-                          "provider": {
-                            "type": "string"
-                          },
-                          "provider_metadata": {
-                            "type": "object"
-                          },
-                          "related": {
-                            "type": "string"
-                          },
-                          "created_by": {
-                            "type": "string"
-                          },
-                          "updated_by": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    },
-                    "author": {
-                      "type": "string"
-                    },
-                    "publish_date": {
-                      "type": "string",
-                      "format": "date"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "subtitle": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "sessions": {
-                      "type": "array",
-                      "items": {
-                        "required": [
-                          "id"
-                        ],
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "days": {
-                            "type": "dynamiczone"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "published_at": {
-                            "type": "string"
-                          },
-                          "created_by": {
-                            "type": "string"
-                          },
-                          "updated_by": {
-                            "type": "string"
-                          }
-                        }
-                      }
-                    },
-                    "type": {
-                      "type": "string",
-                      "default": "repetitions",
-                      "enum": [
-                        "article",
-                        "lecture",
-                        "quizz",
-                        "repetitions",
-                        "slide",
-                        "feedback"
-                      ]
-                    },
-                    "duration": {
-                      "type": "integer",
-                      "default": 5
-                    }
-                  },
-                  "required": [
-                    "id"
-                  ]
-                },
-                {
-                  "properties": {
-                    "__component": {
-                      "type": "string",
-                      "enum": [
-                        "steps.article",
-                        "steps.lecture",
-                        "steps.quizz",
-                        "steps.repetitions",
-                        "steps.slides"
+                        "steps.slides",
+                        "steps.exercise-step",
+                        "steps.feedback-step",
+                        "steps.video-step"
                       ]
                     },
                     "id": {
@@ -10493,12 +10658,6 @@
                             "type": "string"
                           }
                         },
-                        "invoices": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        },
                         "trainings": {
                           "type": "array",
                           "items": {
@@ -10526,10 +10685,9 @@
                       "type": "string",
                       "default": "slide",
                       "enum": [
-                        "article",
-                        "lecture",
-                        "quizz",
-                        "repetitions",
+                        "video",
+                        "quiz",
+                        "exercise",
                         "slide",
                         "feedback"
                       ]
@@ -10539,37 +10697,212 @@
                       "default": 5
                     },
                     "slides": {
-                      "type": "array",
-                      "items": {
-                        "required": [
-                          "id",
-                          "name"
-                        ],
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "items": {
-                            "type": "dynamiczone"
-                          },
-                          "name": {
-                            "type": "string"
-                          },
-                          "published_at": {
-                            "type": "string"
-                          },
-                          "created_by": {
-                            "type": "string"
-                          },
-                          "updated_by": {
-                            "type": "string"
-                          }
+                      "required": [
+                        "id",
+                        "name"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "items": {
+                          "type": "dynamiczone"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "published_at": {
+                          "type": "string"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
                         }
                       }
                     }
                   },
                   "required": [
-                    "id"
+                    "id",
+                    "description"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "steps.quizz",
+                        "steps.slides",
+                        "steps.exercise-step",
+                        "steps.feedback-step",
+                        "steps.video-step"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string",
+                      "default": "exercise",
+                      "enum": [
+                        "video",
+                        "quiz",
+                        "exercise",
+                        "slide",
+                        "feedback"
+                      ]
+                    },
+                    "duration": {
+                      "type": "integer",
+                      "default": 5
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "title"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "steps.quizz",
+                        "steps.slides",
+                        "steps.exercise-step",
+                        "steps.feedback-step",
+                        "steps.video-step"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string",
+                      "default": "feedback",
+                      "enum": [
+                        "video",
+                        "quiz",
+                        "exercise",
+                        "slide",
+                        "feedback"
+                      ]
+                    },
+                    "duration": {
+                      "type": "integer",
+                      "default": 5
+                    },
+                    "feedback": {
+                      "required": [
+                        "id"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "items": {
+                          "type": "dynamiczone"
+                        },
+                        "published_at": {
+                          "type": "string"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "title"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "steps.quizz",
+                        "steps.slides",
+                        "steps.exercise-step",
+                        "steps.feedback-step",
+                        "steps.video-step"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string",
+                      "default": "video",
+                      "enum": [
+                        "video",
+                        "quiz",
+                        "exercise",
+                        "slide",
+                        "feedback"
+                      ]
+                    },
+                    "duration": {
+                      "type": "integer",
+                      "default": 5
+                    },
+                    "video": {
+                      "required": [
+                        "id",
+                        "item"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "item": {
+                          "type": "string"
+                        },
+                        "published_at": {
+                          "type": "string"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "title"
                   ]
                 }
               ]
@@ -10580,6 +10913,108 @@
             "items": {
               "type": "string"
             }
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "updated_by": {
+            "type": "string"
+          }
+        }
+      },
+      "Video": {
+        "required": [
+          "id",
+          "item"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "item": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "NewVideo": {
+        "properties": {
+          "name": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -10726,12 +11161,6 @@
                   }
                 },
                 "image": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "invoices": {
                   "type": "array",
                   "items": {
                     "type": "string"
@@ -11028,49 +11457,6 @@
               }
             }
           },
-          "invoices": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "title",
-                "date",
-                "image"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "price": {
-                  "type": "number"
-                },
-                "date": {
-                  "type": "string"
-                },
-                "image": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "user": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "trainings": {
             "type": "array",
             "items": {
@@ -11097,6 +11483,12 @@
                 "thumbnail": {
                   "type": "string"
                 },
+                "min_duration": {
+                  "type": "integer"
+                },
+                "max_duration": {
+                  "type": "integer"
+                },
                 "steps": {
                   "type": "dynamiczone"
                 },
@@ -11105,12 +11497,6 @@
                   "items": {
                     "type": "string"
                   }
-                },
-                "minimum": {
-                  "type": "integer"
-                },
-                "maximum": {
-                  "type": "integer"
                 },
                 "published_at": {
                   "type": "string"
@@ -11253,12 +11639,6 @@
               "type": "string"
             }
           },
-          "invoices": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
           "trainings": {
             "type": "array",
             "items": {
@@ -11311,7 +11691,10 @@
       "name": "Breeds"
     },
     {
-      "name": "Invoice"
+      "name": "Exercise"
+    },
+    {
+      "name": "Feedback"
     },
     {
       "name": "Module"
@@ -11320,13 +11703,19 @@
       "name": "Pet"
     },
     {
-      "name": "Sessions"
+      "name": "Quiz"
+    },
+    {
+      "name": "Session"
     },
     {
       "name": "Slide"
     },
     {
       "name": "Training"
+    },
+    {
+      "name": "Video"
     },
     {
       "name": "Email - Email"

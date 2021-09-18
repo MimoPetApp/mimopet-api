@@ -86,10 +86,6 @@
       "required": false,
       "pluginOptions": {}
     },
-    "invoices": {
-      "via": "user",
-      "collection": "invoice"
-    },
     "trainings": {
       "collection": "training"
     },

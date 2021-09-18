@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/pets": {
+    "/exercises": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Pet"
+                    "$ref": "#/components/schemas/Exercise"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Pet"
+          "Exercise"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Pet"
+                  "$ref": "#/components/schemas/Exercise"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Pet"
+          "Exercise"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPet"
+                "$ref": "#/components/schemas/NewExercise"
               }
             }
           }
         }
       }
     },
-    "/pets/count": {
+    "/exercises/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Pet"
+          "Exercise"
         ],
         "parameters": []
       }
     },
-    "/pets/{id}": {
+    "/exercises/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Pet"
+                  "$ref": "#/components/schemas/Exercise"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Pet"
+          "Exercise"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Pet"
+                  "$ref": "#/components/schemas/Exercise"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Pet"
+          "Exercise"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewPet"
+                "$ref": "#/components/schemas/NewExercise"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Pet"
+          "Exercise"
         ],
         "parameters": [
           {
@@ -514,16 +514,11 @@
   },
   "components": {
     "schemas": {
-      "Pet": {
+      "Exercise": {
         "required": [
           "id",
           "name",
-          "breed",
-          "is_main",
-          "image",
-          "is_adopted",
-          "is_neutered",
-          "is_deficiency"
+          "author"
         ],
         "properties": {
           "id": {
@@ -532,203 +527,70 @@
           "name": {
             "type": "string"
           },
-          "breed": {
+          "author": {
             "type": "string"
           },
-          "is_main": {
-            "type": "boolean",
-            "default": false
+          "min_duration": {
+            "type": "integer",
+            "default": 10
           },
-          "user": {
-            "required": [
-              "id",
-              "username",
-              "email"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "password": {
-                "type": "string"
-              },
-              "resetPasswordToken": {
-                "type": "string"
-              },
-              "confirmationToken": {
-                "type": "string"
-              },
-              "confirmed": {
-                "type": "boolean"
-              },
-              "blocked": {
-                "type": "boolean"
-              },
-              "role": {
-                "type": "string"
-              },
-              "gender": {
-                "type": "string",
-                "enum": [
-                  "MALE",
-                  "FEMALE",
-                  "NONBINARY"
-                ]
-              },
-              "is_premium": {
-                "type": "boolean"
-              },
-              "pets": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "image": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "trainings": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "birthday": {
-                "type": "integer"
-              },
-              "modules": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
+          "max_duration": {
+            "type": "integer",
+            "default": 20
           },
-          "image": {
+          "items": {
             "type": "array",
             "items": {
-              "required": [
-                "id",
-                "name",
-                "hash",
-                "mime",
-                "size",
-                "url",
-                "provider"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "alternativeText": {
-                  "type": "string"
-                },
-                "caption": {
-                  "type": "string"
-                },
-                "width": {
-                  "type": "integer"
-                },
-                "height": {
-                  "type": "integer"
-                },
-                "formats": {
-                  "type": "object"
-                },
-                "hash": {
-                  "type": "string"
-                },
-                "ext": {
-                  "type": "string"
-                },
-                "mime": {
-                  "type": "string"
-                },
-                "size": {
-                  "type": "number"
-                },
-                "url": {
-                  "type": "string"
-                },
-                "previewUrl": {
-                  "type": "string"
-                },
-                "provider": {
-                  "type": "string"
-                },
-                "provider_metadata": {
-                  "type": "object"
-                },
-                "related": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
+              "oneOf": [
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "utils.exercise-item"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "session": {
+                      "required": [
+                        "id"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "video": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "published_at": {
+                          "type": "string"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "is_complete": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
                 }
-              }
+              ]
             }
-          },
-          "type": {
-            "type": "string",
-            "enum": [
-              "canine"
-            ]
-          },
-          "gender": {
-            "type": "string",
-            "enum": [
-              "male",
-              "female"
-            ]
-          },
-          "is_adopted": {
-            "type": "boolean",
-            "default": false
-          },
-          "is_neutered": {
-            "type": "boolean",
-            "default": false
-          },
-          "is_deficiency": {
-            "type": "boolean",
-            "default": false
-          },
-          "ownership_time": {
-            "type": "string",
-            "format": "date"
-          },
-          "age": {
-            "type": "string",
-            "enum": [
-              "SIX_MONTS",
-              "EIGHTEEN_MONTS",
-              "ADULT",
-              "SENIOR"
-            ]
           },
           "published_at": {
             "type": "string",
@@ -736,66 +598,79 @@
           }
         }
       },
-      "NewPet": {
+      "NewExercise": {
         "required": [
           "name",
-          "breed",
-          "is_main",
-          "is_adopted",
-          "is_neutered",
-          "is_deficiency"
+          "author"
         ],
         "properties": {
           "name": {
             "type": "string"
           },
-          "breed": {
+          "author": {
             "type": "string"
           },
-          "is_main": {
-            "type": "boolean",
-            "default": false
+          "min_duration": {
+            "type": "integer",
+            "default": 10
           },
-          "user": {
-            "type": "string"
+          "max_duration": {
+            "type": "integer",
+            "default": 20
           },
-          "type": {
-            "type": "string",
-            "enum": [
-              "canine"
-            ]
-          },
-          "gender": {
-            "type": "string",
-            "enum": [
-              "male",
-              "female"
-            ]
-          },
-          "is_adopted": {
-            "type": "boolean",
-            "default": false
-          },
-          "is_neutered": {
-            "type": "boolean",
-            "default": false
-          },
-          "is_deficiency": {
-            "type": "boolean",
-            "default": false
-          },
-          "ownership_time": {
-            "type": "string",
-            "format": "date"
-          },
-          "age": {
-            "type": "string",
-            "enum": [
-              "SIX_MONTS",
-              "EIGHTEEN_MONTS",
-              "ADULT",
-              "SENIOR"
-            ]
+          "items": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "utils.exercise-item"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "session": {
+                      "required": [
+                        "id"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "video": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "published_at": {
+                          "type": "string"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "is_complete": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "id"
+                  ]
+                }
+              ]
+            }
           },
           "published_at": {
             "type": "string",
@@ -813,7 +688,7 @@
   },
   "tags": [
     {
-      "name": "Pet"
+      "name": "Exercise"
     }
   ]
 }

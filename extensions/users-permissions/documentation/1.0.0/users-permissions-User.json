@@ -1414,49 +1414,6 @@
               }
             }
           },
-          "invoices": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "title",
-                "date",
-                "image"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "price": {
-                  "type": "number"
-                },
-                "date": {
-                  "type": "string"
-                },
-                "image": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "user": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "trainings": {
             "type": "array",
             "items": {
@@ -1483,6 +1440,12 @@
                 "thumbnail": {
                   "type": "string"
                 },
+                "min_duration": {
+                  "type": "integer"
+                },
+                "max_duration": {
+                  "type": "integer"
+                },
                 "steps": {
                   "type": "dynamiczone"
                 },
@@ -1491,12 +1454,6 @@
                   "items": {
                     "type": "string"
                   }
-                },
-                "minimum": {
-                  "type": "integer"
-                },
-                "maximum": {
-                  "type": "integer"
                 },
                 "published_at": {
                   "type": "string"
@@ -1634,12 +1591,6 @@
             "default": false
           },
           "pets": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "invoices": {
             "type": "array",
             "items": {
               "type": "string"

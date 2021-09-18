@@ -600,12 +600,6 @@
                     "type": "string"
                   }
                 },
-                "invoices": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
                 "trainings": {
                   "type": "array",
                   "items": {

@@ -1,22 +1,18 @@
 {
-  "collectionName": "components_steps_slide_steps",
+  "collectionName": "components_steps_video_steps",
   "info": {
-    "name": "Slide Step",
-    "icon": "images",
+    "name": "Video Step",
+    "icon": "play",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "description": {
+    "title": {
       "type": "string",
       "required": true
     },
-    "title": {
+    "description": {
       "type": "string"
-    },
-    "users_completed": {
-      "plugin": "users-permissions",
-      "model": "user"
     },
     "type": {
       "type": "enumeration",
@@ -27,15 +23,15 @@
         "slide",
         "feedback"
       ],
-      "default": "slide"
+      "default": "video"
     },
     "duration": {
       "type": "integer",
       "default": 5,
       "min": 0
     },
-    "slides": {
-      "model": "slide"
+    "video": {
+      "model": "video"
     }
   }
 }

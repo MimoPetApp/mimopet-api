@@ -34,22 +34,22 @@
       "required": true,
       "pluginOptions": {}
     },
-    "minimum": {
+    "min_duration": {
       "type": "integer",
       "default": 5
     },
-    "maximum": {
+    "max_duration": {
       "type": "integer",
       "default": 10
     },
     "steps": {
       "type": "dynamiczone",
       "components": [
-        "steps.article",
-        "steps.lecture",
         "steps.quizz",
-        "steps.repetitions",
-        "steps.slides"
+        "steps.slides",
+        "steps.exercise-step",
+        "steps.feedback-step",
+        "steps.video-step"
       ],
       "required": false
     },

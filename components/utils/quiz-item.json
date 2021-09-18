@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_utils_quiz_items",
+  "info": {
+    "name": "Option Item",
+    "icon": "comment-alt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "is_correct": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
