@@ -86,16 +86,12 @@
       "required": false,
       "pluginOptions": {}
     },
-    "trainings": {
-      "collection": "training"
-    },
     "birthday": {
       "type": "integer"
     },
-    "modules": {
-      "collection": "module",
+    "trainings": {
       "via": "users",
-      "dominant": true
+      "collection": "training"
     }
   }
 }

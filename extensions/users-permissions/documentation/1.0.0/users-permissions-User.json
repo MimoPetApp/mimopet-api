@@ -1414,63 +1414,10 @@
               }
             }
           },
-          "trainings": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "title",
-                "description",
-                "published",
-                "thumbnail"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "published": {
-                  "type": "string"
-                },
-                "thumbnail": {
-                  "type": "string"
-                },
-                "min_duration": {
-                  "type": "integer"
-                },
-                "max_duration": {
-                  "type": "integer"
-                },
-                "steps": {
-                  "type": "dynamiczone"
-                },
-                "modules": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "birthday": {
             "type": "integer"
           },
-          "modules": {
+          "trainings": {
             "type": "array",
             "items": {
               "required": [
@@ -1513,13 +1460,13 @@
                 "thumbnail": {
                   "type": "string"
                 },
-                "trainings": {
+                "users": {
                   "type": "array",
                   "items": {
                     "type": "string"
                   }
                 },
-                "users": {
+                "modules": {
                   "type": "array",
                   "items": {
                     "type": "string"
@@ -1596,16 +1543,10 @@
               "type": "string"
             }
           },
-          "trainings": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
           "birthday": {
             "type": "integer"
           },
-          "modules": {
+          "trainings": {
             "type": "array",
             "items": {
               "type": "string"

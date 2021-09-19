@@ -600,16 +600,10 @@
                     "type": "string"
                   }
                 },
-                "trainings": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
                 "birthday": {
                   "type": "integer"
                 },
-                "modules": {
+                "trainings": {
                   "type": "array",
                   "items": {
                     "type": "string"

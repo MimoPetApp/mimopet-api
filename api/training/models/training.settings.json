@@ -20,8 +20,25 @@
       "type": "string",
       "required": true
     },
+    "author": {
+      "type": "string",
+      "required": true
+    },
     "published": {
       "type": "date",
+      "required": true
+    },
+    "rating": {
+      "type": "decimal",
+      "required": true
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "adults",
+        "puppy",
+        "premium"
+      ],
       "required": true
     },
     "thumbnail": {
@@ -34,28 +51,18 @@
       "required": true,
       "pluginOptions": {}
     },
-    "min_duration": {
-      "type": "integer",
-      "default": 5
-    },
-    "max_duration": {
-      "type": "integer",
-      "default": 10
-    },
-    "steps": {
-      "type": "dynamiczone",
-      "components": [
-        "steps.quizz",
-        "steps.slides",
-        "steps.exercise-step",
-        "steps.feedback-step",
-        "steps.video-step"
-      ],
-      "required": false
+    "users": {
+      "private": true,
+      "plugin": "users-permissions",
+      "collection": "user",
+      "via": "trainings",
+      "dominant": true
     },
     "modules": {
       "via": "trainings",
-      "collection": "module"
+      "private": true,
+      "collection": "module",
+      "dominant": true
     }
   }
 }
