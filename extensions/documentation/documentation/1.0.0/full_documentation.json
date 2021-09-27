@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "09/18/2021 9:25:11 PM"
+    "x-generation-date": "09/27/2021 11:48:04 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -8650,13 +8650,26 @@
                     "title": {
                       "type": "string"
                     },
-                    "is_correct": {
-                      "type": "boolean",
-                      "default": false
+                    "selection": {
+                      "type": "string",
+                      "default": "single",
+                      "enum": [
+                        "single",
+                        "multiple"
+                      ]
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "options": {
+                      "type": "object"
                     }
                   },
                   "required": [
-                    "id"
+                    "id",
+                    "selection",
+                    "description",
+                    "options"
                   ]
                 }
               ]
@@ -8691,13 +8704,26 @@
                     "title": {
                       "type": "string"
                     },
-                    "is_correct": {
-                      "type": "boolean",
-                      "default": false
+                    "selection": {
+                      "type": "string",
+                      "default": "single",
+                      "enum": [
+                        "single",
+                        "multiple"
+                      ]
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "options": {
+                      "type": "object"
                     }
                   },
                   "required": [
-                    "id"
+                    "id",
+                    "selection",
+                    "description",
+                    "options"
                   ]
                 }
               ]
@@ -8898,10 +8924,10 @@
                     "id": {
                       "type": "string"
                     },
-                    "description": {
+                    "title": {
                       "type": "string"
                     },
-                    "title": {
+                    "description": {
                       "type": "string"
                     },
                     "users_completed": {
@@ -9025,7 +9051,7 @@
                   },
                   "required": [
                     "id",
-                    "description"
+                    "title"
                   ]
                 },
                 {
@@ -9208,6 +9234,73 @@
               ]
             }
           },
+          "trainings": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "title",
+                "description",
+                "author",
+                "published",
+                "rating",
+                "category",
+                "thumbnail"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "author": {
+                  "type": "string"
+                },
+                "published": {
+                  "type": "string"
+                },
+                "rating": {
+                  "type": "number"
+                },
+                "category": {
+                  "type": "string",
+                  "enum": [
+                    "adults",
+                    "puppy",
+                    "premium"
+                  ]
+                },
+                "thumbnail": {
+                  "type": "string"
+                },
+                "users": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "modules": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -9325,10 +9418,10 @@
                     "id": {
                       "type": "string"
                     },
-                    "description": {
+                    "title": {
                       "type": "string"
                     },
-                    "title": {
+                    "description": {
                       "type": "string"
                     },
                     "users_completed": {
@@ -9452,7 +9545,7 @@
                   },
                   "required": [
                     "id",
-                    "description"
+                    "title"
                   ]
                 },
                 {
@@ -10098,13 +10191,26 @@
                     "title": {
                       "type": "string"
                     },
-                    "is_correct": {
-                      "type": "boolean",
-                      "default": false
+                    "selection": {
+                      "type": "string",
+                      "default": "single",
+                      "enum": [
+                        "single",
+                        "multiple"
+                      ]
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "options": {
+                      "type": "object"
                     }
                   },
                   "required": [
-                    "id"
+                    "id",
+                    "selection",
+                    "description",
+                    "options"
                   ]
                 }
               ]
@@ -10139,13 +10245,26 @@
                     "title": {
                       "type": "string"
                     },
-                    "is_correct": {
-                      "type": "boolean",
-                      "default": false
+                    "selection": {
+                      "type": "string",
+                      "default": "single",
+                      "enum": [
+                        "single",
+                        "multiple"
+                      ]
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "options": {
+                      "type": "object"
                     }
                   },
                   "required": [
-                    "id"
+                    "id",
+                    "selection",
+                    "description",
+                    "options"
                   ]
                 }
               ]
@@ -10635,6 +10754,59 @@
               },
               "updated_by": {
                 "type": "string"
+              }
+            }
+          },
+          "modules": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "title",
+                "description",
+                "published",
+                "thumbnail"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "published": {
+                  "type": "string"
+                },
+                "thumbnail": {
+                  "type": "string"
+                },
+                "min_duration": {
+                  "type": "integer"
+                },
+                "max_duration": {
+                  "type": "integer"
+                },
+                "steps": {
+                  "type": "dynamiczone"
+                },
+                "trainings": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
               }
             }
           },

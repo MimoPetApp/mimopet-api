@@ -54,7 +54,6 @@
       "required": false
     },
     "trainings": {
-      "private": true,
       "via": "modules",
       "collection": "training"
     }

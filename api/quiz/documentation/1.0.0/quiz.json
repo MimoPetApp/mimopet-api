@@ -543,13 +543,26 @@
                     "title": {
                       "type": "string"
                     },
-                    "is_correct": {
-                      "type": "boolean",
-                      "default": false
+                    "selection": {
+                      "type": "string",
+                      "default": "single",
+                      "enum": [
+                        "single",
+                        "multiple"
+                      ]
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "options": {
+                      "type": "object"
                     }
                   },
                   "required": [
-                    "id"
+                    "id",
+                    "selection",
+                    "description",
+                    "options"
                   ]
                 }
               ]
@@ -584,13 +597,26 @@
                     "title": {
                       "type": "string"
                     },
-                    "is_correct": {
-                      "type": "boolean",
-                      "default": false
+                    "selection": {
+                      "type": "string",
+                      "default": "single",
+                      "enum": [
+                        "single",
+                        "multiple"
+                      ]
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "options": {
+                      "type": "object"
                     }
                   },
                   "required": [
-                    "id"
+                    "id",
+                    "selection",
+                    "description",
+                    "options"
                   ]
                 }
               ]

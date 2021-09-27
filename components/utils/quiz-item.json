@@ -10,9 +10,22 @@
     "title": {
       "type": "string"
     },
-    "is_correct": {
-      "type": "boolean",
-      "default": false
+    "selection": {
+      "type": "enumeration",
+      "enum": [
+        "single",
+        "multiple"
+      ],
+      "default": "single",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "options": {
+      "type": "json",
+      "required": true
     }
   }
 }
