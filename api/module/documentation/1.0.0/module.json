@@ -907,7 +907,8 @@
                     },
                     "feedback": {
                       "required": [
-                        "id"
+                        "id",
+                        "title"
                       ],
                       "properties": {
                         "id": {
@@ -918,6 +919,12 @@
                         },
                         "items": {
                           "type": "dynamiczone"
+                        },
+                        "title": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
                         },
                         "published_at": {
                           "type": "string"
@@ -1334,7 +1341,8 @@
                     },
                     "feedback": {
                       "required": [
-                        "id"
+                        "id",
+                        "title"
                       ],
                       "properties": {
                         "id": {
@@ -1345,6 +1353,12 @@
                         },
                         "items": {
                           "type": "dynamiczone"
+                        },
+                        "title": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
                         },
                         "published_at": {
                           "type": "string"
