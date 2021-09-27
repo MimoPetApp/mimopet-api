@@ -2,8 +2,7 @@
   "kind": "collectionType",
   "collectionName": "feedbacks",
   "info": {
-    "name": "Feedback",
-    "description": ""
+    "name": "Feedback"
   },
   "options": {
     "increments": true,
@@ -20,14 +19,6 @@
       "components": [
         "utils.quiz-item"
       ]
-    },
-    "title": {
-      "type": "string",
-      "required": true,
-      "unique": false
-    },
-    "description": {
-      "type": "richtext"
     }
   }
 }

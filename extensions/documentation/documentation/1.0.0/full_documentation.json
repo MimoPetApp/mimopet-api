@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "09/27/2021 11:48:04 AM"
+    "x-generation-date": "09/18/2021 9:25:11 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -8623,8 +8623,7 @@
       },
       "Feedback": {
         "required": [
-          "id",
-          "title"
+          "id"
         ],
         "properties": {
           "id": {
@@ -8676,12 +8675,6 @@
               ]
             }
           },
-          "title": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -8689,9 +8682,6 @@
         }
       },
       "NewFeedback": {
-        "required": [
-          "title"
-        ],
         "properties": {
           "name": {
             "type": "string"
@@ -8738,12 +8728,6 @@
                 }
               ]
             }
-          },
-          "title": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -9150,8 +9134,7 @@
                     },
                     "feedback": {
                       "required": [
-                        "id",
-                        "title"
+                        "id"
                       ],
                       "properties": {
                         "id": {
@@ -9162,12 +9145,6 @@
                         },
                         "items": {
                           "type": "dynamiczone"
-                        },
-                        "title": {
-                          "type": "string"
-                        },
-                        "description": {
-                          "type": "string"
                         },
                         "published_at": {
                           "type": "string"
@@ -9651,8 +9628,7 @@
                     },
                     "feedback": {
                       "required": [
-                        "id",
-                        "title"
+                        "id"
                       ],
                       "properties": {
                         "id": {
@@ -9663,12 +9639,6 @@
                         },
                         "items": {
                           "type": "dynamiczone"
-                        },
-                        "title": {
-                          "type": "string"
-                        },
-                        "description": {
-                          "type": "string"
                         },
                         "published_at": {
                           "type": "string"

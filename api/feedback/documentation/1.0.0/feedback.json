@@ -516,8 +516,7 @@
     "schemas": {
       "Feedback": {
         "required": [
-          "id",
-          "title"
+          "id"
         ],
         "properties": {
           "id": {
@@ -569,12 +568,6 @@
               ]
             }
           },
-          "title": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -582,9 +575,6 @@
         }
       },
       "NewFeedback": {
-        "required": [
-          "title"
-        ],
         "properties": {
           "name": {
             "type": "string"
@@ -631,12 +621,6 @@
                 }
               ]
             }
-          },
-          "title": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
           },
           "published_at": {
             "type": "string",
