@@ -7,11 +7,11 @@
   },
   "options": {},
   "attributes": {
-    "description": {
+    "title": {
       "type": "string",
       "required": true
     },
-    "title": {
+    "description": {
       "type": "string"
     },
     "users_completed": {

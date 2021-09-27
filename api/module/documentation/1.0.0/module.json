@@ -697,10 +697,10 @@
                     "id": {
                       "type": "string"
                     },
-                    "description": {
+                    "title": {
                       "type": "string"
                     },
-                    "title": {
+                    "description": {
                       "type": "string"
                     },
                     "users_completed": {
@@ -824,7 +824,7 @@
                   },
                   "required": [
                     "id",
-                    "description"
+                    "title"
                   ]
                 },
                 {
@@ -1014,6 +1014,73 @@
               ]
             }
           },
+          "trainings": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "title",
+                "description",
+                "author",
+                "published",
+                "rating",
+                "category",
+                "thumbnail"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "author": {
+                  "type": "string"
+                },
+                "published": {
+                  "type": "string"
+                },
+                "rating": {
+                  "type": "number"
+                },
+                "category": {
+                  "type": "string",
+                  "enum": [
+                    "adults",
+                    "puppy",
+                    "premium"
+                  ]
+                },
+                "thumbnail": {
+                  "type": "string"
+                },
+                "users": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "modules": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -1131,10 +1198,10 @@
                     "id": {
                       "type": "string"
                     },
-                    "description": {
+                    "title": {
                       "type": "string"
                     },
-                    "title": {
+                    "description": {
                       "type": "string"
                     },
                     "users_completed": {
@@ -1258,7 +1325,7 @@
                   },
                   "required": [
                     "id",
-                    "description"
+                    "title"
                   ]
                 },
                 {

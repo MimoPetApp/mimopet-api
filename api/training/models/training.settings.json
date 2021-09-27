@@ -60,7 +60,6 @@
     },
     "modules": {
       "via": "trainings",
-      "private": true,
       "collection": "module",
       "dominant": true
     }
