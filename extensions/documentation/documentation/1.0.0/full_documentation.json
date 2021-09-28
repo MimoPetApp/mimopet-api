@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "09/18/2021 9:25:11 PM"
+    "x-generation-date": "09/27/2021 2:17:30 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -8641,7 +8641,8 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "utils.quiz-item"
+                        "utils.quiz-item",
+                        "utils.option-warning"
                       ]
                     },
                     "id": {
@@ -8671,6 +8672,49 @@
                     "description",
                     "options"
                   ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "utils.quiz-item",
+                        "utils.option-warning"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "index": {
+                      "type": "integer",
+                      "default": 0
+                    },
+                    "condition": {
+                      "type": "string",
+                      "default": "equals",
+                      "enum": [
+                        "equals",
+                        "different",
+                        "lessThanOrEqualTo",
+                        "GreaterThanOrEqualTo",
+                        "lessThan",
+                        "GreaterThan"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "title",
+                    "description",
+                    "index",
+                    "condition"
+                  ]
                 }
               ]
             }
@@ -8695,7 +8739,8 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "utils.quiz-item"
+                        "utils.quiz-item",
+                        "utils.option-warning"
                       ]
                     },
                     "id": {
@@ -8724,6 +8769,49 @@
                     "selection",
                     "description",
                     "options"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "utils.quiz-item",
+                        "utils.option-warning"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "index": {
+                      "type": "integer",
+                      "default": 0
+                    },
+                    "condition": {
+                      "type": "string",
+                      "default": "equals",
+                      "enum": [
+                        "equals",
+                        "different",
+                        "lessThanOrEqualTo",
+                        "GreaterThanOrEqualTo",
+                        "lessThan",
+                        "GreaterThan"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "title",
+                    "description",
+                    "index",
+                    "condition"
                   ]
                 }
               ]
@@ -10182,7 +10270,8 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "utils.quiz-item"
+                        "utils.quiz-item",
+                        "utils.option-warning"
                       ]
                     },
                     "id": {
@@ -10212,6 +10301,49 @@
                     "description",
                     "options"
                   ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "utils.quiz-item",
+                        "utils.option-warning"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "index": {
+                      "type": "integer",
+                      "default": 0
+                    },
+                    "condition": {
+                      "type": "string",
+                      "default": "equals",
+                      "enum": [
+                        "equals",
+                        "different",
+                        "lessThanOrEqualTo",
+                        "GreaterThanOrEqualTo",
+                        "lessThan",
+                        "GreaterThan"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "title",
+                    "description",
+                    "index",
+                    "condition"
+                  ]
                 }
               ]
             }
@@ -10236,7 +10368,8 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "utils.quiz-item"
+                        "utils.quiz-item",
+                        "utils.option-warning"
                       ]
                     },
                     "id": {
@@ -10265,6 +10398,49 @@
                     "selection",
                     "description",
                     "options"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "utils.quiz-item",
+                        "utils.option-warning"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "index": {
+                      "type": "integer",
+                      "default": 0
+                    },
+                    "condition": {
+                      "type": "string",
+                      "default": "equals",
+                      "enum": [
+                        "equals",
+                        "different",
+                        "lessThanOrEqualTo",
+                        "GreaterThanOrEqualTo",
+                        "lessThan",
+                        "GreaterThan"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "title",
+                    "description",
+                    "index",
+                    "condition"
                   ]
                 }
               ]

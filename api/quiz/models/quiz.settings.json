@@ -18,7 +18,8 @@
     "items": {
       "type": "dynamiczone",
       "components": [
-        "utils.quiz-item"
+        "utils.quiz-item",
+        "utils.option-warning"
       ]
     }
   }

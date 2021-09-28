@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_utils_option_warnings",
+  "info": {
+    "name": "Option Warning",
+    "icon": "exclamation-triangle"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "index": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "condition": {
+      "type": "enumeration",
+      "enum": [
+        "equals",
+        "different",
+        "lessThanOrEqualTo",
+        "GreaterThanOrEqualTo",
+        "lessThan",
+        "GreaterThan"
+      ],
+      "required": true,
+      "default": "equals"
+    }
+  }
+}

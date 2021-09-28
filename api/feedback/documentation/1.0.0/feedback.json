@@ -534,7 +534,8 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "utils.quiz-item"
+                        "utils.quiz-item",
+                        "utils.option-warning"
                       ]
                     },
                     "id": {
@@ -564,6 +565,49 @@
                     "description",
                     "options"
                   ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "utils.quiz-item",
+                        "utils.option-warning"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "index": {
+                      "type": "integer",
+                      "default": 0
+                    },
+                    "condition": {
+                      "type": "string",
+                      "default": "equals",
+                      "enum": [
+                        "equals",
+                        "different",
+                        "lessThanOrEqualTo",
+                        "GreaterThanOrEqualTo",
+                        "lessThan",
+                        "GreaterThan"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "title",
+                    "description",
+                    "index",
+                    "condition"
+                  ]
                 }
               ]
             }
@@ -588,7 +632,8 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "utils.quiz-item"
+                        "utils.quiz-item",
+                        "utils.option-warning"
                       ]
                     },
                     "id": {
@@ -617,6 +662,49 @@
                     "selection",
                     "description",
                     "options"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "utils.quiz-item",
+                        "utils.option-warning"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "index": {
+                      "type": "integer",
+                      "default": 0
+                    },
+                    "condition": {
+                      "type": "string",
+                      "default": "equals",
+                      "enum": [
+                        "equals",
+                        "different",
+                        "lessThanOrEqualTo",
+                        "GreaterThanOrEqualTo",
+                        "lessThan",
+                        "GreaterThan"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "title",
+                    "description",
+                    "index",
+                    "condition"
                   ]
                 }
               ]
