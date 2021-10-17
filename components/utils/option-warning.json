@@ -2,7 +2,8 @@
   "collectionName": "components_utils_option_warnings",
   "info": {
     "name": "Option Warning",
-    "icon": "exclamation-triangle"
+    "icon": "exclamation-triangle",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -25,9 +26,9 @@
         "equals",
         "different",
         "lessThanOrEqualTo",
-        "GreaterThanOrEqualTo",
+        "greaterThanOrEqualTo",
         "lessThan",
-        "GreaterThan"
+        "greaterThan"
       ],
       "required": true,
       "default": "equals"

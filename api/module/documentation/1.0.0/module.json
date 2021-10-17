@@ -862,6 +862,42 @@
                     "duration": {
                       "type": "integer",
                       "default": 5
+                    },
+                    "exercise": {
+                      "required": [
+                        "id",
+                        "name",
+                        "author"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "author": {
+                          "type": "string"
+                        },
+                        "min_duration": {
+                          "type": "integer"
+                        },
+                        "max_duration": {
+                          "type": "integer"
+                        },
+                        "items": {
+                          "type": "dynamiczone"
+                        },
+                        "published_at": {
+                          "type": "string"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
                     }
                   },
                   "required": [
@@ -1356,6 +1392,42 @@
                     "duration": {
                       "type": "integer",
                       "default": 5
+                    },
+                    "exercise": {
+                      "required": [
+                        "id",
+                        "name",
+                        "author"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "author": {
+                          "type": "string"
+                        },
+                        "min_duration": {
+                          "type": "integer"
+                        },
+                        "max_duration": {
+                          "type": "integer"
+                        },
+                        "items": {
+                          "type": "dynamiczone"
+                        },
+                        "published_at": {
+                          "type": "string"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
                     }
                   },
                   "required": [

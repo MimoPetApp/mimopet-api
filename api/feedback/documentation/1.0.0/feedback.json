@@ -595,9 +595,9 @@
                         "equals",
                         "different",
                         "lessThanOrEqualTo",
-                        "GreaterThanOrEqualTo",
+                        "greaterThanOrEqualTo",
                         "lessThan",
-                        "GreaterThan"
+                        "greaterThan"
                       ]
                     }
                   },
@@ -693,9 +693,9 @@
                         "equals",
                         "different",
                         "lessThanOrEqualTo",
-                        "GreaterThanOrEqualTo",
+                        "greaterThanOrEqualTo",
                         "lessThan",
-                        "GreaterThan"
+                        "greaterThan"
                       ]
                     }
                   },
