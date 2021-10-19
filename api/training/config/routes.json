@@ -47,6 +47,22 @@
       "config": {
         "policies": []
       }
+    },  
+    {
+      "method": "GET",
+      "path": "/trainings/index/my",
+      "handler": "training.indexByUser",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/trainings/:id/subscribe",
+      "handler": "training.subscribe",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }

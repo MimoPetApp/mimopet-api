@@ -5,4 +5,14 @@
  * to customize this controller
  */
 
-module.exports = {};
+module.exports = {
+  indexByUser: async (ctx) => {
+    return await strapi.query("training")
+      .find({ users: ctx.state.user.id });
+  },
+  subscribe: async (ctx) => {
+    const { id } = ctx.params;
+    return await strapi.query("training")
+      .update({ id }, { users: [ ctx.state.user.id ] });
+  }
+};
