@@ -801,6 +801,9 @@
                     "type": "string"
                   }
                 },
+                "locked": {
+                  "type": "boolean"
+                },
                 "published_at": {
                   "type": "string"
                 },

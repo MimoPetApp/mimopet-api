@@ -56,6 +56,10 @@
     "trainings": {
       "via": "modules",
       "collection": "training"
+    },
+    "locked": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

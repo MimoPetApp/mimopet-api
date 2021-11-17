@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "10/18/2021 9:40:21 PM"
+    "x-generation-date": "11/16/2021 10:08:15 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -2229,6 +2229,74 @@
                 "schema": {
                   "type": "integer",
                   "format": "int64"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Module"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/modules/trainings/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -9565,6 +9633,10 @@
               }
             }
           },
+          "locked": {
+            "type": "boolean",
+            "default": false
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -10033,6 +10105,10 @@
             "items": {
               "type": "string"
             }
+          },
+          "locked": {
+            "type": "boolean",
+            "default": false
           },
           "published_at": {
             "type": "string",
@@ -11185,6 +11261,9 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "locked": {
+                  "type": "boolean"
                 },
                 "published_at": {
                   "type": "string"
