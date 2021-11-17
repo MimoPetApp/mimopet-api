@@ -25,6 +25,14 @@
       }
     },
     {
+      "method": "GET",
+      "path": "/modules/trainings/:id",
+      "handler": "module.indexByTraining",
+      "config": {
+        "policies": []
+      }
+    },
+    {
       "method": "POST",
       "path": "/modules",
       "handler": "module.create",
