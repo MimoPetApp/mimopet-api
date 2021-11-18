@@ -12,7 +12,11 @@ module.exports = {
   },
   subscribe: async (ctx) => {
     const { id } = ctx.params;
+    let train = await strapi.query("training")
+      .findOne({ id });    
+    var subscribes = train.users || []
+    subscribes.push(ctx.state.user)
     return await strapi.query("training")
-      .update({ id }, { users: [ ctx.state.user.id ] });
+     .update({ id }, { users: subscribes });
   }
 };
