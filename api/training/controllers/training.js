@@ -18,5 +18,15 @@ module.exports = {
     subscribes.push(ctx.state.user)
     return await strapi.query("training")
      .update({ id }, { users: subscribes });
-  }
+  },
+  find: async (ctx) => {
+    const trainings = await strapi.query("training").find();
+    return trainings.filter(
+      train => {
+        return train.users.filter(
+          u => u.id === ctx.state.user.id
+        ).length === 0
+      }
+    );
+  },
 };
