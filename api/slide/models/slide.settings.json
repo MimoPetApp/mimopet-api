@@ -22,9 +22,8 @@
       "type": "string",
       "required": true
     },
-    "users_completed": {
-      "plugin": "users-permissions",
-      "collection": "user"
+    "pets_completed": {
+      "collection": "pet"
     }
   }
 }

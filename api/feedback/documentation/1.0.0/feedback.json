@@ -793,7 +793,7 @@
               ]
             }
           },
-          "users_completeds": {
+          "pets_completed": {
             "type": "array",
             "items": {
               "type": "string"

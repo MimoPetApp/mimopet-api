@@ -687,7 +687,7 @@
           "name": {
             "type": "string"
           },
-          "users_completed": {
+          "pets_completed": {
             "type": "array",
             "items": {
               "type": "string"

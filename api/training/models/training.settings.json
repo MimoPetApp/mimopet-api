@@ -52,10 +52,10 @@
       "pluginOptions": {}
     },
     "users": {
-      "private": true,
-      "plugin": "users-permissions",
-      "collection": "user",
       "via": "trainings",
+      "plugin": "users-permissions",
+      "private": true,
+      "collection": "user",
       "dominant": true
     },
     "modules": {

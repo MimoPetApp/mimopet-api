@@ -675,7 +675,7 @@
                         "item": {
                           "type": "string"
                         },
-                        "users_completed": {
+                        "pets_completed": {
                           "type": "array",
                           "items": {
                             "type": "string"
@@ -747,7 +747,7 @@
                         "items": {
                           "type": "dynamiczone"
                         },
-                        "users_completeds": {
+                        "pets_completed": {
                           "type": "array",
                           "items": {
                             "type": "string"
@@ -820,7 +820,7 @@
                         "name": {
                           "type": "string"
                         },
-                        "users_completed": {
+                        "pets_completed": {
                           "type": "array",
                           "items": {
                             "type": "string"
@@ -892,7 +892,7 @@
                         "items": {
                           "type": "dynamiczone"
                         },
-                        "users_completed": {
+                        "pets_completed": {
                           "type": "array",
                           "items": {
                             "type": "string"
@@ -998,7 +998,7 @@
                         "item": {
                           "type": "string"
                         },
-                        "users_completed": {
+                        "pets_completed": {
                           "type": "array",
                           "items": {
                             "type": "string"
@@ -1070,7 +1070,7 @@
                         "items": {
                           "type": "dynamiczone"
                         },
-                        "users_completeds": {
+                        "pets_completed": {
                           "type": "array",
                           "items": {
                             "type": "string"
@@ -1143,7 +1143,7 @@
                         "name": {
                           "type": "string"
                         },
-                        "users_completed": {
+                        "pets_completed": {
                           "type": "array",
                           "items": {
                             "type": "string"
@@ -1215,7 +1215,7 @@
                         "items": {
                           "type": "dynamiczone"
                         },
-                        "users_completed": {
+                        "pets_completed": {
                           "type": "array",
                           "items": {
                             "type": "string"
@@ -1241,7 +1241,7 @@
               ]
             }
           },
-          "users_completed": {
+          "pets_completed": {
             "type": "array",
             "items": {
               "type": "string"

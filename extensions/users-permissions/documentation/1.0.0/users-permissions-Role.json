@@ -609,6 +609,9 @@
                     "type": "string"
                   }
                 },
+                "current_pet": {
+                  "type": "string"
+                },
                 "created_by": {
                   "type": "string"
                 },

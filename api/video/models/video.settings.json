@@ -25,10 +25,9 @@
       "required": true,
       "pluginOptions": {}
     },
-    "users_completed": {
+    "pets_completed": {
       "private": true,
-      "plugin": "users-permissions",
-      "collection": "user"
+      "collection": "pet"
     }
   }
 }

@@ -22,10 +22,9 @@
         "utils.option-warning"
       ]
     },
-    "users_completeds": {
+    "pets_completed": {
       "private": true,
-      "plugin": "users-permissions",
-      "collection": "user"
+      "collection": "pet"
     }
   }
 }

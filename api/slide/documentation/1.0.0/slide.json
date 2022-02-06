@@ -705,61 +705,34 @@
           "name": {
             "type": "string"
           },
-          "users_completed": {
+          "pets_completed": {
             "type": "array",
             "items": {
               "required": [
                 "id",
-                "username",
-                "email"
+                "name",
+                "breed",
+                "is_main",
+                "image",
+                "is_adopted",
+                "is_neutered",
+                "is_deficiency"
               ],
               "properties": {
                 "id": {
                   "type": "string"
                 },
-                "username": {
+                "name": {
                   "type": "string"
                 },
-                "email": {
+                "breed": {
                   "type": "string"
                 },
-                "provider": {
-                  "type": "string"
-                },
-                "password": {
-                  "type": "string"
-                },
-                "resetPasswordToken": {
-                  "type": "string"
-                },
-                "confirmationToken": {
-                  "type": "string"
-                },
-                "confirmed": {
+                "is_main": {
                   "type": "boolean"
                 },
-                "blocked": {
-                  "type": "boolean"
-                },
-                "role": {
+                "user": {
                   "type": "string"
-                },
-                "gender": {
-                  "type": "string",
-                  "enum": [
-                    "MALE",
-                    "FEMALE",
-                    "NONBINARY"
-                  ]
-                },
-                "is_premium": {
-                  "type": "boolean"
-                },
-                "pets": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
                 },
                 "image": {
                   "type": "array",
@@ -767,14 +740,42 @@
                     "type": "string"
                   }
                 },
-                "birthday": {
-                  "type": "integer"
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "canine"
+                  ]
                 },
-                "trainings": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
+                "gender": {
+                  "type": "string",
+                  "enum": [
+                    "male",
+                    "female"
+                  ]
+                },
+                "is_adopted": {
+                  "type": "boolean"
+                },
+                "is_neutered": {
+                  "type": "boolean"
+                },
+                "is_deficiency": {
+                  "type": "boolean"
+                },
+                "ownership_time": {
+                  "type": "string"
+                },
+                "age": {
+                  "type": "string",
+                  "enum": [
+                    "SIX_MONTS",
+                    "EIGHTEEN_MONTS",
+                    "ADULT",
+                    "SENIOR"
+                  ]
+                },
+                "published_at": {
+                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"
@@ -895,7 +896,7 @@
           "name": {
             "type": "string"
           },
-          "users_completed": {
+          "pets_completed": {
             "type": "array",
             "items": {
               "type": "string"

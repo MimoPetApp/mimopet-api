@@ -6,6 +6,7 @@
  */
 
 var getModuleStatus = async (module, user) => {
+  /*
   var query = module.steps.map(
     step => {
       let payload = {
@@ -37,6 +38,7 @@ var getModuleStatus = async (module, user) => {
 
   if (stepscompleted.length === 0) return "todo";
   if (stepscompleted.length === module.steps.length) return "done";
+  */
   
   return "doing"
 };

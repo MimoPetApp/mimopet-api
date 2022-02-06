@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "02/06/2022 11:15:21 AM"
+    "x-generation-date": "02/06/2022 2:43:59 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -9676,7 +9676,7 @@
                         "item": {
                           "type": "string"
                         },
-                        "users_completed": {
+                        "pets_completed": {
                           "type": "array",
                           "items": {
                             "type": "string"
@@ -9748,7 +9748,7 @@
                         "items": {
                           "type": "dynamiczone"
                         },
-                        "users_completeds": {
+                        "pets_completed": {
                           "type": "array",
                           "items": {
                             "type": "string"
@@ -9821,7 +9821,7 @@
                         "name": {
                           "type": "string"
                         },
-                        "users_completed": {
+                        "pets_completed": {
                           "type": "array",
                           "items": {
                             "type": "string"
@@ -9893,7 +9893,7 @@
                         "items": {
                           "type": "dynamiczone"
                         },
-                        "users_completed": {
+                        "pets_completed": {
                           "type": "array",
                           "items": {
                             "type": "string"
@@ -9999,7 +9999,7 @@
                         "item": {
                           "type": "string"
                         },
-                        "users_completed": {
+                        "pets_completed": {
                           "type": "array",
                           "items": {
                             "type": "string"
@@ -10071,7 +10071,7 @@
                         "items": {
                           "type": "dynamiczone"
                         },
-                        "users_completeds": {
+                        "pets_completed": {
                           "type": "array",
                           "items": {
                             "type": "string"
@@ -10144,7 +10144,7 @@
                         "name": {
                           "type": "string"
                         },
-                        "users_completed": {
+                        "pets_completed": {
                           "type": "array",
                           "items": {
                             "type": "string"
@@ -10216,7 +10216,7 @@
                         "items": {
                           "type": "dynamiczone"
                         },
-                        "users_completed": {
+                        "pets_completed": {
                           "type": "array",
                           "items": {
                             "type": "string"
@@ -10242,7 +10242,7 @@
               ]
             }
           },
-          "users_completed": {
+          "pets_completed": {
             "type": "array",
             "items": {
               "type": "string"
@@ -10456,7 +10456,7 @@
               ]
             }
           },
-          "users_completeds": {
+          "pets_completed": {
             "type": "array",
             "items": {
               "type": "string"
@@ -10625,7 +10625,7 @@
                         "items": {
                           "type": "dynamiczone"
                         },
-                        "users_completed": {
+                        "pets_completed": {
                           "type": "array",
                           "items": {
                             "type": "string"
@@ -10699,7 +10699,7 @@
                         "name": {
                           "type": "string"
                         },
-                        "users_completed": {
+                        "pets_completed": {
                           "type": "array",
                           "items": {
                             "type": "string"
@@ -10783,7 +10783,7 @@
                         "items": {
                           "type": "dynamiczone"
                         },
-                        "users_completed": {
+                        "pets_completed": {
                           "type": "array",
                           "items": {
                             "type": "string"
@@ -10856,7 +10856,7 @@
                         "items": {
                           "type": "dynamiczone"
                         },
-                        "users_completeds": {
+                        "pets_completed": {
                           "type": "array",
                           "items": {
                             "type": "string"
@@ -10930,7 +10930,7 @@
                         "item": {
                           "type": "string"
                         },
-                        "users_completed": {
+                        "pets_completed": {
                           "type": "array",
                           "items": {
                             "type": "string"
@@ -11112,7 +11112,7 @@
                         "items": {
                           "type": "dynamiczone"
                         },
-                        "users_completed": {
+                        "pets_completed": {
                           "type": "array",
                           "items": {
                             "type": "string"
@@ -11186,7 +11186,7 @@
                         "name": {
                           "type": "string"
                         },
-                        "users_completed": {
+                        "pets_completed": {
                           "type": "array",
                           "items": {
                             "type": "string"
@@ -11270,7 +11270,7 @@
                         "items": {
                           "type": "dynamiczone"
                         },
-                        "users_completed": {
+                        "pets_completed": {
                           "type": "array",
                           "items": {
                             "type": "string"
@@ -11343,7 +11343,7 @@
                         "items": {
                           "type": "dynamiczone"
                         },
-                        "users_completeds": {
+                        "pets_completed": {
                           "type": "array",
                           "items": {
                             "type": "string"
@@ -11417,7 +11417,7 @@
                         "item": {
                           "type": "string"
                         },
-                        "users_completed": {
+                        "pets_completed": {
                           "type": "array",
                           "items": {
                             "type": "string"
@@ -11685,6 +11685,9 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "current_pet": {
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -12077,7 +12080,7 @@
               ]
             }
           },
-          "users_completed": {
+          "pets_completed": {
             "type": "array",
             "items": {
               "type": "string"
@@ -12304,61 +12307,34 @@
           "name": {
             "type": "string"
           },
-          "users_completed": {
+          "pets_completed": {
             "type": "array",
             "items": {
               "required": [
                 "id",
-                "username",
-                "email"
+                "name",
+                "breed",
+                "is_main",
+                "image",
+                "is_adopted",
+                "is_neutered",
+                "is_deficiency"
               ],
               "properties": {
                 "id": {
                   "type": "string"
                 },
-                "username": {
+                "name": {
                   "type": "string"
                 },
-                "email": {
+                "breed": {
                   "type": "string"
                 },
-                "provider": {
-                  "type": "string"
-                },
-                "password": {
-                  "type": "string"
-                },
-                "resetPasswordToken": {
-                  "type": "string"
-                },
-                "confirmationToken": {
-                  "type": "string"
-                },
-                "confirmed": {
+                "is_main": {
                   "type": "boolean"
                 },
-                "blocked": {
-                  "type": "boolean"
-                },
-                "role": {
+                "user": {
                   "type": "string"
-                },
-                "gender": {
-                  "type": "string",
-                  "enum": [
-                    "MALE",
-                    "FEMALE",
-                    "NONBINARY"
-                  ]
-                },
-                "is_premium": {
-                  "type": "boolean"
-                },
-                "pets": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
                 },
                 "image": {
                   "type": "array",
@@ -12366,14 +12342,42 @@
                     "type": "string"
                   }
                 },
-                "birthday": {
-                  "type": "integer"
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "canine"
+                  ]
                 },
-                "trainings": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
+                "gender": {
+                  "type": "string",
+                  "enum": [
+                    "male",
+                    "female"
+                  ]
+                },
+                "is_adopted": {
+                  "type": "boolean"
+                },
+                "is_neutered": {
+                  "type": "boolean"
+                },
+                "is_deficiency": {
+                  "type": "boolean"
+                },
+                "ownership_time": {
+                  "type": "string"
+                },
+                "age": {
+                  "type": "string",
+                  "enum": [
+                    "SIX_MONTS",
+                    "EIGHTEEN_MONTS",
+                    "ADULT",
+                    "SENIOR"
+                  ]
+                },
+                "published_at": {
+                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"
@@ -12494,7 +12498,7 @@
           "name": {
             "type": "string"
           },
-          "users_completed": {
+          "pets_completed": {
             "type": "array",
             "items": {
               "type": "string"
@@ -12591,6 +12595,9 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "current_pet": {
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -13032,7 +13039,7 @@
           "name": {
             "type": "string"
           },
-          "users_completed": {
+          "pets_completed": {
             "type": "array",
             "items": {
               "type": "string"
@@ -13196,6 +13203,9 @@
                   "items": {
                     "type": "string"
                   }
+                },
+                "current_pet": {
+                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"
@@ -13542,6 +13552,84 @@
                 }
               }
             }
+          },
+          "current_pet": {
+            "required": [
+              "id",
+              "name",
+              "breed",
+              "is_main",
+              "image",
+              "is_adopted",
+              "is_neutered",
+              "is_deficiency"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "breed": {
+                "type": "string"
+              },
+              "is_main": {
+                "type": "boolean"
+              },
+              "user": {
+                "type": "string"
+              },
+              "image": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "canine"
+                ]
+              },
+              "gender": {
+                "type": "string",
+                "enum": [
+                  "male",
+                  "female"
+                ]
+              },
+              "is_adopted": {
+                "type": "boolean"
+              },
+              "is_neutered": {
+                "type": "boolean"
+              },
+              "is_deficiency": {
+                "type": "boolean"
+              },
+              "ownership_time": {
+                "type": "string"
+              },
+              "age": {
+                "type": "string",
+                "enum": [
+                  "SIX_MONTS",
+                  "EIGHTEEN_MONTS",
+                  "ADULT",
+                  "SENIOR"
+                ]
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -13610,6 +13698,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "current_pet": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"

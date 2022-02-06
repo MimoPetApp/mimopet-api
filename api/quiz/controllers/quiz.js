@@ -10,9 +10,9 @@ module.exports = {
     const { id } = ctx.params;
     const step = await strapi.query("quiz")
       .findOne({ id });
-    let users = step.users_completed || []
-    users.push(ctx.state.user)
+    let pets = step.pets_completed || []
+    pets.push(ctx.state.user.current_pet)
     return await strapi.query("quiz")
-     .update({ id }, { users_completed: users });
+     .update({ id }, { pets_completed: pets });
   }
 };

@@ -10,8 +10,12 @@ module.exports = {
     return await strapi.query("pet").find({ user: ctx.state.user.id });
   },
   create: async (ctx) => {
-    return await strapi
+    const newPet = await strapi
       .query("pet")
       .create({ ...ctx.request.body, user: ctx.state.user.id });
+    await strapi
+      .query("user", "users-permissions")
+      .update({ id: ctx.state.user.id }, { current_pet: newPet });
+    return newPet;
   },
 };
