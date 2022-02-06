@@ -5,7 +5,7 @@
  * to customize this controller
  */
 
- const { sanitizeEntity } = require('strapi-utils');
+const { sanitizeEntity } = require('strapi-utils');
 
 var getStepStatus = (pets_completed = [], pet_selected_id = 0) => {
   return pets_completed.filter(p => p.id === pet_selected_id).length !== 0;
