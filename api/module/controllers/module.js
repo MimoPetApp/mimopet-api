@@ -5,7 +5,7 @@
  * to customize this controller
  */
 
-var getModuleStatus = async (module) => {
+var getModuleStatus = async (module, user) => {
   var query = module.steps.map(
     step => {
       let payload = {
@@ -32,7 +32,7 @@ var getModuleStatus = async (module) => {
   query.step = Array.from(new Set(query.step));
 
   const stepscompleted = await strapi.query("step-user").find(
-    { ...query, status_eq: "done" }
+    { ...query, status_eq: "done", user_eq: user }
   );
 
   if (stepscompleted.length === 0) return "todo";
@@ -48,7 +48,7 @@ module.exports = {
       .find({ trainings: id });
 
     for (let i = 0; i < modules.length; i++)
-      modules[i].status = await getModuleStatus(modules[i]);
+      modules[i].status = await getModuleStatus(modules[i], ctx.state.user.id);
     return modules;
   }
 };
