@@ -47,6 +47,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "PUT",
+      "path": "/pets/:id/select",
+      "handler": "pet.select",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }
