@@ -510,6 +510,89 @@
           }
         ]
       }
+    },
+    "/exercises/{id}/complete": {
+      "put": {
+        "deprecated": false,
+        "description": "Update a record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Exercise"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "foo": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
     }
   },
   "components": {
@@ -592,6 +675,12 @@
                         "item": {
                           "type": "string"
                         },
+                        "users_completed": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
                         "published_at": {
                           "type": "string"
                         },
@@ -658,6 +747,12 @@
                         "items": {
                           "type": "dynamiczone"
                         },
+                        "users_completeds": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
                         "published_at": {
                           "type": "string"
                         },
@@ -695,83 +790,6 @@
                     "description": {
                       "type": "string"
                     },
-                    "users_completed": {
-                      "required": [
-                        "id",
-                        "username",
-                        "email"
-                      ],
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "username": {
-                          "type": "string"
-                        },
-                        "email": {
-                          "type": "string"
-                        },
-                        "provider": {
-                          "type": "string"
-                        },
-                        "password": {
-                          "type": "string"
-                        },
-                        "resetPasswordToken": {
-                          "type": "string"
-                        },
-                        "confirmationToken": {
-                          "type": "string"
-                        },
-                        "confirmed": {
-                          "type": "boolean"
-                        },
-                        "blocked": {
-                          "type": "boolean"
-                        },
-                        "role": {
-                          "type": "string"
-                        },
-                        "gender": {
-                          "type": "string",
-                          "enum": [
-                            "MALE",
-                            "FEMALE",
-                            "NONBINARY"
-                          ]
-                        },
-                        "is_premium": {
-                          "type": "boolean"
-                        },
-                        "pets": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        },
-                        "image": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        },
-                        "birthday": {
-                          "type": "integer"
-                        },
-                        "trainings": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        },
-                        "created_by": {
-                          "type": "string"
-                        },
-                        "updated_by": {
-                          "type": "string"
-                        }
-                      }
-                    },
                     "type": {
                       "type": "string",
                       "default": "slide",
@@ -801,6 +819,12 @@
                         },
                         "name": {
                           "type": "string"
+                        },
+                        "users_completed": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
                         },
                         "published_at": {
                           "type": "string"
@@ -867,6 +891,12 @@
                         },
                         "items": {
                           "type": "dynamiczone"
+                        },
+                        "users_completed": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
                         },
                         "published_at": {
                           "type": "string"
@@ -968,6 +998,12 @@
                         "item": {
                           "type": "string"
                         },
+                        "users_completed": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
                         "published_at": {
                           "type": "string"
                         },
@@ -1034,6 +1070,12 @@
                         "items": {
                           "type": "dynamiczone"
                         },
+                        "users_completeds": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
                         "published_at": {
                           "type": "string"
                         },
@@ -1071,83 +1113,6 @@
                     "description": {
                       "type": "string"
                     },
-                    "users_completed": {
-                      "required": [
-                        "id",
-                        "username",
-                        "email"
-                      ],
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "username": {
-                          "type": "string"
-                        },
-                        "email": {
-                          "type": "string"
-                        },
-                        "provider": {
-                          "type": "string"
-                        },
-                        "password": {
-                          "type": "string"
-                        },
-                        "resetPasswordToken": {
-                          "type": "string"
-                        },
-                        "confirmationToken": {
-                          "type": "string"
-                        },
-                        "confirmed": {
-                          "type": "boolean"
-                        },
-                        "blocked": {
-                          "type": "boolean"
-                        },
-                        "role": {
-                          "type": "string"
-                        },
-                        "gender": {
-                          "type": "string",
-                          "enum": [
-                            "MALE",
-                            "FEMALE",
-                            "NONBINARY"
-                          ]
-                        },
-                        "is_premium": {
-                          "type": "boolean"
-                        },
-                        "pets": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        },
-                        "image": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        },
-                        "birthday": {
-                          "type": "integer"
-                        },
-                        "trainings": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        },
-                        "created_by": {
-                          "type": "string"
-                        },
-                        "updated_by": {
-                          "type": "string"
-                        }
-                      }
-                    },
                     "type": {
                       "type": "string",
                       "default": "slide",
@@ -1177,6 +1142,12 @@
                         },
                         "name": {
                           "type": "string"
+                        },
+                        "users_completed": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
                         },
                         "published_at": {
                           "type": "string"
@@ -1244,6 +1215,12 @@
                         "items": {
                           "type": "dynamiczone"
                         },
+                        "users_completed": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
                         "published_at": {
                           "type": "string"
                         },
@@ -1262,6 +1239,12 @@
                   ]
                 }
               ]
+            }
+          },
+          "users_completed": {
+            "type": "array",
+            "items": {
+              "type": "string"
             }
           },
           "published_at": {

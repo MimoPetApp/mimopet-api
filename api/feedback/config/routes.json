@@ -47,6 +47,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "PUT",
+      "path": "/feedbacks/:id/complete",
+      "handler": "feedback.completeStep",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }

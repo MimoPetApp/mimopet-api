@@ -47,6 +47,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "PUT",
+      "path": "/videos/:id/complete",
+      "handler": "video.completeStep",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }

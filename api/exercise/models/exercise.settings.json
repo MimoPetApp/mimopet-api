@@ -37,6 +37,11 @@
         "steps.quiz-step"
       ],
       "required": false
+    },
+    "users_completed": {
+      "private": true,
+      "plugin": "users-permissions",
+      "collection": "user"
     }
   }
 }

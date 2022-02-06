@@ -21,6 +21,11 @@
         "utils.quiz-item",
         "utils.option-warning"
       ]
+    },
+    "users_completeds": {
+      "private": true,
+      "plugin": "users-permissions",
+      "collection": "user"
     }
   }
 }

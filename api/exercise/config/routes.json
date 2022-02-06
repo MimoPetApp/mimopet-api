@@ -47,6 +47,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "PUT",
+      "path": "/exercises/:id/complete",
+      "handler": "exercise.completeStep",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }

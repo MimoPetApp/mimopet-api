@@ -5,4 +5,14 @@
  * to customize this controller
  */
 
-module.exports = {};
+module.exports = {
+  completeStep: async (ctx) => {
+    const { id } = ctx.params;
+    const step = await strapi.query("slide")
+      .findOne({ id });
+    let users = step.users_completed || []
+    users.push(ctx.state.user)
+    return await strapi.query("slide")
+     .update({ id }, { users_completed: users });
+  }
+};

@@ -14,10 +14,6 @@
     "description": {
       "type": "string"
     },
-    "users_completed": {
-      "plugin": "users-permissions",
-      "model": "user"
-    },
     "type": {
       "type": "enumeration",
       "enum": [

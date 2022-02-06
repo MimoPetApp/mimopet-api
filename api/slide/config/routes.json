@@ -47,6 +47,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "PUT",
+      "path": "/slides/:id/complete",
+      "handler": "slide.completeStep",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }
