@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "02/06/2022 10:21:18 AM"
+    "x-generation-date": "02/06/2022 11:15:21 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -12303,6 +12303,86 @@
           },
           "name": {
             "type": "string"
+          },
+          "users_completed": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "username",
+                "email"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "username": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                },
+                "resetPasswordToken": {
+                  "type": "string"
+                },
+                "confirmationToken": {
+                  "type": "string"
+                },
+                "confirmed": {
+                  "type": "boolean"
+                },
+                "blocked": {
+                  "type": "boolean"
+                },
+                "role": {
+                  "type": "string"
+                },
+                "gender": {
+                  "type": "string",
+                  "enum": [
+                    "MALE",
+                    "FEMALE",
+                    "NONBINARY"
+                  ]
+                },
+                "is_premium": {
+                  "type": "boolean"
+                },
+                "pets": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "image": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "birthday": {
+                  "type": "integer"
+                },
+                "trainings": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "published_at": {
             "type": "string",
