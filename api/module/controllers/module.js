@@ -4,53 +4,51 @@
  * Read the documentation (https://strapi.io/documentation/developer-docs/latest/development/backend-customization.html#core-controllers)
  * to customize this controller
  */
+const { sanitizeEntity } = require('strapi-utils');
 
-var getModuleStatus = async (module, user) => {
-  /*
-  var query = module.steps.map(
-    step => {
-      let payload = {
-        type: step.type
-      }
-      if (step.slides) payload.step = step.slides.id;
-      else if (step.video) payload.step = step.video.id;
-      else if (step.quiz) payload.step = step.quiz.id;
-      else if (step.exercise) payload.step = step.exercise.id;
-      else if (step.feedback) payload.step = step.feedback.id;
+var getStepStatus = async (model = "slide", step_id = 0, pet_selected_id = 0) => {
+  const stepDetails = await strapi.query(model).findOne({ id: step_id });
+  return stepDetails.pets_completed.filter(p => p.id === pet_selected_id).length !== 0;
+}
 
-      return payload
-    }
-  );
-  
-  query = query.reduce((acc, curr) => {
-    let {type, step} = curr;
-    acc.type = [...(acc.type || [])]
-    acc.step = [...(acc.step || [])]
-    return {type: [...(acc.type || []), type], step: [...(acc.step || []), step]};
-  }, {});
+var getModuleStatus = async (module, pet_selected_id) => {
+  var module_completed = true;
+  var module_payload = module;
+  for (let i = 0; i < module.steps.length; i++) {
+    let step = module.steps[i];    
+    step.completed = false;
 
-  query.type = Array.from(new Set(query.type));
-  query.step = Array.from(new Set(query.step));
-
-  const stepscompleted = await strapi.query("step-user").find(
-    { ...query, status_eq: "done", user_eq: user }
-  );
-
-  if (stepscompleted.length === 0) return "todo";
-  if (stepscompleted.length === module.steps.length) return "done";
-  */
-  
-  return "doing"
+    if (step.slides) step.completed = await getStepStatus("slide", step.slides.id, pet_selected_id);
+    else if (step.video) step.completed = await getStepStatus("video", step.video.id, pet_selected_id);
+    else if (step.quiz) step.completed = await getStepStatus("quiz", step.quiz.id, pet_selected_id);
+    else if (step.exercise) step.completed = await getStepStatus("exercise", step.exercise.id, pet_selected_id);
+    else if (step.feedback) step.completed = await getStepStatus("feedback", step.feedback.id, pet_selected_id);
+    module_completed = module_completed && step.completed;
+  }
+  module_payload.completed = module_completed;
+  return module_payload;
 };
 
 module.exports = {
   indexByTraining: async (ctx) => {
     const { id } = ctx.params;
-    const modules = await strapi.query("module")
-      .find({ trainings: id });
+    const entities = await strapi.query("module").find({ trainings: id });
+    
+    for (let i = 0; i < entities.length; i++) {
+      let entity = entities[i];
+      entity = await getModuleStatus(entity, ctx.state.user.current_pet);
+      delete entity.trainings;
+      entity = sanitizeEntity(entity, { model: strapi.models.module });
+    }
 
-    for (let i = 0; i < modules.length; i++)
-      modules[i].status = await getModuleStatus(modules[i], ctx.state.user.id);
-    return modules;
+    return entities;
+  },
+  
+  findOne: async (ctx) => {
+    const { id } = ctx.params;
+    let entity = await strapi.query("module").findOne({ id });
+    entity = await getModuleStatus(entity, ctx.state.user.current_pet);
+    delete entity.trainings;
+    return sanitizeEntity(entity, { model: strapi.models.module });
   }
 };

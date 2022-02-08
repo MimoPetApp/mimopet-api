@@ -22,7 +22,6 @@ module.exports = {
     });
   },
   select: async (ctx) => {
-    console.log("oi")
     const { id } = ctx.params;
     const pet = await strapi.query("pet")
       .findOne({ id });
