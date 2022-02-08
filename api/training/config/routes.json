@@ -63,6 +63,14 @@
       "config": {
         "policies": []
       }
+    },
+    {
+      "method": "PUT",
+      "path": "/trainings/:id/unsubscribe",
+      "handler": "training.unsubscribe",
+      "config": {
+        "policies": []
+      }
     }
   ]
 }
