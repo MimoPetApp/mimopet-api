@@ -516,7 +516,8 @@
     "schemas": {
       "Session": {
         "required": [
-          "id"
+          "id",
+          "items"
         ],
         "properties": {
           "id": {
@@ -829,6 +830,9 @@
         }
       },
       "NewSession": {
+        "required": [
+          "items"
+        ],
         "properties": {
           "name": {
             "type": "string"

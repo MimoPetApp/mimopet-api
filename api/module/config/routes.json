@@ -26,7 +26,7 @@
     },
     {
       "method": "GET",
-      "path": "/modules/trainings/:id",
+      "path": "/trainings/:id/modules",
       "handler": "module.indexByTraining",
       "config": {
         "policies": []

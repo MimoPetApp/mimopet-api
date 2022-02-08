@@ -22,7 +22,8 @@
         "steps.feedback-step",
         "steps.slide-step",
         "steps.quiz-step"
-      ]
+      ],
+      "required": true
     }
   }
 }

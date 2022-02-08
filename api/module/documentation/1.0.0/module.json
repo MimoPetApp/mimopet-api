@@ -511,7 +511,7 @@
         ]
       }
     },
-    "/modules/trainings/{id}": {
+    "/trainings/{id}/modules": {
       "get": {
         "deprecated": false,
         "description": "",
