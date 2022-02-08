@@ -888,10 +888,13 @@
                         "max_duration": {
                           "type": "integer"
                         },
-                        "items": {
-                          "type": "dynamiczone"
-                        },
                         "pets_completed": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "sessions": {
                           "type": "array",
                           "items": {
                             "type": "string"
@@ -1375,10 +1378,13 @@
                         "max_duration": {
                           "type": "integer"
                         },
-                        "items": {
-                          "type": "dynamiczone"
-                        },
                         "pets_completed": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "sessions": {
                           "type": "array",
                           "items": {
                             "type": "string"

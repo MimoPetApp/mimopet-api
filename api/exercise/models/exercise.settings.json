@@ -28,19 +28,13 @@
       "type": "integer",
       "default": 20
     },
-    "items": {
-      "type": "dynamiczone",
-      "components": [
-        "steps.video-step",
-        "steps.feedback-step",
-        "steps.slide-step",
-        "steps.quiz-step"
-      ],
-      "required": false
-    },
     "pets_completed": {
       "private": true,
       "collection": "pet"
+    },
+    "sessions": {
+      "private": true,
+      "collection": "session"
     }
   }
 }

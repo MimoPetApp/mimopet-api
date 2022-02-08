@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "sessions",
   "info": {
-    "name": "Session"
+    "name": "Session",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -11,18 +12,17 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "video": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "videos"
-      ],
-      "plugin": "upload",
-      "required": false,
-      "pluginOptions": {}
-    },
     "name": {
       "type": "string"
+    },
+    "items": {
+      "type": "dynamiczone",
+      "components": [
+        "steps.video-step",
+        "steps.feedback-step",
+        "steps.slide-step",
+        "steps.quiz-step"
+      ]
     }
   }
 }
