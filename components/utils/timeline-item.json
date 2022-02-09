@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_utils_timeline_items",
+  "info": {
+    "name": "Timeline item",
+    "icon": "clock",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "data": {
+      "type": "datetime",
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "todo",
+        "doing",
+        "done"
+      ],
+      "required": true,
+      "default": "todo"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "step",
+        "other"
+      ],
+      "default": "other",
+      "required": true
+    },
+    "details": {
+      "type": "string"
+    }
+  }
+}

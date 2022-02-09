@@ -35,5 +35,19 @@ module.exports = {
     }
     training.completed = training_completed;
     return training;
+  },
+  updatePetTimeline: async (pet, event) => {
+    const timeline = await strapi.query("pet-timeline").findOne({ pet: pet });  
+    await strapi
+      .query("pet-timeline")
+      .update(
+        { id: timeline.id },
+        {
+          items: [
+            ...timeline.items,
+            event
+          ]
+        }
+      );
   }
 };

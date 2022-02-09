@@ -14,12 +14,28 @@ var getStepStatus = (pets_completed = [], pet_selected_id = 0) => {
 module.exports = {
   completeStep: async (ctx) => {
     const { id } = ctx.params;
-    const step = await strapi.query("slide")
-      .findOne({ id });
-    let pets = step.pets_completed || []
-    pets.push(ctx.state.user.current_pet)
+    const step = await strapi.query("slide").findOne({ id });
+    await strapi.config.functions['mixin'].updatePetTimeline(
+      ctx.state.user.current_pet,
+      {
+        __component: 'utils.timeline-item',
+        data: new Date(),
+        label: step.name,
+        details: "slide",
+        type: "step",
+        status: "done"
+      }
+    );
     return await strapi.query("slide")
-     .update({ id }, { pets_completed: pets });
+     .update(
+       { id },
+       {
+        pets_completed: [
+          ...step.pets_completed,
+          ctx.state.user.current_pet
+        ]
+       }
+      );
   },
   
   find: async (ctx) => {

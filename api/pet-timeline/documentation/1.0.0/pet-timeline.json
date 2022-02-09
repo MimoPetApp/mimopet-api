@@ -523,14 +523,81 @@
           }
         ]
       }
+    },
+    "/pets/{id}/pet-timelines": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Pet-timeline"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
     }
   },
   "components": {
     "schemas": {
       "Pet-timeline": {
         "required": [
-          "id",
-          "title"
+          "id"
         ],
         "properties": {
           "id": {
@@ -539,86 +606,58 @@
           "title": {
             "type": "string"
           },
-          "date": {
-            "type": "string",
-            "format": "date"
-          },
-          "pet": {
-            "required": [
-              "id",
-              "name",
-              "breed",
-              "is_main",
-              "image",
-              "is_adopted",
-              "is_neutered",
-              "is_deficiency"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "breed": {
-                "type": "string"
-              },
-              "is_main": {
-                "type": "boolean"
-              },
-              "user": {
-                "type": "string"
-              },
-              "image": {
-                "type": "array",
-                "items": {
-                  "type": "string"
+          "items": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "utils.timeline-item"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "label": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "status": {
+                      "type": "string",
+                      "default": "todo",
+                      "enum": [
+                        "todo",
+                        "doing",
+                        "done"
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "default": "other",
+                      "enum": [
+                        "step",
+                        "other"
+                      ]
+                    },
+                    "details": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "label",
+                    "data",
+                    "status",
+                    "type"
+                  ]
                 }
-              },
-              "type": {
-                "type": "string",
-                "enum": [
-                  "canine"
-                ]
-              },
-              "gender": {
-                "type": "string",
-                "enum": [
-                  "male",
-                  "female"
-                ]
-              },
-              "is_adopted": {
-                "type": "boolean"
-              },
-              "is_neutered": {
-                "type": "boolean"
-              },
-              "is_deficiency": {
-                "type": "boolean"
-              },
-              "ownership_time": {
-                "type": "string"
-              },
-              "age": {
-                "type": "string",
-                "enum": [
-                  "SIX_MONTS",
-                  "EIGHTEEN_MONTS",
-                  "ADULT",
-                  "SENIOR"
-                ]
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
+              ]
             }
           },
           "published_at": {
@@ -628,19 +667,66 @@
         }
       },
       "NewPet-timeline": {
-        "required": [
-          "title"
-        ],
         "properties": {
           "title": {
             "type": "string"
           },
-          "date": {
-            "type": "string",
-            "format": "date"
-          },
           "pet": {
             "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "utils.timeline-item"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "label": {
+                      "type": "string"
+                    },
+                    "data": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "status": {
+                      "type": "string",
+                      "default": "todo",
+                      "enum": [
+                        "todo",
+                        "doing",
+                        "done"
+                      ]
+                    },
+                    "type": {
+                      "type": "string",
+                      "default": "other",
+                      "enum": [
+                        "step",
+                        "other"
+                      ]
+                    },
+                    "details": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "label",
+                    "data",
+                    "status",
+                    "type"
+                  ]
+                }
+              ]
+            }
           },
           "published_at": {
             "type": "string",
