@@ -32,5 +32,17 @@ module.exports = {
     return sanitizeEntity(pet, {
       model: strapi.models.pet,
     });
+  },
+  async delete(ctx) {
+    const { id } = ctx.params;
+    const entity = await strapi.query("pet").delete({ id });
+    if (id == ctx.state.user.current_pet) {
+      const user = await strapi.query("user", "users-permissions").findOne({ id: ctx.state.user.id });
+      if (user.pets.length > 0) {
+        await strapi.query("user", "users-permissions")
+          .update({ id: ctx.state.user.id }, { current_pet: user.pets[0] });
+      }
+    }
+    return sanitizeEntity(entity, { model: strapi.models.pet });
   }
 };
