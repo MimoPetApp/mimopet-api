@@ -6,7 +6,7 @@ module.exports = {
     const stepDetails = await strapi.query(model).findOne({ id: step_id });
     return stepDetails.pets_completed.filter(p => p.id === pet_selected_id).length !== 0;
   },
-  getModuleStatus: async (module, pet_selected_id) => {
+  setModuleCompleted: async (module, pet_selected_id) => {
     var module_completed = true;
     var module_payload = module;
     for (let i = 0; i < module.steps.length; i++) {
@@ -23,10 +23,14 @@ module.exports = {
     module_payload.completed = module_completed;
     return module_payload;
   },
+  setModuleLocked: async (module, is_locked) => {
+    module.locked = is_locked;
+    return module;
+  },
   getTrainingStatus: async (training, pet_selected_id) => {
     var training_completed = true;
     for (let i = 0; i < training.modules.length; i++) {
-      training.modules[i] = await strapi.config.functions['mixin'].getModuleStatus(training.modules[i], pet_selected_id);
+      training.modules[i] = await strapi.config.functions['mixin'].setModuleCompleted(training.modules[i], pet_selected_id);
       training_completed = training_completed && training.modules[i].completed;
     }
     training.completed = training_completed;
