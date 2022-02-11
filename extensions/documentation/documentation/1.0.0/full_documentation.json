@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "02/09/2022 5:13:29 PM"
+    "x-generation-date": "02/11/2022 8:41:37 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -495,7 +495,7 @@
     "/breeds/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the numver of breeds documents",
+        "description": "Retrieve the number of breeds documents",
         "responses": {
           "200": {
             "description": "Retrieve breeds document(s)",
@@ -1313,600 +1313,6 @@
         "summary": "",
         "tags": [
           "Exercise"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "properties": {
-                  "foo": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      }
-    },
-    "/feedbacks": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Feedback"
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Feedback"
-        ],
-        "parameters": [
-          {
-            "name": "_limit",
-            "in": "query",
-            "required": false,
-            "description": "Maximum number of results possible",
-            "schema": {
-              "type": "integer"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_sort",
-            "in": "query",
-            "required": false,
-            "description": "Sort according to a specific field.",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_start",
-            "in": "query",
-            "required": false,
-            "description": "Skip a specific number of entries (especially useful for pagination)",
-            "schema": {
-              "type": "integer"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "=",
-            "in": "query",
-            "required": false,
-            "description": "Get entries that matches exactly your input",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_ne",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are not equals to something",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_lt",
-            "in": "query",
-            "required": false,
-            "description": "Get record that are lower than a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_lte",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are lower than or equal to a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_gt",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are greater than a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_gte",
-            "in": "query",
-            "required": false,
-            "description": "Get records that are greater than  or equal a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_contains",
-            "in": "query",
-            "required": false,
-            "description": "Get records that contains a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_containss",
-            "in": "query",
-            "required": false,
-            "description": "Get records that contains (case sensitive) a value",
-            "schema": {
-              "type": "string"
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_in",
-            "in": "query",
-            "required": false,
-            "description": "Get records that matches any value in the array of values",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "deprecated": false
-          },
-          {
-            "name": "_nin",
-            "in": "query",
-            "required": false,
-            "description": "Get records that doesn't match any value in the array of values",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "deprecated": false
-          }
-        ]
-      },
-      "post": {
-        "deprecated": false,
-        "description": "Create a new record",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Feedback"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Feedback"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewFeedback"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/feedbacks/count": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "count": {
-                      "type": "integer"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Feedback"
-        ],
-        "parameters": []
-      }
-    },
-    "/feedbacks/{id}": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Feedback"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Feedback"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      },
-      "put": {
-        "deprecated": false,
-        "description": "Update a record",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Feedback"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Feedback"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewFeedback"
-              }
-            }
-          }
-        },
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      },
-      "delete": {
-        "deprecated": false,
-        "description": "Delete a record",
-        "responses": {
-          "200": {
-            "description": "deletes a single record based on the ID supplied",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "integer",
-                  "format": "int64"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Feedback"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "",
-            "deprecated": false,
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ]
-      }
-    },
-    "/feedbacks/{id}/complete": {
-      "put": {
-        "deprecated": false,
-        "description": "Update a record",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Feedback"
         ],
         "requestBody": {
           "description": "",
@@ -3702,7 +3108,7 @@
         ]
       }
     },
-    "/quizzes": {
+    "/questions": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -3714,7 +3120,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Quiz"
+                    "$ref": "#/components/schemas/Question"
                   }
                 }
               }
@@ -3753,7 +3159,7 @@
         },
         "summary": "",
         "tags": [
-          "Quiz"
+          "Question"
         ],
         "parameters": [
           {
@@ -3903,7 +3309,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Quiz"
+                  "$ref": "#/components/schemas/Question"
                 }
               }
             }
@@ -3941,7 +3347,7 @@
         },
         "summary": "",
         "tags": [
-          "Quiz"
+          "Question"
         ],
         "requestBody": {
           "description": "",
@@ -3949,14 +3355,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewQuiz"
+                "$ref": "#/components/schemas/NewQuestion"
               }
             }
           }
         }
       }
     },
-    "/quizzes/count": {
+    "/questions/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -4008,12 +3414,12 @@
         },
         "summary": "",
         "tags": [
-          "Quiz"
+          "Question"
         ],
         "parameters": []
       }
     },
-    "/quizzes/{id}": {
+    "/questions/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -4023,7 +3429,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Quiz"
+                  "$ref": "#/components/schemas/Question"
                 }
               }
             }
@@ -4061,7 +3467,7 @@
         },
         "summary": "",
         "tags": [
-          "Quiz"
+          "Question"
         ],
         "parameters": [
           {
@@ -4085,7 +3491,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Quiz"
+                  "$ref": "#/components/schemas/Question"
                 }
               }
             }
@@ -4123,7 +3529,7 @@
         },
         "summary": "",
         "tags": [
-          "Quiz"
+          "Question"
         ],
         "requestBody": {
           "description": "",
@@ -4131,7 +3537,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewQuiz"
+                "$ref": "#/components/schemas/NewQuestion"
               }
             }
           }
@@ -4197,7 +3603,7 @@
         },
         "summary": "",
         "tags": [
-          "Quiz"
+          "Question"
         ],
         "parameters": [
           {
@@ -4213,7 +3619,7 @@
         ]
       }
     },
-    "/quizzes/{id}/complete": {
+    "/questions/{id}/complete": {
       "put": {
         "deprecated": false,
         "description": "Update a record",
@@ -4265,7 +3671,7 @@
         },
         "summary": "",
         "tags": [
-          "Quiz"
+          "Question"
         ],
         "requestBody": {
           "description": "",
@@ -9906,220 +9312,6 @@
           }
         }
       },
-      "Feedback": {
-        "required": [
-          "id"
-        ],
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "items": {
-            "type": "array",
-            "items": {
-              "oneOf": [
-                {
-                  "properties": {
-                    "__component": {
-                      "type": "string",
-                      "enum": [
-                        "utils.quiz-item",
-                        "utils.option-warning"
-                      ]
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "selection": {
-                      "type": "string",
-                      "default": "single",
-                      "enum": [
-                        "single",
-                        "multiple"
-                      ]
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "options": {
-                      "type": "object"
-                    }
-                  },
-                  "required": [
-                    "id",
-                    "selection",
-                    "description",
-                    "options"
-                  ]
-                },
-                {
-                  "properties": {
-                    "__component": {
-                      "type": "string",
-                      "enum": [
-                        "utils.quiz-item",
-                        "utils.option-warning"
-                      ]
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "index": {
-                      "type": "integer",
-                      "default": 0
-                    },
-                    "condition": {
-                      "type": "string",
-                      "default": "equals",
-                      "enum": [
-                        "equals",
-                        "different",
-                        "lessThanOrEqualTo",
-                        "greaterThanOrEqualTo",
-                        "lessThan",
-                        "greaterThan"
-                      ]
-                    }
-                  },
-                  "required": [
-                    "id",
-                    "title",
-                    "description",
-                    "index",
-                    "condition"
-                  ]
-                }
-              ]
-            }
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
-          }
-        }
-      },
-      "NewFeedback": {
-        "properties": {
-          "name": {
-            "type": "string"
-          },
-          "items": {
-            "type": "array",
-            "items": {
-              "oneOf": [
-                {
-                  "properties": {
-                    "__component": {
-                      "type": "string",
-                      "enum": [
-                        "utils.quiz-item",
-                        "utils.option-warning"
-                      ]
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "selection": {
-                      "type": "string",
-                      "default": "single",
-                      "enum": [
-                        "single",
-                        "multiple"
-                      ]
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "options": {
-                      "type": "object"
-                    }
-                  },
-                  "required": [
-                    "id",
-                    "selection",
-                    "description",
-                    "options"
-                  ]
-                },
-                {
-                  "properties": {
-                    "__component": {
-                      "type": "string",
-                      "enum": [
-                        "utils.quiz-item",
-                        "utils.option-warning"
-                      ]
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "index": {
-                      "type": "integer",
-                      "default": 0
-                    },
-                    "condition": {
-                      "type": "string",
-                      "default": "equals",
-                      "enum": [
-                        "equals",
-                        "different",
-                        "lessThanOrEqualTo",
-                        "greaterThanOrEqualTo",
-                        "lessThan",
-                        "greaterThan"
-                      ]
-                    }
-                  },
-                  "required": [
-                    "id",
-                    "title",
-                    "description",
-                    "index",
-                    "condition"
-                  ]
-                }
-              ]
-            }
-          },
-          "pets_completed": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "published_at": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "created_by": {
-            "type": "string"
-          },
-          "updated_by": {
-            "type": "string"
-          }
-        }
-      },
       "Module": {
         "required": [
           "id",
@@ -10226,84 +9418,10 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "steps.quiz-step",
                         "steps.slide-step",
                         "steps.exercise-step",
-                        "steps.feedback-step",
-                        "steps.video-step"
-                      ]
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "type": {
-                      "type": "string",
-                      "default": "quiz",
-                      "enum": [
-                        "video",
-                        "quiz",
-                        "exercise",
-                        "slide",
-                        "feedback"
-                      ]
-                    },
-                    "duration": {
-                      "type": "integer",
-                      "default": 5
-                    },
-                    "quizzes": {
-                      "required": [
-                        "id"
-                      ],
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "name": {
-                          "type": "string"
-                        },
-                        "items": {
-                          "type": "dynamiczone"
-                        },
-                        "pets_completed": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        },
-                        "published_at": {
-                          "type": "string"
-                        },
-                        "created_by": {
-                          "type": "string"
-                        },
-                        "updated_by": {
-                          "type": "string"
-                        }
-                      }
-                    }
-                  },
-                  "required": [
-                    "id",
-                    "title"
-                  ]
-                },
-                {
-                  "properties": {
-                    "__component": {
-                      "type": "string",
-                      "enum": [
-                        "steps.quiz-step",
-                        "steps.slide-step",
-                        "steps.exercise-step",
-                        "steps.feedback-step",
-                        "steps.video-step"
+                        "steps.video-step",
+                        "steps.question-step"
                       ]
                     },
                     "id": {
@@ -10320,17 +9438,16 @@
                       "default": "slide",
                       "enum": [
                         "video",
-                        "quiz",
                         "exercise",
                         "slide",
-                        "feedback"
+                        "question"
                       ]
                     },
                     "duration": {
                       "type": "integer",
                       "default": 5
                     },
-                    "slides": {
+                    "slide": {
                       "required": [
                         "id",
                         "name"
@@ -10373,11 +9490,10 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "steps.quiz-step",
                         "steps.slide-step",
                         "steps.exercise-step",
-                        "steps.feedback-step",
-                        "steps.video-step"
+                        "steps.video-step",
+                        "steps.question-step"
                       ]
                     },
                     "id": {
@@ -10394,10 +9510,9 @@
                       "default": "exercise",
                       "enum": [
                         "video",
-                        "quiz",
                         "exercise",
                         "slide",
-                        "feedback"
+                        "question"
                       ]
                     },
                     "duration": {
@@ -10460,11 +9575,10 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "steps.quiz-step",
                         "steps.slide-step",
                         "steps.exercise-step",
-                        "steps.feedback-step",
-                        "steps.video-step"
+                        "steps.video-step",
+                        "steps.question-step"
                       ]
                     },
                     "id": {
@@ -10478,22 +9592,22 @@
                     },
                     "type": {
                       "type": "string",
-                      "default": "feedback",
+                      "default": "video",
                       "enum": [
                         "video",
-                        "quiz",
                         "exercise",
                         "slide",
-                        "feedback"
+                        "question"
                       ]
                     },
                     "duration": {
                       "type": "integer",
                       "default": 5
                     },
-                    "feedback": {
+                    "video": {
                       "required": [
-                        "id"
+                        "id",
+                        "item"
                       ],
                       "properties": {
                         "id": {
@@ -10502,8 +9616,8 @@
                         "name": {
                           "type": "string"
                         },
-                        "items": {
-                          "type": "dynamiczone"
+                        "item": {
+                          "type": "string"
                         },
                         "pets_completed": {
                           "type": "array",
@@ -10533,11 +9647,10 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "steps.quiz-step",
                         "steps.slide-step",
                         "steps.exercise-step",
-                        "steps.feedback-step",
-                        "steps.video-step"
+                        "steps.video-step",
+                        "steps.question-step"
                       ]
                     },
                     "id": {
@@ -10551,23 +9664,21 @@
                     },
                     "type": {
                       "type": "string",
-                      "default": "video",
+                      "default": "question",
                       "enum": [
                         "video",
-                        "quiz",
                         "exercise",
                         "slide",
-                        "feedback"
+                        "question"
                       ]
                     },
                     "duration": {
-                      "type": "integer",
-                      "default": 5
+                      "type": "integer"
                     },
-                    "video": {
+                    "question": {
                       "required": [
                         "id",
-                        "item"
+                        "name"
                       ],
                       "properties": {
                         "id": {
@@ -10576,8 +9687,8 @@
                         "name": {
                           "type": "string"
                         },
-                        "item": {
-                          "type": "string"
+                        "items": {
+                          "type": "dynamiczone"
                         },
                         "pets_completed": {
                           "type": "array",
@@ -10712,84 +9823,10 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "steps.quiz-step",
                         "steps.slide-step",
                         "steps.exercise-step",
-                        "steps.feedback-step",
-                        "steps.video-step"
-                      ]
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "type": {
-                      "type": "string",
-                      "default": "quiz",
-                      "enum": [
-                        "video",
-                        "quiz",
-                        "exercise",
-                        "slide",
-                        "feedback"
-                      ]
-                    },
-                    "duration": {
-                      "type": "integer",
-                      "default": 5
-                    },
-                    "quizzes": {
-                      "required": [
-                        "id"
-                      ],
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "name": {
-                          "type": "string"
-                        },
-                        "items": {
-                          "type": "dynamiczone"
-                        },
-                        "pets_completed": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        },
-                        "published_at": {
-                          "type": "string"
-                        },
-                        "created_by": {
-                          "type": "string"
-                        },
-                        "updated_by": {
-                          "type": "string"
-                        }
-                      }
-                    }
-                  },
-                  "required": [
-                    "id",
-                    "title"
-                  ]
-                },
-                {
-                  "properties": {
-                    "__component": {
-                      "type": "string",
-                      "enum": [
-                        "steps.quiz-step",
-                        "steps.slide-step",
-                        "steps.exercise-step",
-                        "steps.feedback-step",
-                        "steps.video-step"
+                        "steps.video-step",
+                        "steps.question-step"
                       ]
                     },
                     "id": {
@@ -10806,17 +9843,16 @@
                       "default": "slide",
                       "enum": [
                         "video",
-                        "quiz",
                         "exercise",
                         "slide",
-                        "feedback"
+                        "question"
                       ]
                     },
                     "duration": {
                       "type": "integer",
                       "default": 5
                     },
-                    "slides": {
+                    "slide": {
                       "required": [
                         "id",
                         "name"
@@ -10859,11 +9895,10 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "steps.quiz-step",
                         "steps.slide-step",
                         "steps.exercise-step",
-                        "steps.feedback-step",
-                        "steps.video-step"
+                        "steps.video-step",
+                        "steps.question-step"
                       ]
                     },
                     "id": {
@@ -10880,10 +9915,9 @@
                       "default": "exercise",
                       "enum": [
                         "video",
-                        "quiz",
                         "exercise",
                         "slide",
-                        "feedback"
+                        "question"
                       ]
                     },
                     "duration": {
@@ -10946,11 +9980,10 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "steps.quiz-step",
                         "steps.slide-step",
                         "steps.exercise-step",
-                        "steps.feedback-step",
-                        "steps.video-step"
+                        "steps.video-step",
+                        "steps.question-step"
                       ]
                     },
                     "id": {
@@ -10964,22 +9997,22 @@
                     },
                     "type": {
                       "type": "string",
-                      "default": "feedback",
+                      "default": "video",
                       "enum": [
                         "video",
-                        "quiz",
                         "exercise",
                         "slide",
-                        "feedback"
+                        "question"
                       ]
                     },
                     "duration": {
                       "type": "integer",
                       "default": 5
                     },
-                    "feedback": {
+                    "video": {
                       "required": [
-                        "id"
+                        "id",
+                        "item"
                       ],
                       "properties": {
                         "id": {
@@ -10988,8 +10021,8 @@
                         "name": {
                           "type": "string"
                         },
-                        "items": {
-                          "type": "dynamiczone"
+                        "item": {
+                          "type": "string"
                         },
                         "pets_completed": {
                           "type": "array",
@@ -11019,11 +10052,10 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "steps.quiz-step",
                         "steps.slide-step",
                         "steps.exercise-step",
-                        "steps.feedback-step",
-                        "steps.video-step"
+                        "steps.video-step",
+                        "steps.question-step"
                       ]
                     },
                     "id": {
@@ -11037,23 +10069,21 @@
                     },
                     "type": {
                       "type": "string",
-                      "default": "video",
+                      "default": "question",
                       "enum": [
                         "video",
-                        "quiz",
                         "exercise",
                         "slide",
-                        "feedback"
+                        "question"
                       ]
                     },
                     "duration": {
-                      "type": "integer",
-                      "default": 5
+                      "type": "integer"
                     },
-                    "video": {
+                    "question": {
                       "required": [
                         "id",
-                        "item"
+                        "name"
                       ],
                       "properties": {
                         "id": {
@@ -11062,8 +10092,8 @@
                         "name": {
                           "type": "string"
                         },
-                        "item": {
-                          "type": "string"
+                        "items": {
+                          "type": "dynamiczone"
                         },
                         "pets_completed": {
                           "type": "array",
@@ -11546,9 +10576,10 @@
           }
         }
       },
-      "Quiz": {
+      "Question": {
         "required": [
-          "id"
+          "id",
+          "name"
         ],
         "properties": {
           "id": {
@@ -11566,45 +10597,8 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "utils.quiz-item",
-                        "utils.option-warning"
-                      ]
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "selection": {
-                      "type": "string",
-                      "default": "single",
-                      "enum": [
-                        "single",
-                        "multiple"
-                      ]
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "options": {
-                      "type": "object"
-                    }
-                  },
-                  "required": [
-                    "id",
-                    "selection",
-                    "description",
-                    "options"
-                  ]
-                },
-                {
-                  "properties": {
-                    "__component": {
-                      "type": "string",
-                      "enum": [
-                        "utils.quiz-item",
-                        "utils.option-warning"
+                        "utils.option-warning",
+                        "utils.quiz-item"
                       ]
                     },
                     "id": {
@@ -11640,8 +10634,126 @@
                     "index",
                     "condition"
                   ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "utils.option-warning",
+                        "utils.quiz-item"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "selection": {
+                      "type": "string",
+                      "default": "single",
+                      "enum": [
+                        "single",
+                        "multiple"
+                      ]
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "options": {
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "selection",
+                    "description",
+                    "options"
+                  ]
                 }
               ]
+            }
+          },
+          "pets_completed": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "breed",
+                "is_main",
+                "image",
+                "is_adopted",
+                "is_neutered",
+                "is_deficiency"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "breed": {
+                  "type": "string"
+                },
+                "is_main": {
+                  "type": "boolean"
+                },
+                "user": {
+                  "type": "string"
+                },
+                "image": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "canine"
+                  ]
+                },
+                "gender": {
+                  "type": "string",
+                  "enum": [
+                    "male",
+                    "female"
+                  ]
+                },
+                "is_adopted": {
+                  "type": "boolean"
+                },
+                "is_neutered": {
+                  "type": "boolean"
+                },
+                "is_deficiency": {
+                  "type": "boolean"
+                },
+                "ownership_time": {
+                  "type": "string"
+                },
+                "age": {
+                  "type": "string",
+                  "enum": [
+                    "SIX_MONTS",
+                    "EIGHTEEN_MONTS",
+                    "ADULT",
+                    "SENIOR"
+                  ]
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
             }
           },
           "published_at": {
@@ -11650,7 +10762,10 @@
           }
         }
       },
-      "NewQuiz": {
+      "NewQuestion": {
+        "required": [
+          "name"
+        ],
         "properties": {
           "name": {
             "type": "string"
@@ -11664,45 +10779,8 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "utils.quiz-item",
-                        "utils.option-warning"
-                      ]
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "selection": {
-                      "type": "string",
-                      "default": "single",
-                      "enum": [
-                        "single",
-                        "multiple"
-                      ]
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "options": {
-                      "type": "object"
-                    }
-                  },
-                  "required": [
-                    "id",
-                    "selection",
-                    "description",
-                    "options"
-                  ]
-                },
-                {
-                  "properties": {
-                    "__component": {
-                      "type": "string",
-                      "enum": [
-                        "utils.quiz-item",
-                        "utils.option-warning"
+                        "utils.option-warning",
+                        "utils.quiz-item"
                       ]
                     },
                     "id": {
@@ -11737,6 +10815,43 @@
                     "description",
                     "index",
                     "condition"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "utils.option-warning",
+                        "utils.quiz-item"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "selection": {
+                      "type": "string",
+                      "default": "single",
+                      "enum": [
+                        "single",
+                        "multiple"
+                      ]
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "options": {
+                      "type": "object"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "selection",
+                    "description",
+                    "options"
                   ]
                 }
               ]
@@ -11772,6 +10887,9 @@
           "name": {
             "type": "string"
           },
+          "goals": {
+            "type": "string"
+          },
           "items": {
             "type": "array",
             "items": {
@@ -11782,9 +10900,8 @@
                       "type": "string",
                       "enum": [
                         "steps.video-step",
-                        "steps.feedback-step",
                         "steps.slide-step",
-                        "steps.quiz-step"
+                        "steps.question-step"
                       ]
                     },
                     "id": {
@@ -11801,10 +10918,9 @@
                       "default": "video",
                       "enum": [
                         "video",
-                        "quiz",
                         "exercise",
                         "slide",
-                        "feedback"
+                        "question"
                       ]
                     },
                     "duration": {
@@ -11855,81 +10971,8 @@
                       "type": "string",
                       "enum": [
                         "steps.video-step",
-                        "steps.feedback-step",
                         "steps.slide-step",
-                        "steps.quiz-step"
-                      ]
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "type": {
-                      "type": "string",
-                      "default": "feedback",
-                      "enum": [
-                        "video",
-                        "quiz",
-                        "exercise",
-                        "slide",
-                        "feedback"
-                      ]
-                    },
-                    "duration": {
-                      "type": "integer",
-                      "default": 5
-                    },
-                    "feedback": {
-                      "required": [
-                        "id"
-                      ],
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "name": {
-                          "type": "string"
-                        },
-                        "items": {
-                          "type": "dynamiczone"
-                        },
-                        "pets_completed": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        },
-                        "published_at": {
-                          "type": "string"
-                        },
-                        "created_by": {
-                          "type": "string"
-                        },
-                        "updated_by": {
-                          "type": "string"
-                        }
-                      }
-                    }
-                  },
-                  "required": [
-                    "id",
-                    "title"
-                  ]
-                },
-                {
-                  "properties": {
-                    "__component": {
-                      "type": "string",
-                      "enum": [
-                        "steps.video-step",
-                        "steps.feedback-step",
-                        "steps.slide-step",
-                        "steps.quiz-step"
+                        "steps.question-step"
                       ]
                     },
                     "id": {
@@ -11946,17 +10989,16 @@
                       "default": "slide",
                       "enum": [
                         "video",
-                        "quiz",
                         "exercise",
                         "slide",
-                        "feedback"
+                        "question"
                       ]
                     },
                     "duration": {
                       "type": "integer",
                       "default": 5
                     },
-                    "slides": {
+                    "slide": {
                       "required": [
                         "id",
                         "name"
@@ -12000,9 +11042,8 @@
                       "type": "string",
                       "enum": [
                         "steps.video-step",
-                        "steps.feedback-step",
                         "steps.slide-step",
-                        "steps.quiz-step"
+                        "steps.question-step"
                       ]
                     },
                     "id": {
@@ -12016,22 +11057,21 @@
                     },
                     "type": {
                       "type": "string",
-                      "default": "quiz",
+                      "default": "question",
                       "enum": [
                         "video",
-                        "quiz",
                         "exercise",
                         "slide",
-                        "feedback"
+                        "question"
                       ]
                     },
                     "duration": {
-                      "type": "integer",
-                      "default": 5
+                      "type": "integer"
                     },
-                    "quizzes": {
+                    "question": {
                       "required": [
-                        "id"
+                        "id",
+                        "name"
                       ],
                       "properties": {
                         "id": {
@@ -12083,6 +11123,9 @@
           "name": {
             "type": "string"
           },
+          "goals": {
+            "type": "string"
+          },
           "items": {
             "type": "array",
             "items": {
@@ -12093,9 +11136,8 @@
                       "type": "string",
                       "enum": [
                         "steps.video-step",
-                        "steps.feedback-step",
                         "steps.slide-step",
-                        "steps.quiz-step"
+                        "steps.question-step"
                       ]
                     },
                     "id": {
@@ -12112,10 +11154,9 @@
                       "default": "video",
                       "enum": [
                         "video",
-                        "quiz",
                         "exercise",
                         "slide",
-                        "feedback"
+                        "question"
                       ]
                     },
                     "duration": {
@@ -12166,81 +11207,8 @@
                       "type": "string",
                       "enum": [
                         "steps.video-step",
-                        "steps.feedback-step",
                         "steps.slide-step",
-                        "steps.quiz-step"
-                      ]
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "type": {
-                      "type": "string",
-                      "default": "feedback",
-                      "enum": [
-                        "video",
-                        "quiz",
-                        "exercise",
-                        "slide",
-                        "feedback"
-                      ]
-                    },
-                    "duration": {
-                      "type": "integer",
-                      "default": 5
-                    },
-                    "feedback": {
-                      "required": [
-                        "id"
-                      ],
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "name": {
-                          "type": "string"
-                        },
-                        "items": {
-                          "type": "dynamiczone"
-                        },
-                        "pets_completed": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        },
-                        "published_at": {
-                          "type": "string"
-                        },
-                        "created_by": {
-                          "type": "string"
-                        },
-                        "updated_by": {
-                          "type": "string"
-                        }
-                      }
-                    }
-                  },
-                  "required": [
-                    "id",
-                    "title"
-                  ]
-                },
-                {
-                  "properties": {
-                    "__component": {
-                      "type": "string",
-                      "enum": [
-                        "steps.video-step",
-                        "steps.feedback-step",
-                        "steps.slide-step",
-                        "steps.quiz-step"
+                        "steps.question-step"
                       ]
                     },
                     "id": {
@@ -12257,17 +11225,16 @@
                       "default": "slide",
                       "enum": [
                         "video",
-                        "quiz",
                         "exercise",
                         "slide",
-                        "feedback"
+                        "question"
                       ]
                     },
                     "duration": {
                       "type": "integer",
                       "default": 5
                     },
-                    "slides": {
+                    "slide": {
                       "required": [
                         "id",
                         "name"
@@ -12311,9 +11278,8 @@
                       "type": "string",
                       "enum": [
                         "steps.video-step",
-                        "steps.feedback-step",
                         "steps.slide-step",
-                        "steps.quiz-step"
+                        "steps.question-step"
                       ]
                     },
                     "id": {
@@ -12327,22 +11293,21 @@
                     },
                     "type": {
                       "type": "string",
-                      "default": "quiz",
+                      "default": "question",
                       "enum": [
                         "video",
-                        "quiz",
                         "exercise",
                         "slide",
-                        "feedback"
+                        "question"
                       ]
                     },
                     "duration": {
-                      "type": "integer",
-                      "default": 5
+                      "type": "integer"
                     },
-                    "quizzes": {
+                    "question": {
                       "required": [
-                        "id"
+                        "id",
+                        "name"
                       ],
                       "properties": {
                         "id": {
@@ -12807,10 +11772,9 @@
             "type": "string",
             "enum": [
               "video",
-              "quiz",
               "exercise",
               "slide",
-              "feedback"
+              "question"
             ]
           },
           "status": {
@@ -12848,10 +11812,9 @@
             "type": "string",
             "enum": [
               "video",
-              "quiz",
               "exercise",
               "slide",
-              "feedback"
+              "question"
             ]
           },
           "status": {
@@ -13932,16 +12895,13 @@
       "name": "Exercise"
     },
     {
-      "name": "Feedback"
-    },
-    {
       "name": "Module"
     },
     {
       "name": "Pet"
     },
     {
-      "name": "Quiz"
+      "name": "Question"
     },
     {
       "name": "Session"

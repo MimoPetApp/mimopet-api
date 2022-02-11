@@ -45,11 +45,10 @@
     "steps": {
       "type": "dynamiczone",
       "components": [
-        "steps.quiz-step",
         "steps.slide-step",
         "steps.exercise-step",
-        "steps.feedback-step",
-        "steps.video-step"
+        "steps.video-step",
+        "steps.question-step"
       ],
       "required": false
     },

@@ -13,11 +13,36 @@ module.exports = {
       let step = module.steps[i];    
       step.completed = false;
   
-      if (step.slides) step.completed = await strapi.config.functions['mixin'].getStepStatus("slide", step.slides.id, pet_selected_id);
-      else if (step.video) step.completed = await strapi.config.functions['mixin'].getStepStatus("video", step.video.id, pet_selected_id);
-      else if (step.quiz) step.completed = await strapi.config.functions['mixin'].getStepStatus("quiz", step.quiz.id, pet_selected_id);
-      else if (step.exercise) step.completed = await strapi.config.functions['mixin'].getStepStatus("exercise", step.exercise.id, pet_selected_id);
-      else if (step.feedback) step.completed = await strapi.config.functions['mixin'].getStepStatus("feedback", step.feedback.id, pet_selected_id);
+      if (step.slide)
+        step.completed = await strapi.config.functions['mixin'].getStepStatus(
+          "slide",
+          step.slide.id,
+          pet_selected_id
+        );
+      else if (step.video)
+        step.completed = await strapi.config.functions['mixin'].getStepStatus(
+          "video",
+          step.video.id,
+          pet_selected_id
+        );
+      else if (step.quiz)
+        step.completed = await strapi.config.functions['mixin'].getStepStatus(
+          "quiz",
+          step.quiz.id,
+          pet_selected_id
+        );
+      else if (step.exercise)
+        step.completed = await strapi.config.functions['mixin'].getStepStatus(
+          "exercise",
+          step.exercise.id,
+          pet_selected_id
+        );
+      else if (step.question)
+        step.completed = await strapi.config.functions['mixin'].getStepStatus(
+          "question",
+          step.question.id,
+          pet_selected_id
+        );
       module_completed = module_completed && step.completed;
     }
     module_payload.completed = module_completed;

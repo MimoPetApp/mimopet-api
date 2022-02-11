@@ -18,10 +18,9 @@
       "type": "enumeration",
       "enum": [
         "video",
-        "quiz",
         "exercise",
         "slide",
-        "feedback"
+        "question"
       ],
       "default": "slide"
     },
@@ -30,7 +29,7 @@
       "default": 5,
       "min": 0
     },
-    "slides": {
+    "slide": {
       "model": "slide"
     }
   }

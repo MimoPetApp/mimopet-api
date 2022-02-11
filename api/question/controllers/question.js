@@ -10,22 +10,22 @@ var getStepStatus = (pets_completed = [], pet_selected_id = 0) => {
   return pets_completed.filter(p => p.id === pet_selected_id).length !== 0;
 }
 
-module.exports = {
+module.exports = {  
   completeStep: async (ctx) => {
     const { id } = ctx.params;
-    const step = await strapi.query("quiz").findOne({ id });
+    const step = await strapi.query("question").findOne({ id });
     await strapi.config.functions['mixin'].updatePetTimeline(
       ctx.state.user.current_pet,
       {
         __component: 'utils.timeline-item',
         data: new Date(),
         label: step.name,
-        details: "quiz",
+        details: "question",
         type: "step",
         status: "done"
       }
     );
-    return await strapi.query("quiz")
+    return await strapi.query("question")
       .update(
         { id },
         {
@@ -38,13 +38,13 @@ module.exports = {
   },
   
   find: async (ctx) => {
-    let entities = await strapi.query("quiz").find();
+    let entities = await strapi.query("question").find();
 
     return entities.map(entity => {
       entity.completed = getStepStatus(entity.pets_completed, ctx.state.user.current_pet);
       delete entity.pets_completed;
       return sanitizeEntity(entity, {
-        model: strapi.models.quiz,
+        model: strapi.models.question,
       });
     });
   },
@@ -52,9 +52,9 @@ module.exports = {
   findOne: async (ctx) => {
     const { id } = ctx.params;
 
-    const entity = await strapi.query("quiz").findOne({ id });
+    const entity = await strapi.query("question").findOne({ id });
     entity.completed = getStepStatus(entity.pets_completed, ctx.state.user.current_pet);
     delete entity.pets_completed;
-    return sanitizeEntity(entity, { model: strapi.models.quiz });
+    return sanitizeEntity(entity, { model: strapi.models.question });
   }
 };
