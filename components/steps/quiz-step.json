@@ -1,7 +1,7 @@
 {
-  "collectionName": "components_steps_question_steps",
+  "collectionName": "components_steps_quiz_steps",
   "info": {
-    "name": "Question Step",
+    "name": "Quiz Step",
     "icon": "question",
     "description": ""
   },
@@ -18,18 +18,20 @@
       "type": "enumeration",
       "enum": [
         "video",
+        "quiz",
         "exercise",
         "slide",
-        "question"
+        "feedback"
       ],
-      "default": "question"
+      "default": "quiz"
     },
     "duration": {
       "type": "integer",
+      "default": 5,
       "min": 0
     },
-    "question": {
-      "model": "question"
+    "quizzes": {
+      "model": "quiz"
     }
   }
 }

@@ -2,56 +2,56 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/questions",
-      "handler": "question.find",
+      "path": "/feedbacks",
+      "handler": "feedback.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/questions/count",
-      "handler": "question.count",
+      "path": "/feedbacks/count",
+      "handler": "feedback.count",
       "config": {
         "policies": []
       }
     },
     {
       "method": "GET",
-      "path": "/questions/:id",
-      "handler": "question.findOne",
+      "path": "/feedbacks/:id",
+      "handler": "feedback.findOne",
       "config": {
         "policies": []
       }
     },
     {
       "method": "POST",
-      "path": "/questions",
-      "handler": "question.create",
+      "path": "/feedbacks",
+      "handler": "feedback.create",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/questions/:id",
-      "handler": "question.update",
+      "path": "/feedbacks/:id",
+      "handler": "feedback.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/questions/:id",
-      "handler": "question.delete",
+      "path": "/feedbacks/:id",
+      "handler": "feedback.delete",
       "config": {
         "policies": []
       }
-    },    
+    },
     {
       "method": "PUT",
-      "path": "/questions/:id/complete",
-      "handler": "question.completeStep",
+      "path": "/feedbacks/:id/complete",
+      "handler": "feedback.completeStep",
       "config": {
         "policies": []
       }

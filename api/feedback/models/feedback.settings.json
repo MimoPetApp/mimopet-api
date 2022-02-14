@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "sessions",
+  "collectionName": "feedbacks",
   "info": {
-    "name": "Session",
+    "name": "Feedback",
     "description": ""
   },
   "options": {
@@ -18,12 +18,13 @@
     "items": {
       "type": "dynamiczone",
       "components": [
-        "steps.video-step",
-        "steps.feedback-step",
-        "steps.slide-step",
-        "steps.quiz-step"
-      ],
-      "required": true
+        "utils.quiz-item",
+        "utils.option-warning"
+      ]
+    },
+    "pets_completed": {
+      "private": true,
+      "collection": "pet"
     }
   }
 }

@@ -1,8 +1,9 @@
 {
   "kind": "collectionType",
-  "collectionName": "questions",
+  "collectionName": "quizzes",
   "info": {
-    "name": "Question"
+    "name": "Quiz",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -12,17 +13,17 @@
   "pluginOptions": {},
   "attributes": {
     "name": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "items": {
       "type": "dynamiczone",
       "components": [
-        "utils.option-warning",
-        "utils.quiz-item"
+        "utils.quiz-item",
+        "utils.option-warning"
       ]
     },
     "pets_completed": {
+      "private": true,
       "collection": "pet"
     }
   }

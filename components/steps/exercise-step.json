@@ -18,9 +18,10 @@
       "type": "enumeration",
       "enum": [
         "video",
+        "quiz",
         "exercise",
         "slide",
-        "question"
+        "feedback"
       ],
       "default": "exercise"
     },
