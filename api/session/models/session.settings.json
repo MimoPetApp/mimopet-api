@@ -19,9 +19,8 @@
       "type": "dynamiczone",
       "components": [
         "steps.video-step",
-        "steps.feedback-step",
         "steps.slide-step",
-        "steps.quiz-step"
+        "steps.question-step"
       ],
       "required": true
     }

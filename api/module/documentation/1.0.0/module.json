@@ -688,84 +688,10 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "steps.quiz-step",
                         "steps.slide-step",
                         "steps.exercise-step",
-                        "steps.feedback-step",
-                        "steps.video-step"
-                      ]
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "type": {
-                      "type": "string",
-                      "default": "quiz",
-                      "enum": [
-                        "video",
-                        "quiz",
-                        "exercise",
-                        "slide",
-                        "feedback"
-                      ]
-                    },
-                    "duration": {
-                      "type": "integer",
-                      "default": 5
-                    },
-                    "quizzes": {
-                      "required": [
-                        "id"
-                      ],
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "name": {
-                          "type": "string"
-                        },
-                        "items": {
-                          "type": "dynamiczone"
-                        },
-                        "pets_completed": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        },
-                        "published_at": {
-                          "type": "string"
-                        },
-                        "created_by": {
-                          "type": "string"
-                        },
-                        "updated_by": {
-                          "type": "string"
-                        }
-                      }
-                    }
-                  },
-                  "required": [
-                    "id",
-                    "title"
-                  ]
-                },
-                {
-                  "properties": {
-                    "__component": {
-                      "type": "string",
-                      "enum": [
-                        "steps.quiz-step",
-                        "steps.slide-step",
-                        "steps.exercise-step",
-                        "steps.feedback-step",
-                        "steps.video-step"
+                        "steps.video-step",
+                        "steps.question-step"
                       ]
                     },
                     "id": {
@@ -782,10 +708,9 @@
                       "default": "slide",
                       "enum": [
                         "video",
-                        "quiz",
                         "exercise",
                         "slide",
-                        "feedback"
+                        "question"
                       ]
                     },
                     "duration": {
@@ -835,11 +760,10 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "steps.quiz-step",
                         "steps.slide-step",
                         "steps.exercise-step",
-                        "steps.feedback-step",
-                        "steps.video-step"
+                        "steps.video-step",
+                        "steps.question-step"
                       ]
                     },
                     "id": {
@@ -856,10 +780,9 @@
                       "default": "exercise",
                       "enum": [
                         "video",
-                        "quiz",
                         "exercise",
                         "slide",
-                        "feedback"
+                        "question"
                       ]
                     },
                     "duration": {
@@ -922,11 +845,10 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "steps.quiz-step",
                         "steps.slide-step",
                         "steps.exercise-step",
-                        "steps.feedback-step",
-                        "steps.video-step"
+                        "steps.video-step",
+                        "steps.question-step"
                       ]
                     },
                     "id": {
@@ -940,22 +862,22 @@
                     },
                     "type": {
                       "type": "string",
-                      "default": "feedback",
+                      "default": "video",
                       "enum": [
                         "video",
-                        "quiz",
                         "exercise",
                         "slide",
-                        "feedback"
+                        "question"
                       ]
                     },
                     "duration": {
                       "type": "integer",
                       "default": 5
                     },
-                    "feedback": {
+                    "video": {
                       "required": [
-                        "id"
+                        "id",
+                        "item"
                       ],
                       "properties": {
                         "id": {
@@ -964,8 +886,8 @@
                         "name": {
                           "type": "string"
                         },
-                        "items": {
-                          "type": "dynamiczone"
+                        "item": {
+                          "type": "string"
                         },
                         "pets_completed": {
                           "type": "array",
@@ -995,11 +917,10 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "steps.quiz-step",
                         "steps.slide-step",
                         "steps.exercise-step",
-                        "steps.feedback-step",
-                        "steps.video-step"
+                        "steps.video-step",
+                        "steps.question-step"
                       ]
                     },
                     "id": {
@@ -1013,23 +934,21 @@
                     },
                     "type": {
                       "type": "string",
-                      "default": "video",
+                      "default": "question",
                       "enum": [
                         "video",
-                        "quiz",
                         "exercise",
                         "slide",
-                        "feedback"
+                        "question"
                       ]
                     },
                     "duration": {
-                      "type": "integer",
-                      "default": 5
+                      "type": "integer"
                     },
-                    "video": {
+                    "question": {
                       "required": [
                         "id",
-                        "item"
+                        "name"
                       ],
                       "properties": {
                         "id": {
@@ -1038,8 +957,8 @@
                         "name": {
                           "type": "string"
                         },
-                        "item": {
-                          "type": "string"
+                        "items": {
+                          "type": "dynamiczone"
                         },
                         "pets_completed": {
                           "type": "array",
@@ -1174,84 +1093,10 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "steps.quiz-step",
                         "steps.slide-step",
                         "steps.exercise-step",
-                        "steps.feedback-step",
-                        "steps.video-step"
-                      ]
-                    },
-                    "id": {
-                      "type": "string"
-                    },
-                    "title": {
-                      "type": "string"
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "type": {
-                      "type": "string",
-                      "default": "quiz",
-                      "enum": [
-                        "video",
-                        "quiz",
-                        "exercise",
-                        "slide",
-                        "feedback"
-                      ]
-                    },
-                    "duration": {
-                      "type": "integer",
-                      "default": 5
-                    },
-                    "quizzes": {
-                      "required": [
-                        "id"
-                      ],
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "name": {
-                          "type": "string"
-                        },
-                        "items": {
-                          "type": "dynamiczone"
-                        },
-                        "pets_completed": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        },
-                        "published_at": {
-                          "type": "string"
-                        },
-                        "created_by": {
-                          "type": "string"
-                        },
-                        "updated_by": {
-                          "type": "string"
-                        }
-                      }
-                    }
-                  },
-                  "required": [
-                    "id",
-                    "title"
-                  ]
-                },
-                {
-                  "properties": {
-                    "__component": {
-                      "type": "string",
-                      "enum": [
-                        "steps.quiz-step",
-                        "steps.slide-step",
-                        "steps.exercise-step",
-                        "steps.feedback-step",
-                        "steps.video-step"
+                        "steps.video-step",
+                        "steps.question-step"
                       ]
                     },
                     "id": {
@@ -1268,10 +1113,9 @@
                       "default": "slide",
                       "enum": [
                         "video",
-                        "quiz",
                         "exercise",
                         "slide",
-                        "feedback"
+                        "question"
                       ]
                     },
                     "duration": {
@@ -1321,11 +1165,10 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "steps.quiz-step",
                         "steps.slide-step",
                         "steps.exercise-step",
-                        "steps.feedback-step",
-                        "steps.video-step"
+                        "steps.video-step",
+                        "steps.question-step"
                       ]
                     },
                     "id": {
@@ -1342,10 +1185,9 @@
                       "default": "exercise",
                       "enum": [
                         "video",
-                        "quiz",
                         "exercise",
                         "slide",
-                        "feedback"
+                        "question"
                       ]
                     },
                     "duration": {
@@ -1408,11 +1250,10 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "steps.quiz-step",
                         "steps.slide-step",
                         "steps.exercise-step",
-                        "steps.feedback-step",
-                        "steps.video-step"
+                        "steps.video-step",
+                        "steps.question-step"
                       ]
                     },
                     "id": {
@@ -1426,22 +1267,22 @@
                     },
                     "type": {
                       "type": "string",
-                      "default": "feedback",
+                      "default": "video",
                       "enum": [
                         "video",
-                        "quiz",
                         "exercise",
                         "slide",
-                        "feedback"
+                        "question"
                       ]
                     },
                     "duration": {
                       "type": "integer",
                       "default": 5
                     },
-                    "feedback": {
+                    "video": {
                       "required": [
-                        "id"
+                        "id",
+                        "item"
                       ],
                       "properties": {
                         "id": {
@@ -1450,8 +1291,8 @@
                         "name": {
                           "type": "string"
                         },
-                        "items": {
-                          "type": "dynamiczone"
+                        "item": {
+                          "type": "string"
                         },
                         "pets_completed": {
                           "type": "array",
@@ -1481,11 +1322,10 @@
                     "__component": {
                       "type": "string",
                       "enum": [
-                        "steps.quiz-step",
                         "steps.slide-step",
                         "steps.exercise-step",
-                        "steps.feedback-step",
-                        "steps.video-step"
+                        "steps.video-step",
+                        "steps.question-step"
                       ]
                     },
                     "id": {
@@ -1499,23 +1339,21 @@
                     },
                     "type": {
                       "type": "string",
-                      "default": "video",
+                      "default": "question",
                       "enum": [
                         "video",
-                        "quiz",
                         "exercise",
                         "slide",
-                        "feedback"
+                        "question"
                       ]
                     },
                     "duration": {
-                      "type": "integer",
-                      "default": 5
+                      "type": "integer"
                     },
-                    "video": {
+                    "question": {
                       "required": [
                         "id",
-                        "item"
+                        "name"
                       ],
                       "properties": {
                         "id": {
@@ -1524,8 +1362,8 @@
                         "name": {
                           "type": "string"
                         },
-                        "item": {
-                          "type": "string"
+                        "items": {
+                          "type": "dynamiczone"
                         },
                         "pets_completed": {
                           "type": "array",

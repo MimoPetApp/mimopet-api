@@ -4,6 +4,7 @@
  * Read the documentation (https://strapi.io/documentation/developer-docs/latest/development/backend-customization.html#core-controllers)
  * to customize this controller
  */
+
 const { sanitizeEntity } = require('strapi-utils');
 
 var getStepStatus = (pets_completed = [], pet_selected_id = 0) => {
@@ -13,38 +14,38 @@ var getStepStatus = (pets_completed = [], pet_selected_id = 0) => {
 module.exports = {
   completeStep: async (ctx) => {
     const { id } = ctx.params;
-    const step = await strapi.query("quiz").findOne({ id });
+    const step = await strapi.query("question").findOne({ id });
     await strapi.config.functions['mixin'].updatePetTimeline(
       ctx.state.user.current_pet,
       {
         __component: 'utils.timeline-item',
         data: new Date(),
         label: step.name,
-        details: "quiz",
+        details: "question",
         type: "step",
         status: "done"
       }
     );
-    return await strapi.query("quiz")
-      .update(
-        { id },
-        {
-          pets_completed: [
-            ...step.pets_completed,
-            ctx.state.user.current_pet
-          ]
-        }
+    return await strapi.query("question")
+     .update(
+       { id },
+       {
+        pets_completed: [
+          ...step.pets_completed,
+          ctx.state.user.current_pet
+        ]
+       }
       );
   },
   
   find: async (ctx) => {
-    let entities = await strapi.query("quiz").find();
+    let entities = await strapi.query("question").find();
 
     return entities.map(entity => {
       entity.completed = getStepStatus(entity.pets_completed, ctx.state.user.current_pet);
       delete entity.pets_completed;
       return sanitizeEntity(entity, {
-        model: strapi.models.quiz,
+        model: strapi.models.question,
       });
     });
   },
@@ -52,9 +53,9 @@ module.exports = {
   findOne: async (ctx) => {
     const { id } = ctx.params;
 
-    const entity = await strapi.query("quiz").findOne({ id });
+    const entity = await strapi.query("question").findOne({ id });
     entity.completed = getStepStatus(entity.pets_completed, ctx.state.user.current_pet);
     delete entity.pets_completed;
-    return sanitizeEntity(entity, { model: strapi.models.quiz });
+    return sanitizeEntity(entity, { model: strapi.models.question });
   }
 };

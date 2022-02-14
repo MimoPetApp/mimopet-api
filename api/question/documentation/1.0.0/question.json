@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/quizzes": {
+    "/questions": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Quiz"
+                    "$ref": "#/components/schemas/Question"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Quiz"
+          "Question"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Quiz"
+                  "$ref": "#/components/schemas/Question"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Quiz"
+          "Question"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewQuiz"
+                "$ref": "#/components/schemas/NewQuestion"
               }
             }
           }
         }
       }
     },
-    "/quizzes/count": {
+    "/questions/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Quiz"
+          "Question"
         ],
         "parameters": []
       }
     },
-    "/quizzes/{id}": {
+    "/questions/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Quiz"
+                  "$ref": "#/components/schemas/Question"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Quiz"
+          "Question"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Quiz"
+                  "$ref": "#/components/schemas/Question"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Quiz"
+          "Question"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewQuiz"
+                "$ref": "#/components/schemas/NewQuestion"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Quiz"
+          "Question"
         ],
         "parameters": [
           {
@@ -511,7 +511,7 @@
         ]
       }
     },
-    "/quizzes/{id}/complete": {
+    "/questions/{id}/complete": {
       "put": {
         "deprecated": false,
         "description": "Update a record",
@@ -563,7 +563,7 @@
         },
         "summary": "",
         "tags": [
-          "Quiz"
+          "Question"
         ],
         "requestBody": {
           "description": "",
@@ -597,9 +597,10 @@
   },
   "components": {
     "schemas": {
-      "Quiz": {
+      "Question": {
         "required": [
-          "id"
+          "id",
+          "name"
         ],
         "properties": {
           "id": {
@@ -695,13 +696,97 @@
               ]
             }
           },
+          "pets_completed": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "breed",
+                "is_main",
+                "image",
+                "is_adopted",
+                "is_neutered",
+                "is_deficiency"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "breed": {
+                  "type": "string"
+                },
+                "is_main": {
+                  "type": "boolean"
+                },
+                "user": {
+                  "type": "string"
+                },
+                "image": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "canine"
+                  ]
+                },
+                "gender": {
+                  "type": "string",
+                  "enum": [
+                    "male",
+                    "female"
+                  ]
+                },
+                "is_adopted": {
+                  "type": "boolean"
+                },
+                "is_neutered": {
+                  "type": "boolean"
+                },
+                "is_deficiency": {
+                  "type": "boolean"
+                },
+                "ownership_time": {
+                  "type": "string"
+                },
+                "age": {
+                  "type": "string",
+                  "enum": [
+                    "SIX_MONTS",
+                    "EIGHTEEN_MONTS",
+                    "ADULT",
+                    "SENIOR"
+                  ]
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
           }
         }
       },
-      "NewQuiz": {
+      "NewQuestion": {
+        "required": [
+          "name"
+        ],
         "properties": {
           "name": {
             "type": "string"
@@ -815,7 +900,7 @@
   },
   "tags": [
     {
-      "name": "Quiz"
+      "name": "Question"
     }
   ]
 }
