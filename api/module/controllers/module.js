@@ -13,15 +13,15 @@ module.exports = {
     
     for (let i = 0; i < entities.length; i++) {
       let entity = entities[i];
-      entity = await strapi.config.functions['mixin'].setModuleCompleted(entity, ctx.state.user.current_pet);
-      if (i != 0 && !ctx.state.user.is_premium) {
-        entity = await strapi.config.functions['mixin'].setModuleLocked(
-          entity,
-          !entities[i - 1].completed
-        );
-      } else {
-        entity = await strapi.config.functions['mixin'].setModuleLocked(entity, false);
-      }
+      entity = await strapi.config.functions['mixin'].setModuleCompleted(
+        entity,
+        ctx.state.user
+      );
+      entity.locked = await strapi.config.functions['mixin'].getLocked(
+        entities,
+        i,
+        ctx.state.user.is_premium
+      );
       delete entity.trainings;
       entity = sanitizeEntity(entity, { model: strapi.models.module });
     }
@@ -32,7 +32,10 @@ module.exports = {
   findOne: async (ctx) => {
     const { id } = ctx.params;
     let entity = await strapi.query("module").findOne({ id });
-    entity = await strapi.config.functions['mixin'].setModuleCompleted(entity, ctx.state.user.current_pet);
+    entity = await strapi.config.functions['mixin'].setModuleCompleted(
+      entity,
+      ctx.state.user
+    );
     delete entity.trainings;
     return sanitizeEntity(entity, { model: strapi.models.module });
   }

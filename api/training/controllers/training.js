@@ -11,7 +11,10 @@ module.exports = {
     const entities = await strapi.query("training").find({ users: ctx.state.user.id });    
     for (let i = 0; i < entities.length; i++) {
       let entity = entities[i];
-      entity = await strapi.config.functions['mixin'].getTrainingStatus(entity, ctx.state.user.current_pet);
+      entity = await strapi.config.functions['mixin'].getTrainingStatus(
+        entity,
+        ctx.state.user
+      );
       delete entity.users;
       entity = sanitizeEntity(entity, { model: strapi.models.training });
     }
