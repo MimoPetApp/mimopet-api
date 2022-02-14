@@ -30,7 +30,7 @@
       "default": 5,
       "min": 0
     },
-    "slides": {
+    "slide": {
       "model": "slide"
     }
   }

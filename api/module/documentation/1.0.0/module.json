@@ -792,7 +792,7 @@
                       "type": "integer",
                       "default": 5
                     },
-                    "slides": {
+                    "slide": {
                       "required": [
                         "id",
                         "name"
@@ -1278,7 +1278,7 @@
                       "type": "integer",
                       "default": 5
                     },
-                    "slides": {
+                    "slide": {
                       "required": [
                         "id",
                         "name"
