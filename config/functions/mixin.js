@@ -2,9 +2,9 @@
 
 
 module.exports = {
-  getStepStatus: async (model = "slide", step_id = 0, pet_selected_id = 0) => {
+  getStepStatus: async (model = "slide", step_id = 0, current_pet = 0) => {
     const stepDetails = await strapi.query(model).findOne({ id: step_id });
-    return stepDetails.pets_completed.filter(p => p.id === pet_selected_id).length !== 0;
+    return stepDetails.pets_completed.filter(p => p.id === current_pet).length !== 0;
   },
   setModuleCompleted: async (module, user) => {
     var module_completed = true;
@@ -17,28 +17,28 @@ module.exports = {
         step.completed = await strapi.config.functions['mixin'].getStepStatus(
           "slide",
           step.slide.id,
-          user.pet_selected_id
+          user.current_pet
         );
       }
       else if (step.video) {
         step.completed = await strapi.config.functions['mixin'].getStepStatus(
           "video",
           step.video.id,
-          user.pet_selected_id
+          user.current_pet
         );
       }
       else if (step.exercise) {
         step.completed = await strapi.config.functions['mixin'].getStepStatus(
           "exercise",
           step.exercise.id,
-          user.pet_selected_id
+          user.current_pet
         );
       }
       else if (step.question) {
         step.completed = await strapi.config.functions['mixin'].getStepStatus(
           "question",
           step.question.id,
-          user.pet_selected_id
+          user.current_pet
         );
       }
       // Calculo step é bloqueado
