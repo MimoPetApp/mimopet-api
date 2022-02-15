@@ -51,16 +51,14 @@
       "required": true,
       "pluginOptions": {}
     },
-    "users": {
-      "via": "trainings",
-      "plugin": "users-permissions",
-      "private": true,
-      "collection": "user",
-      "dominant": true
-    },
     "modules": {
       "via": "trainings",
       "collection": "module",
+      "dominant": true
+    },
+    "pets_completed": {
+      "collection": "pet",
+      "via": "trainings_completed",
       "dominant": true
     }
   }

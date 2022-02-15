@@ -89,10 +89,6 @@
     "birthday": {
       "type": "integer"
     },
-    "trainings": {
-      "via": "users",
-      "collection": "training"
-    },
     "current_pet": {
       "model": "pet"
     }

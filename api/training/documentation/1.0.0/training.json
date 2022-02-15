@@ -896,6 +896,93 @@
               }
             }
           },
+          "pets_completed": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "breed",
+                "is_main",
+                "image",
+                "is_adopted",
+                "is_neutered",
+                "is_deficiency"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "breed": {
+                  "type": "string"
+                },
+                "is_main": {
+                  "type": "boolean"
+                },
+                "user": {
+                  "type": "string"
+                },
+                "image": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "canine"
+                  ]
+                },
+                "gender": {
+                  "type": "string",
+                  "enum": [
+                    "male",
+                    "female"
+                  ]
+                },
+                "is_adopted": {
+                  "type": "boolean"
+                },
+                "is_neutered": {
+                  "type": "boolean"
+                },
+                "is_deficiency": {
+                  "type": "boolean"
+                },
+                "ownership_time": {
+                  "type": "string"
+                },
+                "age": {
+                  "type": "string",
+                  "enum": [
+                    "SIX_MONTS",
+                    "EIGHTEEN_MONTS",
+                    "ADULT",
+                    "SENIOR"
+                  ]
+                },
+                "trainings_completed": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -936,13 +1023,13 @@
               "premium"
             ]
           },
-          "users": {
+          "modules": {
             "type": "array",
             "items": {
               "type": "string"
             }
           },
-          "modules": {
+          "pets_completed": {
             "type": "array",
             "items": {
               "type": "string"

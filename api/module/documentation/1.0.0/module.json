@@ -1029,13 +1029,13 @@
                 "thumbnail": {
                   "type": "string"
                 },
-                "users": {
+                "modules": {
                   "type": "array",
                   "items": {
                     "type": "string"
                   }
                 },
-                "modules": {
+                "pets_completed": {
                   "type": "array",
                   "items": {
                     "type": "string"

@@ -8,45 +8,57 @@ const { sanitizeEntity } = require('strapi-utils');
 
 module.exports = {
   indexByUser: async (ctx) => {
-    const entities = await strapi.query("training").find({ users: ctx.state.user.id });    
+    const entities = await strapi.query("training").find({
+      pets_completed: ctx.state.user.current_pet
+    });    
     for (let i = 0; i < entities.length; i++) {
       let entity = entities[i];
       entity = await strapi.config.functions['mixin'].getTrainingStatus(
         entity,
         ctx.state.user
       );
-      delete entity.users;
+      delete entity.pets_completed;
       entity = sanitizeEntity(entity, { model: strapi.models.training });
     }
     return entities;
   },
   subscribe: async (ctx) => {
     const { id } = ctx.params;
-    let train = await strapi.query("training").findOne({ id });    
-    let subscribes = train.users || [];
-    subscribes.push(ctx.state.user);
-    return await strapi.query("training").update({ id }, { users: subscribes });
+    let entity = await strapi.query("training").findOne({ id });
+    return await strapi.query("training")
+      .update(
+        { id },
+        { 
+          pets_completed: [
+            ...entity.pets_completed,
+            ctx.state.user.current_pet
+          ]
+        }
+      );
   },
   unsubscribe: async (ctx) => {
     const { id } = ctx.params;
-    let train = await strapi.query("training").findOne({ id });
-    let subscribes = train.users.filter(
-      u => { return u.id != ctx.state.user.id; }
+    let entity = await strapi.query("training").findOne({ id });
+    let subscribes = entity.pets_completed.filter(
+      p => { return p.id != ctx.state.user.current_pet; }
     );
-    return await strapi.query("training").update({ id }, { users: subscribes });
+    return await strapi.query("training").update(
+      { id },
+      { pets_completed: subscribes }
+    );
   },
   find: async (ctx) => {
     var trainings = await strapi.query("training").find();
     trainings = trainings.filter(
       train => {
-        return train.users.filter(
-          u => u.id === ctx.state.user.id
+        return train.pets_completed.filter(
+          u => u.id === ctx.state.user.current_pet
         ).length === 0
       }
     );
     return trainings.map(
       train => {
-        delete train.users;
+        delete train.pets_completed;
         delete train.modules;
         return sanitizeEntity(train, { model: strapi.models.training });
       }

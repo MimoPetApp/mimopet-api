@@ -1332,6 +1332,12 @@
                     "SENIOR"
                   ]
                 },
+                "trainings_completed": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
                 "published_at": {
                   "type": "string"
                 },
@@ -1417,73 +1423,6 @@
           "birthday": {
             "type": "integer"
           },
-          "trainings": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "title",
-                "description",
-                "author",
-                "published",
-                "rating",
-                "category",
-                "thumbnail"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "author": {
-                  "type": "string"
-                },
-                "published": {
-                  "type": "string"
-                },
-                "rating": {
-                  "type": "number"
-                },
-                "category": {
-                  "type": "string",
-                  "enum": [
-                    "adults",
-                    "puppy",
-                    "premium"
-                  ]
-                },
-                "thumbnail": {
-                  "type": "string"
-                },
-                "users": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "modules": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "current_pet": {
             "required": [
               "id",
@@ -1550,6 +1489,12 @@
                   "ADULT",
                   "SENIOR"
                 ]
+              },
+              "trainings_completed": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "published_at": {
                 "type": "string"
@@ -1623,12 +1568,6 @@
           },
           "birthday": {
             "type": "integer"
-          },
-          "trainings": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "current_pet": {
             "type": "string"

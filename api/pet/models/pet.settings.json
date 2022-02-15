@@ -82,6 +82,10 @@
         "ADULT",
         "SENIOR"
       ]
+    },
+    "trainings_completed": {
+      "via": "pets_completed",
+      "collection": "training"
     }
   }
 }

@@ -603,12 +603,6 @@
                 "birthday": {
                   "type": "integer"
                 },
-                "trainings": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
                 "current_pet": {
                   "type": "string"
                 },
