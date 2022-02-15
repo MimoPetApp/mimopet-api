@@ -5,7 +5,7 @@
       "path": "/exercises",
       "handler": "exercise.find",
       "config": {
-        "policies": []
+        "policies": ["global::is-pet-owner"]
       }
     },
     {
@@ -21,7 +21,7 @@
       "path": "/exercises/:id",
       "handler": "exercise.findOne",
       "config": {
-        "policies": []
+        "policies": ["global::is-pet-owner"]
       }
     },
     {
@@ -53,7 +53,7 @@
       "path": "/exercises/:id/complete",
       "handler": "exercise.completeStep",
       "config": {
-        "policies": []
+        "policies": ["global::is-pet-owner"]
       }
     }
   ]

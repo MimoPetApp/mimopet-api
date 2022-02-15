@@ -5,7 +5,7 @@
       "path": "/trainings",
       "handler": "training.find",
       "config": {
-        "policies": []
+        "policies": ["global::is-pet-owner"]
       }
     },
     {
@@ -53,7 +53,7 @@
       "path": "/trainings/index/my",
       "handler": "training.indexByUser",
       "config": {
-        "policies": []
+        "policies": ["global::is-pet-owner"]
       }
     },
     {
@@ -61,7 +61,7 @@
       "path": "/trainings/:id/subscribe",
       "handler": "training.subscribe",
       "config": {
-        "policies": []
+        "policies": ["global::is-pet-owner"]
       }
     },
     {
@@ -69,7 +69,7 @@
       "path": "/trainings/:id/unsubscribe",
       "handler": "training.unsubscribe",
       "config": {
-        "policies": []
+        "policies": ["global::is-pet-owner"]
       }
     }
   ]

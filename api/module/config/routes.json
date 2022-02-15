@@ -21,7 +21,7 @@
       "path": "/modules/:id",
       "handler": "module.findOne",
       "config": {
-        "policies": []
+        "policies": ["global::is-pet-owner"]
       }
     },
     {
@@ -29,7 +29,7 @@
       "path": "/trainings/:id/modules",
       "handler": "module.indexByTraining",
       "config": {
-        "policies": []
+        "policies": ["global::is-pet-owner"]
       }
     },
     {

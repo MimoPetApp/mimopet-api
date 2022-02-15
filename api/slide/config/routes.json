@@ -5,7 +5,7 @@
       "path": "/slides",
       "handler": "slide.find",
       "config": {
-        "policies": []
+        "policies": ["global::is-pet-owner"]
       }
     },
     {
@@ -21,7 +21,7 @@
       "path": "/slides/:id",
       "handler": "slide.findOne",
       "config": {
-        "policies": []
+        "policies": ["global::is-pet-owner"]
       }
     },
     {
@@ -53,7 +53,7 @@
       "path": "/slides/:id/complete",
       "handler": "slide.completeStep",
       "config": {
-        "policies": []
+        "policies": ["global::is-pet-owner"]
       }
     }
   ]

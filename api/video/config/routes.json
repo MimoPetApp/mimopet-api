@@ -5,7 +5,7 @@
       "path": "/videos",
       "handler": "video.find",
       "config": {
-        "policies": []
+        "policies": ["global::is-pet-owner"]
       }
     },
     {
@@ -21,7 +21,7 @@
       "path": "/videos/:id",
       "handler": "video.findOne",
       "config": {
-        "policies": []
+        "policies": ["global::is-pet-owner"]
       }
     },
     {
@@ -53,7 +53,7 @@
       "path": "/videos/:id/complete",
       "handler": "video.completeStep",
       "config": {
-        "policies": []
+        "policies": ["global::is-pet-owner"]
       }
     }
   ]

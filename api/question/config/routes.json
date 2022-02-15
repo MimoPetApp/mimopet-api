@@ -5,7 +5,7 @@
       "path": "/questions",
       "handler": "question.find",
       "config": {
-        "policies": []
+        "policies": ["global::is-pet-owner"]
       }
     },
     {
@@ -21,7 +21,7 @@
       "path": "/questions/:id",
       "handler": "question.findOne",
       "config": {
-        "policies": []
+        "policies": ["global::is-pet-owner"]
       }
     },
     {
@@ -53,7 +53,7 @@
       "path": "/questions/:id/complete",
       "handler": "question.completeStep",
       "config": {
-        "policies": []
+        "policies": ["global::is-pet-owner"]
       }
     }
   ]
