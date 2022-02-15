@@ -823,6 +823,9 @@
                             "type": "string"
                           }
                         },
+                        "goal": {
+                          "type": "string"
+                        },
                         "published_at": {
                           "type": "string"
                         },
@@ -1227,6 +1230,9 @@
                           "items": {
                             "type": "string"
                           }
+                        },
+                        "goal": {
+                          "type": "string"
                         },
                         "published_at": {
                           "type": "string"

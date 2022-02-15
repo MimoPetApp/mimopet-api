@@ -33,6 +33,9 @@
     },
     "sessions": {
       "collection": "session"
+    },
+    "goal": {
+      "type": "text"
     }
   }
 }
