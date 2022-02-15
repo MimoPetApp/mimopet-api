@@ -29,6 +29,7 @@
       "type": "enumeration",
       "enum": [
         "step",
+        "session",
         "other"
       ],
       "default": "other",

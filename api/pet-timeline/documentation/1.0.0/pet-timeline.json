@@ -642,6 +642,7 @@
                       "default": "other",
                       "enum": [
                         "step",
+                        "session",
                         "other"
                       ]
                     },
@@ -710,6 +711,7 @@
                       "default": "other",
                       "enum": [
                         "step",
+                        "session",
                         "other"
                       ]
                     },

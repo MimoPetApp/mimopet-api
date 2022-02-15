@@ -52,6 +52,22 @@ module.exports = {
     module_payload.completed = module_completed;
     return module_payload;
   },
+  setExerciseCompleted: async (exercise, user) => {
+    for (let i = 0; i < exercise.sessions.length; i++) {
+      let session = exercise.sessions[i];
+      session.completed = await strapi.config.functions['mixin'].getStepStatus(
+        "session",
+        session.id,
+        user.current_pet
+      );
+      session.locked = await strapi.config.functions['mixin'].getLocked(
+        exercise.sessions,
+        i,
+        user.is_premium
+      );
+    }
+    return exercise;
+  },
   getLocked: async (items, index, is_premium) => {
     if (index != 0 && !is_premium) {
       return !items[index - 1].completed

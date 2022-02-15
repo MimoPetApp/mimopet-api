@@ -5,7 +5,7 @@
       "path": "/sessions",
       "handler": "session.find",
       "config": {
-        "policies": []
+        "policies": ["global::is-pet-owner"]
       }
     },
     {
@@ -21,7 +21,7 @@
       "path": "/sessions/:id",
       "handler": "session.findOne",
       "config": {
-        "policies": []
+        "policies": ["global::is-pet-owner"]
       }
     },
     {
@@ -46,6 +46,14 @@
       "handler": "session.delete",
       "config": {
         "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/sessions/:id/complete",
+      "handler": "session.completeStep",
+      "config": {
+        "policies": ["global::is-pet-owner"]
       }
     }
   ]

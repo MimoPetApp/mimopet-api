@@ -23,6 +23,9 @@
         "steps.question-step"
       ],
       "required": true
+    },
+    "pets_completed": {
+      "collection": "pet"
     }
   }
 }
