@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_exercises_instruction_exercises",
+  "info": {
+    "name": "Instruction Exercise",
+    "icon": "book-open"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "instruction": {
+      "type": "text",
+      "required": true
+    },
+    "thumbnail": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    }
+  }
+}

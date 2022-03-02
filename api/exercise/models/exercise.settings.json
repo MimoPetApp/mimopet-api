@@ -31,11 +31,16 @@
     "pets_completed": {
       "collection": "pet"
     },
-    "sessions": {
-      "collection": "session"
-    },
-    "goal": {
+    "guide": {
       "type": "text"
+    },
+    "sessions": {
+      "type": "dynamiczone",
+      "components": [
+        "exercises.instruction-exercise",
+        "exercises.question-exercise",
+        "exercises.animation-exercise"
+      ]
     }
   }
 }

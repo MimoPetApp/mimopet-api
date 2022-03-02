@@ -817,14 +817,11 @@
                             "type": "string"
                           }
                         },
-                        "sessions": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        },
-                        "goal": {
+                        "guide": {
                           "type": "string"
+                        },
+                        "sessions": {
+                          "type": "dynamiczone"
                         },
                         "published_at": {
                           "type": "string"
@@ -1225,14 +1222,11 @@
                             "type": "string"
                           }
                         },
-                        "sessions": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        },
-                        "goal": {
+                        "guide": {
                           "type": "string"
+                        },
+                        "sessions": {
+                          "type": "dynamiczone"
                         },
                         "published_at": {
                           "type": "string"

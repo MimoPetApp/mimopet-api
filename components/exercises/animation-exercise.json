@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_exercises_animation_exercises",
+  "info": {
+    "name": "Animation Exercise",
+    "icon": "baseball-ball"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "videos": {
+      "collection": "video"
+    }
+  }
+}

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "02/14/2022 11:19:07 PM"
+    "x-generation-date": "03/02/2022 7:44:42 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -8908,43 +8908,220 @@
               }
             }
           },
+          "guide": {
+            "type": "string"
+          },
           "sessions": {
             "type": "array",
             "items": {
-              "required": [
-                "id",
-                "items"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
+              "oneOf": [
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "exercises.instruction-exercise",
+                        "exercises.question-exercise",
+                        "exercises.animation-exercise"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "label": {
+                      "type": "string"
+                    },
+                    "instruction": {
+                      "type": "string"
+                    },
+                    "thumbnail": {
+                      "required": [
+                        "id",
+                        "name",
+                        "hash",
+                        "mime",
+                        "size",
+                        "url",
+                        "provider"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "alternativeText": {
+                          "type": "string"
+                        },
+                        "caption": {
+                          "type": "string"
+                        },
+                        "width": {
+                          "type": "integer"
+                        },
+                        "height": {
+                          "type": "integer"
+                        },
+                        "formats": {
+                          "type": "object"
+                        },
+                        "hash": {
+                          "type": "string"
+                        },
+                        "ext": {
+                          "type": "string"
+                        },
+                        "mime": {
+                          "type": "string"
+                        },
+                        "size": {
+                          "type": "number"
+                        },
+                        "url": {
+                          "type": "string"
+                        },
+                        "previewUrl": {
+                          "type": "string"
+                        },
+                        "provider": {
+                          "type": "string"
+                        },
+                        "provider_metadata": {
+                          "type": "object"
+                        },
+                        "related": {
+                          "type": "string"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "label",
+                    "instruction",
+                    "thumbnail"
+                  ]
                 },
-                "name": {
-                  "type": "string"
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "exercises.instruction-exercise",
+                        "exercises.question-exercise",
+                        "exercises.animation-exercise"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "label": {
+                      "type": "string"
+                    },
+                    "question": {
+                      "required": [
+                        "id",
+                        "name"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "items": {
+                          "type": "dynamiczone"
+                        },
+                        "pets_completed": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "published_at": {
+                          "type": "string"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "label"
+                  ]
                 },
-                "items": {
-                  "type": "dynamiczone"
-                },
-                "pets_completed": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "exercises.instruction-exercise",
+                        "exercises.question-exercise",
+                        "exercises.animation-exercise"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "label": {
+                      "type": "string"
+                    },
+                    "videos": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "id",
+                          "item"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "item": {
+                            "type": "string"
+                          },
+                          "pets_completed": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "published_at": {
+                            "type": "string"
+                          },
+                          "created_by": {
+                            "type": "string"
+                          },
+                          "updated_by": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "label"
+                  ]
                 }
-              }
+              ]
             }
-          },
-          "goal": {
-            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -8978,14 +9155,220 @@
               "type": "string"
             }
           },
+          "guide": {
+            "type": "string"
+          },
           "sessions": {
             "type": "array",
             "items": {
-              "type": "string"
+              "oneOf": [
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "exercises.instruction-exercise",
+                        "exercises.question-exercise",
+                        "exercises.animation-exercise"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "label": {
+                      "type": "string"
+                    },
+                    "instruction": {
+                      "type": "string"
+                    },
+                    "thumbnail": {
+                      "required": [
+                        "id",
+                        "name",
+                        "hash",
+                        "mime",
+                        "size",
+                        "url",
+                        "provider"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "alternativeText": {
+                          "type": "string"
+                        },
+                        "caption": {
+                          "type": "string"
+                        },
+                        "width": {
+                          "type": "integer"
+                        },
+                        "height": {
+                          "type": "integer"
+                        },
+                        "formats": {
+                          "type": "object"
+                        },
+                        "hash": {
+                          "type": "string"
+                        },
+                        "ext": {
+                          "type": "string"
+                        },
+                        "mime": {
+                          "type": "string"
+                        },
+                        "size": {
+                          "type": "number"
+                        },
+                        "url": {
+                          "type": "string"
+                        },
+                        "previewUrl": {
+                          "type": "string"
+                        },
+                        "provider": {
+                          "type": "string"
+                        },
+                        "provider_metadata": {
+                          "type": "object"
+                        },
+                        "related": {
+                          "type": "string"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "label",
+                    "instruction",
+                    "thumbnail"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "exercises.instruction-exercise",
+                        "exercises.question-exercise",
+                        "exercises.animation-exercise"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "label": {
+                      "type": "string"
+                    },
+                    "question": {
+                      "required": [
+                        "id",
+                        "name"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "items": {
+                          "type": "dynamiczone"
+                        },
+                        "pets_completed": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "published_at": {
+                          "type": "string"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "label"
+                  ]
+                },
+                {
+                  "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "exercises.instruction-exercise",
+                        "exercises.question-exercise",
+                        "exercises.animation-exercise"
+                      ]
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "label": {
+                      "type": "string"
+                    },
+                    "videos": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "id",
+                          "item"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "item": {
+                            "type": "string"
+                          },
+                          "pets_completed": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "published_at": {
+                            "type": "string"
+                          },
+                          "created_by": {
+                            "type": "string"
+                          },
+                          "updated_by": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "label"
+                  ]
+                }
+              ]
             }
-          },
-          "goal": {
-            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -9234,14 +9617,11 @@
                             "type": "string"
                           }
                         },
-                        "sessions": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        },
-                        "goal": {
+                        "guide": {
                           "type": "string"
+                        },
+                        "sessions": {
+                          "type": "dynamiczone"
                         },
                         "published_at": {
                           "type": "string"
@@ -9642,14 +10022,11 @@
                             "type": "string"
                           }
                         },
-                        "sessions": {
-                          "type": "array",
-                          "items": {
-                            "type": "string"
-                          }
-                        },
-                        "goal": {
+                        "guide": {
                           "type": "string"
+                        },
+                        "sessions": {
+                          "type": "dynamiczone"
                         },
                         "published_at": {
                           "type": "string"

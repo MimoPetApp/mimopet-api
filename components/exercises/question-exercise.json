@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_exercises_question_exercises",
+  "info": {
+    "name": "Question Exercise",
+    "icon": "smile"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "question": {
+      "model": "question"
+    }
+  }
+}
