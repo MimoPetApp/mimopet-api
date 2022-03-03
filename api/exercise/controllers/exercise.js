@@ -54,11 +54,11 @@ module.exports = {
 
   findOne: async (ctx) => {
     const { id } = ctx.params;
-    let entity = await strapi.query("exercise").findOne({ id });
-    entity = await strapi.config.functions['mixin'].setExerciseCompleted(
-      entity,
-      ctx.state.user
-    );
+    const entity = await strapi.query("exercise").findOne({ id });
+    if (!entity) {
+      ctx.response.status = 404;
+      return ctx.response;
+    }
     entity.completed = getStepStatus(
       entity.pets_completed,
       ctx.state.user.current_pet
