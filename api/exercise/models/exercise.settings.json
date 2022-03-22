@@ -41,6 +41,10 @@
         "exercises.question-exercise",
         "exercises.animation-exercise"
       ]
+    },
+    "data": {
+      "type": "json",
+      "private": true
     }
   }
 }

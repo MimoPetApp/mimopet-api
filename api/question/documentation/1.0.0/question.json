@@ -890,6 +890,9 @@
               "type": "string"
             }
           },
+          "data": {
+            "type": "object"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"

@@ -846,6 +846,9 @@
                             "type": "string"
                           }
                         },
+                        "data": {
+                          "type": "object"
+                        },
                         "published_at": {
                           "type": "string"
                         },
@@ -1093,6 +1096,9 @@
                             "type": "string"
                           }
                         },
+                        "data": {
+                          "type": "object"
+                        },
                         "published_at": {
                           "type": "string"
                         },
@@ -1169,6 +1175,9 @@
                 }
               ]
             }
+          },
+          "data": {
+            "type": "object"
           },
           "published_at": {
             "type": "string",

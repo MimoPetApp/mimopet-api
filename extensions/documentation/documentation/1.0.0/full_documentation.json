@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "03/15/2022 4:11:12 PM"
+    "x-generation-date": "03/22/2022 2:38:32 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -9387,6 +9387,9 @@
                             "type": "string"
                           }
                         },
+                        "data": {
+                          "type": "object"
+                        },
                         "published_at": {
                           "type": "string"
                         },
@@ -9634,6 +9637,9 @@
                             "type": "string"
                           }
                         },
+                        "data": {
+                          "type": "object"
+                        },
                         "published_at": {
                           "type": "string"
                         },
@@ -9710,6 +9716,9 @@
                 }
               ]
             }
+          },
+          "data": {
+            "type": "object"
           },
           "published_at": {
             "type": "string",
@@ -9964,6 +9973,9 @@
                         "sessions": {
                           "type": "dynamiczone"
                         },
+                        "data": {
+                          "type": "object"
+                        },
                         "published_at": {
                           "type": "string"
                         },
@@ -10106,6 +10118,9 @@
                           "items": {
                             "type": "string"
                           }
+                        },
+                        "data": {
+                          "type": "object"
                         },
                         "published_at": {
                           "type": "string"
@@ -10369,6 +10384,9 @@
                         "sessions": {
                           "type": "dynamiczone"
                         },
+                        "data": {
+                          "type": "object"
+                        },
                         "published_at": {
                           "type": "string"
                         },
@@ -10511,6 +10529,9 @@
                           "items": {
                             "type": "string"
                           }
+                        },
+                        "data": {
+                          "type": "object"
                         },
                         "published_at": {
                           "type": "string"
@@ -11349,6 +11370,9 @@
               "type": "string"
             }
           },
+          "data": {
+            "type": "object"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -11571,6 +11595,9 @@
                           "items": {
                             "type": "string"
                           }
+                        },
+                        "data": {
+                          "type": "object"
                         },
                         "published_at": {
                           "type": "string"
@@ -11891,6 +11918,9 @@
                           "items": {
                             "type": "string"
                           }
+                        },
+                        "data": {
+                          "type": "object"
                         },
                         "published_at": {
                           "type": "string"

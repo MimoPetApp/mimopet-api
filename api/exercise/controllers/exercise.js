@@ -25,16 +25,32 @@ module.exports = {
         status: "done"
       }
     );
-    return await strapi.query("exercise")
+    var step_data = step.data || [];
+    const body = ctx.request.body;
+    if (body) {
+      step_data = [
+        ...step_data,
+        {
+          user: ctx.state.user.email,
+          pet: ctx.state.user.current_pet,
+          created_at: new Date(),
+          updated_at: new Date(),
+          data: body
+        }
+      ]
+    }
+    const entity = await strapi.query("exercise")
       .update(
         { id },
         {
           pets_completed: [
             ...step.pets_completed,
             ctx.state.user.current_pet
-          ]
+          ],
+          data: step_data
         }
       );
+    return sanitizeEntity(entity, { model: strapi.models.exercise });
   },
   
   find: async (ctx) => {

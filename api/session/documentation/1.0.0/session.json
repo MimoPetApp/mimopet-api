@@ -808,6 +808,9 @@
                             "type": "string"
                           }
                         },
+                        "data": {
+                          "type": "object"
+                        },
                         "published_at": {
                           "type": "string"
                         },
@@ -1127,6 +1130,9 @@
                           "items": {
                             "type": "string"
                           }
+                        },
+                        "data": {
+                          "type": "object"
                         },
                         "published_at": {
                           "type": "string"
