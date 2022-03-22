@@ -495,7 +495,7 @@
     "/breeds/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the number of breeds documents",
+        "description": "Retrieve the numver of breeds documents",
         "responses": {
           "200": {
             "description": "Retrieve breeds document(s)",
@@ -9269,7 +9269,7 @@
                     "id": {
                       "type": "string"
                     },
-                    "label": {
+                    "title": {
                       "type": "string"
                     },
                     "instruction": {
@@ -9345,7 +9345,7 @@
                   },
                   "required": [
                     "id",
-                    "label",
+                    "title",
                     "instruction",
                     "thumbnail"
                   ]
@@ -9363,7 +9363,7 @@
                     "id": {
                       "type": "string"
                     },
-                    "label": {
+                    "title": {
                       "type": "string"
                     },
                     "question": {
@@ -9404,7 +9404,7 @@
                   },
                   "required": [
                     "id",
-                    "label"
+                    "title"
                   ]
                 },
                 {
@@ -9420,7 +9420,7 @@
                     "id": {
                       "type": "string"
                     },
-                    "label": {
+                    "title": {
                       "type": "string"
                     },
                     "videos": {
@@ -9457,11 +9457,14 @@
                           }
                         }
                       }
+                    },
+                    "description": {
+                      "type": "string"
                     }
                   },
                   "required": [
                     "id",
-                    "label"
+                    "title"
                   ]
                 }
               ]
@@ -9519,7 +9522,7 @@
                     "id": {
                       "type": "string"
                     },
-                    "label": {
+                    "title": {
                       "type": "string"
                     },
                     "instruction": {
@@ -9595,7 +9598,7 @@
                   },
                   "required": [
                     "id",
-                    "label",
+                    "title",
                     "instruction",
                     "thumbnail"
                   ]
@@ -9613,7 +9616,7 @@
                     "id": {
                       "type": "string"
                     },
-                    "label": {
+                    "title": {
                       "type": "string"
                     },
                     "question": {
@@ -9654,7 +9657,7 @@
                   },
                   "required": [
                     "id",
-                    "label"
+                    "title"
                   ]
                 },
                 {
@@ -9670,7 +9673,7 @@
                     "id": {
                       "type": "string"
                     },
-                    "label": {
+                    "title": {
                       "type": "string"
                     },
                     "videos": {
@@ -9707,11 +9710,14 @@
                           }
                         }
                       }
+                    },
+                    "description": {
+                      "type": "string"
                     }
                   },
                   "required": [
                     "id",
-                    "label"
+                    "title"
                   ]
                 }
               ]

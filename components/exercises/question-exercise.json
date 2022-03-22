@@ -2,11 +2,12 @@
   "collectionName": "components_exercises_question_exercises",
   "info": {
     "name": "Question Exercise",
-    "icon": "smile"
+    "icon": "smile",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "label": {
+    "title": {
       "type": "string",
       "required": true
     },

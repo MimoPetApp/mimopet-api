@@ -2,16 +2,20 @@
   "collectionName": "components_exercises_animation_exercises",
   "info": {
     "name": "Animation Exercise",
-    "icon": "baseball-ball"
+    "icon": "baseball-ball",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "label": {
+    "title": {
       "type": "string",
       "required": true
     },
     "videos": {
       "collection": "video"
+    },
+    "description": {
+      "type": "text"
     }
   }
 }

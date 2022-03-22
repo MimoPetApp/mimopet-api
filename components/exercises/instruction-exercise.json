@@ -2,11 +2,12 @@
   "collectionName": "components_exercises_instruction_exercises",
   "info": {
     "name": "Instruction Exercise",
-    "icon": "book-open"
+    "icon": "book-open",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "label": {
+    "title": {
       "type": "string",
       "required": true
     },
