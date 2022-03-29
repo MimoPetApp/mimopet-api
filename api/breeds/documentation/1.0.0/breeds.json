@@ -450,7 +450,7 @@
     "/breeds/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the numver of breeds documents",
+        "description": "Retrieve the number of breeds documents",
         "responses": {
           "200": {
             "description": "Retrieve breeds document(s)",

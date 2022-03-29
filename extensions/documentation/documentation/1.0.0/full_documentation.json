@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "03/22/2022 2:38:32 PM"
+    "x-generation-date": "03/28/2022 9:26:23 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -495,7 +495,7 @@
     "/breeds/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the numver of breeds documents",
+        "description": "Retrieve the number of breeds documents",
         "responses": {
           "200": {
             "description": "Retrieve breeds document(s)",
