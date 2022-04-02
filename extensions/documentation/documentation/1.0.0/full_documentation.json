@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "03/28/2022 9:26:23 AM"
+    "x-generation-date": "04/02/2022 3:33:13 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -7258,7 +7258,7 @@
         }
       }
     },
-    "/users/reset_password/": {
+    "/users/reset_password": {
       "post": {
         "deprecated": false,
         "description": "Send e-mail to verify",
@@ -10780,6 +10780,12 @@
               "confirmed": {
                 "type": "boolean"
               },
+              "verifiedResetPasswordToken": {
+                "type": "boolean"
+              },
+              "firstAccess": {
+                "type": "boolean"
+              },
               "blocked": {
                 "type": "boolean"
               },
@@ -12854,6 +12860,12 @@
                 "confirmed": {
                   "type": "boolean"
                 },
+                "verifiedResetPasswordToken": {
+                  "type": "boolean"
+                },
+                "firstAccess": {
+                  "type": "boolean"
+                },
                 "blocked": {
                   "type": "boolean"
                 },
@@ -12959,6 +12971,14 @@
           "confirmed": {
             "type": "boolean",
             "default": false
+          },
+          "verifiedResetPasswordToken": {
+            "type": "boolean",
+            "default": false
+          },
+          "firstAccess": {
+            "type": "boolean",
+            "default": true
           },
           "blocked": {
             "type": "boolean",
@@ -13291,6 +13311,14 @@
           "confirmed": {
             "type": "boolean",
             "default": false
+          },
+          "verifiedResetPasswordToken": {
+            "type": "boolean",
+            "default": false
+          },
+          "firstAccess": {
+            "type": "boolean",
+            "default": true
           },
           "blocked": {
             "type": "boolean",

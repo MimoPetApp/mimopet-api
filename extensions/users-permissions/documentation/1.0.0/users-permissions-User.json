@@ -1266,6 +1266,14 @@
             "type": "boolean",
             "default": false
           },
+          "verifiedResetPasswordToken": {
+            "type": "boolean",
+            "default": false
+          },
+          "firstAccess": {
+            "type": "boolean",
+            "default": true
+          },
           "blocked": {
             "type": "boolean",
             "default": false
@@ -1597,6 +1605,14 @@
           "confirmed": {
             "type": "boolean",
             "default": false
+          },
+          "verifiedResetPasswordToken": {
+            "type": "boolean",
+            "default": false
+          },
+          "firstAccess": {
+            "type": "boolean",
+            "default": true
           },
           "blocked": {
             "type": "boolean",

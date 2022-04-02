@@ -653,6 +653,12 @@
               "confirmed": {
                 "type": "boolean"
               },
+              "verifiedResetPasswordToken": {
+                "type": "boolean"
+              },
+              "firstAccess": {
+                "type": "boolean"
+              },
               "blocked": {
                 "type": "boolean"
               },

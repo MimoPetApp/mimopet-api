@@ -430,7 +430,7 @@
     },
     {
       "method": "POST",
-      "path": "/users/reset_password/",
+      "path": "/users/reset_password",
       "handler": "User.resetPassword",
       "config": {
         "policies": [],
@@ -446,6 +446,14 @@
         "policies": [],
         "prefix": "",
         "description": "Confirm code sended by e-mail"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/users/first_access/confirm",
+      "handler": "User.completeFirstAccess",
+      "config": {
+        "policies": []
       }
     }
   ]

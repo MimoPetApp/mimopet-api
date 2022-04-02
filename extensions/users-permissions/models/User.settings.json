@@ -48,6 +48,15 @@
       "default": false,
       "configurable": false
     },
+    "verifiedResetPasswordToken": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "firstAccess": {
+      "type": "boolean",
+      "default": true
+    },
     "blocked": {
       "type": "boolean",
       "default": false,
