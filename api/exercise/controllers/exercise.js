@@ -14,17 +14,20 @@ module.exports = {
   completeStep: async (ctx) => {
     const { id } = ctx.params;
     const step = await strapi.query("exercise").findOne({ id });
-    await strapi.config.functions['mixin'].updatePetTimeline(
-      ctx.state.user.current_pet,
-      {
-        __component: 'utils.timeline-item',
-        data: new Date(),
-        label: step.name,
-        details: "exercise",
-        type: "step",
-        status: "done"
-      }
-    );
+    /**
+     * 
+     await strapi.config.functions['mixin'].updatePetTimeline(
+       ctx.state.user.current_pet,
+       {
+         __component: 'utils.timeline-item',
+         data: new Date(),
+         label: step.name,
+         details: "exercise",
+         type: "step",
+         status: "done"
+       }
+     );
+     */
     var step_data = step.data || [];
     const body = ctx.request.body;
     if (body) {

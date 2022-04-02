@@ -15,6 +15,7 @@ module.exports = {
   completeStep: async (ctx) => {
     const { id } = ctx.params;
     const step = await strapi.query("question").findOne({ id });
+    /*
     await strapi.config.functions['mixin'].updatePetTimeline(
       ctx.state.user.current_pet,
       {
@@ -26,6 +27,7 @@ module.exports = {
         status: "done"
       }
     );
+    */
     var step_data = step.data || [];
     const body = ctx.request.body;
     if (body) {

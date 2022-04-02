@@ -25,6 +25,17 @@ module.exports = {
   subscribe: async (ctx) => {
     const { id } = ctx.params;
     let entity = await strapi.query("training").findOne({ id });
+    await strapi.config.functions['mixin'].updatePetTimeline(
+      ctx.state.user.current_pet,
+      {
+        __component: 'utils.timeline-item',
+        data: new Date(),
+        label: entity.title,
+        details: "subscribe",
+        type: "training",
+        status: "done"
+      }
+    );
     return await strapi.query("training")
       .update(
         { id },
@@ -41,6 +52,17 @@ module.exports = {
     let entity = await strapi.query("training").findOne({ id });
     let subscribes = entity.pets_completed.filter(
       p => { return p.id != ctx.state.user.current_pet; }
+    );
+    await strapi.config.functions['mixin'].updatePetTimeline(
+      ctx.state.user.current_pet,
+      {
+        __component: 'utils.timeline-item',
+        data: new Date(),
+        label: entity.title,
+        details: "unsubscribe",
+        type: "training",
+        status: "done"
+      }
     );
     return await strapi.query("training").update(
       { id },

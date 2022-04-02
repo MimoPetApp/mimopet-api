@@ -643,6 +643,8 @@
                       "enum": [
                         "step",
                         "session",
+                        "training",
+                        "module",
                         "other"
                       ]
                     },
@@ -712,6 +714,8 @@
                       "enum": [
                         "step",
                         "session",
+                        "training",
+                        "module",
                         "other"
                       ]
                     },

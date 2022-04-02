@@ -30,6 +30,8 @@
       "enum": [
         "step",
         "session",
+        "training",
+        "module",
         "other"
       ],
       "default": "other",

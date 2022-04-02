@@ -9,7 +9,15 @@ const { sanitizeEntity } = require('strapi-utils');
 module.exports = {
   findByPet: async (ctx) => {
     const { id } = ctx.params;
-    const timeline = await strapi.query("pet-timeline").findOne({ pet: id });
+    var timeline = await strapi.query("pet-timeline").findOne({ pet: id });
+    timeline.items = timeline.items.sort(function(a, b) {
+      const cond = new Date(a.data) > new Date(b.data);
+      if (cond) {
+        return -1;
+      } else {
+        return 1;
+      }
+    });
     return sanitizeEntity(timeline, { model: strapi.models["pet-timeline"] });
   }
 };
