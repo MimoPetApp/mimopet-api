@@ -430,8 +430,8 @@
     },
     {
       "method": "POST",
-      "path": "/users/reset_password",
-      "handler": "User.resetPassword",
+      "path": "/users/password/reset",
+      "handler": "User.createResetPasswordCode",
       "config": {
         "policies": [],
         "prefix": "",
@@ -440,8 +440,18 @@
     },
     {
       "method": "POST",
-      "path": "/users/reset_password/confirm",
-      "handler": "User.confirmResetPassword",
+      "path": "/users/password/confirm",
+      "handler": "User.confirmResetPasswordCode",
+      "config": {
+        "policies": [],
+        "prefix": "",
+        "description": "Confirm code sended by e-mail"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/users/password/new",
+      "handler": "User.updatePassword",
       "config": {
         "policies": [],
         "prefix": "",

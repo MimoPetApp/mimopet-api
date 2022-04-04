@@ -1,5 +1,6 @@
 'use strict';
 const crypto = require('crypto');
+var jwt = require('jsonwebtoken');
 
 /**
  * User.js controller
@@ -17,7 +18,10 @@ const sanitizeUser = user =>
 
 module.exports = {
   async verifyUser(ctx) {
-    var user = ctx.state.user;
+    const { email } = ctx.request.body;
+    var user = await strapi
+      .query("user", "users-permissions")
+      .findOne({ email });
     if (!user) {
       return ctx.badRequest(null, [{ messages: [{ id: 'No authorization header was found' }] }]);
     }
@@ -36,8 +40,10 @@ module.exports = {
     ctx.body = sanitizeUser(user);
   },
   async confirmVerifyUser(ctx) {
-    var user = ctx.state.user;
-    const { code } = ctx.request.body;
+    const { email, code } = ctx.request.body;
+    var user = await strapi
+      .query("user", "users-permissions")
+      .findOne({ email });
 
     if (!user) {
       return ctx.badRequest(null, [{ messages: [{ id: 'No authorization header was found' }] }]);
@@ -69,8 +75,11 @@ module.exports = {
       .update({ id: user.id }, { firstAccess: false });
     ctx.body = sanitizeUser(user);
   },
-  async resetPassword(ctx) {
-    var user = ctx.state.user;
+  async createResetPasswordCode(ctx) {
+    const { email } = ctx.request.body;
+    var user = await strapi
+      .query("user", "users-permissions")
+      .findOne({ email });
 
     if (!user) {
       return ctx.badRequest(null, [{ messages: [{ id: 'No authorization header was found' }] }]);
@@ -96,9 +105,11 @@ module.exports = {
 
     ctx.body = sanitizeUser(user);
   },
-  async confirmResetPassword(ctx) {
-    var user = ctx.state.user;
-    const { code } = ctx.request.body;
+  async confirmResetPasswordCode(ctx) {
+    const { email, code } = ctx.request.body;
+    var user = await strapi
+      .query("user", "users-permissions")
+      .findOne({ email });
 
     if (!user) {
       return ctx.badRequest(null, [{ messages: [{ id: 'No authorization header was found' }] }]);
@@ -113,11 +124,33 @@ module.exports = {
           resetPasswordToken: ""
         }
       );
+      const token = jwt.sign(email, process.env.JWT_SECRET);
+      ctx.body = {
+        token: token
+      }
     } else {
       ctx.response.status = 403;
       return ctx.badRequest(null, [{ messages: [{ id: 'Invalid code' }] }]);
     }
+  },
+  async updatePassword(ctx) {
+    const { token, password } = ctx.request.body;
+    const email = jwt.verify(token, process.env.JWT_SECRET);
+    var user = await strapi
+      .query("user", "users-permissions")
+      .findOne({ email: email });
 
+    if (!user) {
+      return ctx.badRequest(null, [{ messages: [{ id: 'No authorization header was found' }] }]);
+    }
+    user = await strapi
+      .query("user", "users-permissions")
+      .update(
+        { id: user.id },
+        {
+          password: password
+        }
+      );
     ctx.body = sanitizeUser(user);
   },
 };
