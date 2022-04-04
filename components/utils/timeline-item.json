@@ -39,6 +39,10 @@
     },
     "details": {
       "type": "string"
+    },
+    "reference_id": {
+      "type": "integer",
+      "default": 0
     }
   }
 }

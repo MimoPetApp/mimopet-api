@@ -33,7 +33,7 @@ module.exports = {
         label: entity.title,
         details: "subscribe",
         type: "training",
-        status: "done"
+        status: "doing"
       }
     );
     return await strapi.query("training")

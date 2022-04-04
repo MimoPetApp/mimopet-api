@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "04/04/2022 11:48:21 AM"
+    "x-generation-date": "04/04/2022 8:28:10 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -7187,7 +7187,7 @@
         }
       }
     },
-    "/users/email/confirm": {
+    "/users/email/confirm-token": {
       "post": {
         "deprecated": false,
         "description": "Confirm code sended by e-mail",
@@ -7329,7 +7329,7 @@
         }
       }
     },
-    "/users/password/confirm": {
+    "/users/password/confirm-token": {
       "post": {
         "deprecated": false,
         "description": "Confirm code sended by e-mail",
@@ -7400,8 +7400,8 @@
         }
       }
     },
-    "/users/password/new": {
-      "post": {
+    "/users/password/update": {
+      "put": {
         "deprecated": false,
         "description": "Confirm code sended by e-mail",
         "responses": {
@@ -7454,6 +7454,7 @@
         "tags": [
           "Unclassified"
         ],
+        "parameters": [],
         "requestBody": {
           "description": "",
           "required": true,
@@ -10703,6 +10704,10 @@
                     },
                     "details": {
                       "type": "string"
+                    },
+                    "reference_id": {
+                      "type": "integer",
+                      "default": 0
                     }
                   },
                   "required": [
@@ -10774,6 +10779,10 @@
                     },
                     "details": {
                       "type": "string"
+                    },
+                    "reference_id": {
+                      "type": "integer",
+                      "default": 0
                     }
                   },
                   "required": [

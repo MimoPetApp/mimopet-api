@@ -71,7 +71,7 @@
         }
       }
     },
-    "/users/email/confirm": {
+    "/users/email/confirm-token": {
       "post": {
         "deprecated": false,
         "description": "Confirm code sended by e-mail",
@@ -213,7 +213,7 @@
         }
       }
     },
-    "/users/password/confirm": {
+    "/users/password/confirm-token": {
       "post": {
         "deprecated": false,
         "description": "Confirm code sended by e-mail",
@@ -284,8 +284,8 @@
         }
       }
     },
-    "/users/password/new": {
-      "post": {
+    "/users/password/update": {
+      "put": {
         "deprecated": false,
         "description": "Confirm code sended by e-mail",
         "responses": {
@@ -338,6 +338,7 @@
         "tags": [
           "Unclassified"
         ],
+        "parameters": [],
         "requestBody": {
           "description": "",
           "required": true,

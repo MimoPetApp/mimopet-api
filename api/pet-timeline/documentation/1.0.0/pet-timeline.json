@@ -650,6 +650,10 @@
                     },
                     "details": {
                       "type": "string"
+                    },
+                    "reference_id": {
+                      "type": "integer",
+                      "default": 0
                     }
                   },
                   "required": [
@@ -721,6 +725,10 @@
                     },
                     "details": {
                       "type": "string"
+                    },
+                    "reference_id": {
+                      "type": "integer",
+                      "default": 0
                     }
                   },
                   "required": [

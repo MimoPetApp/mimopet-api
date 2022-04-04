@@ -52,6 +52,38 @@ module.exports = {
     module_payload.completed = module_completed;
     return module_payload;
   },
+  setTrainingCompleted: async (training, user) => {
+    let shoudAddOnTimeline = true;
+    const timeline = await strapi.query("pet-timeline").findOne({ pet: user.current_pet });
+    if (timeline) {
+      const items = timeline.items.filter(
+        (val) => {
+          return (
+            val.type == "training" &&
+            val.status == "done" &&
+            val.reference_id == training.id
+          )
+        }
+      );
+      if (items.length > 0) {
+        shoudAddOnTimeline = false
+      }
+    }
+    if (shoudAddOnTimeline) {
+      await strapi.config.functions['mixin'].updatePetTimeline(
+        user.current_pet,
+        {
+          __component: 'utils.timeline-item',
+          data: new Date(),
+          label: training.title,
+          details: "subscribe",
+          type: "training",
+          status: "done",
+          reference_id: training.id
+        }
+      );
+    }
+  },
   getLocked: async (items, index, is_premium) => {
     if (index != 0 && !is_premium) {
       return !items[index - 1].completed
@@ -68,6 +100,12 @@ module.exports = {
       training_completed = training_completed && training.modules[i].completed;
     }
     training.completed = training_completed;
+    if (training.completed) {
+      await strapi.config.functions['mixin'].setTrainingCompleted(
+        training,
+        user
+      );
+    }
     return training;
   },
   updatePetTimeline: async (pet, event) => {
