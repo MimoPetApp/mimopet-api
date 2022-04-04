@@ -36,7 +36,7 @@ module.exports = {
     );
     user = await strapi
       .query("user", "users-permissions")
-      .update({ id: user.id }, { confirmationToken: confirmationToken });
+      .update({ id: user.id }, { confirmationToken: confirmationToken, confirmed: false });
     ctx.body = sanitizeUser(user);
   },
   async confirmVerifyUser(ctx) {

@@ -420,7 +420,7 @@
     },
     {
       "method": "POST",
-      "path": "/users/email/confirm",
+      "path": "/users/email/confirm-token",
       "handler": "User.confirmVerifyUser",
       "config": {
         "policies": [],
@@ -440,7 +440,7 @@
     },
     {
       "method": "POST",
-      "path": "/users/password/confirm",
+      "path": "/users/password/confirm-token",
       "handler": "User.confirmResetPasswordCode",
       "config": {
         "policies": [],
@@ -449,8 +449,8 @@
       }
     },
     {
-      "method": "POST",
-      "path": "/users/password/new",
+      "method": "PUT",
+      "path": "/users/password/update",
       "handler": "User.updatePassword",
       "config": {
         "policies": [],
