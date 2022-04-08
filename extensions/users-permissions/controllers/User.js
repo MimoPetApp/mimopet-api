@@ -28,12 +28,14 @@ module.exports = {
     const confirmationToken = (
       `${crypto.randomInt(0, 10)}${crypto.randomInt(0, 10)}${crypto.randomInt(0, 10)}${crypto.randomInt(0, 10)}`
     );
-    strapi.config.functions['notification'].sendEmail(
+    const emailRes = strapi.config.functions['notification'].sendEmail(
       'noreply@mimopetapp.com',
       user.email,
       'Bem vindo',
       `Seu código de confirmação de conta é: ${confirmationToken}`
     );
+    console.log(emailRes);
+    if (!emailRes) return;
     user = await strapi
       .query("user", "users-permissions")
       .update({ id: user.id }, { confirmationToken: confirmationToken, confirmed: false });

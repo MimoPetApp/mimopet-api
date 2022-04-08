@@ -7,6 +7,9 @@ const userPass = process.env.GMAILPASS;
 // Create reusable transporter object using SMTP transport.
 const transporter = nodemailer.createTransport({
   service: 'Gmail',
+  tls: {
+    rejectUnauthorized: false
+  },
   auth: {
     user: userEmail,
     pass: userPass,
@@ -23,6 +26,11 @@ module.exports = {
       text,
     };
     // Return a promise of the function that sends the email.
-    return transporter.sendMail(options);    
+    try {
+      return transporter.sendMail(options);
+    } catch(err) {
+      console.log(err);
+      return false
+    }
   },
 };
