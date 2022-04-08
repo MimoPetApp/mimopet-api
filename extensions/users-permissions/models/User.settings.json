@@ -13,13 +13,13 @@
     "username": {
       "type": "string",
       "minLength": 3,
-      "unique": true,
       "configurable": false,
       "required": true
     },
     "email": {
       "type": "email",
       "minLength": 6,
+      "unique": true,
       "configurable": false,
       "required": true
     },
