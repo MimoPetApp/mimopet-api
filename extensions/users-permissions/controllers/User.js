@@ -135,6 +135,7 @@ module.exports = {
       return ctx.badRequest(null, [{ messages: [{ id: 'Invalid code' }] }]);
     }
   },
+  // REF: https://www.codegrepper.com/code-examples/whatever/strapi+change+user+password
   async updatePassword(ctx) {
     const { token, password } = ctx.request.body;
     const email = jwt.verify(token, process.env.JWT_SECRET);
@@ -143,14 +144,28 @@ module.exports = {
       .findOne({ email: email });
 
     if (!user) {
-      return ctx.badRequest(null, [{ messages: [{ id: 'No authorization header was found' }] }]);
+      return ctx.badRequest(
+        null,
+        formatError({
+          id: 'Auth.form.error.email.provide',
+          message: 'Please provide your username or your e-mail.',
+        })
+     );
     }
+
+    // Generate new hash password
+    const passwordHash = await strapi.plugins['users-permissions'].services.user.hashPassword(
+      {
+        password: password
+      }
+    ); 
+
     user = await strapi
       .query("user", "users-permissions")
       .update(
         { id: user.id },
         {
-          password: password
+          password: passwordHash
         }
       );
     ctx.body = sanitizeUser(user);
