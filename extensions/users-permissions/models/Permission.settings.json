@@ -45,20 +45,17 @@
       "configurable": false
     },
     "name": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "genre": {
       "type": "enumeration",
       "enum": [
         "male",
         "female"
-      ],
-      "required": true
+      ]
     },
     "birthday": {
-      "type": "date",
-      "required": true
+      "type": "date"
     }
   }
 }
