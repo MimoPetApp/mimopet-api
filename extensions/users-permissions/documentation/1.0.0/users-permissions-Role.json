@@ -489,10 +489,7 @@
                 "type",
                 "controller",
                 "action",
-                "enabled",
-                "name",
-                "genre",
-                "birthday"
+                "enabled"
               ],
               "properties": {
                 "id": {
