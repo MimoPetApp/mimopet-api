@@ -20,4 +20,4 @@ RUN NODE_ENV=production npm run build
 
 USER node
 
-CMD node ecosystems.config.js
+CMD NODE_ENV=production npm start
