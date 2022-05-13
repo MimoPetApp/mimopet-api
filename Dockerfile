@@ -18,6 +18,7 @@ RUN npm install --production
 USER node
 
 #RUN npm run develop
+RUN mkdir -p /usr/src/app/.cache
 
 RUN NODE_ENV=production npm run build
 
