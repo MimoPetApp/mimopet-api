@@ -12,7 +12,7 @@ COPY --chown=node:node ./ ./
 
 ENV NODE_ENV=production
 
-RUN npm install -g npm@latest
+#RUN npm install -g npm@latest
 RUN npm install --production
 
 USER node
