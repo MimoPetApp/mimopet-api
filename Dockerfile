@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:14
 MAINTAINER JadsonLucena <jadsonlucena@gmail.com>
 
 RUN apt-get update && apt-get install -y \
