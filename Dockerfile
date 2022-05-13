@@ -17,6 +17,6 @@ RUN npm install --production
 
 USER node
 
-RUN npm build
+RUN NODE_ENV=production npm build
 
 CMD NODE_ENV=production npm start
