@@ -1,7 +1,7 @@
-FROM node:14-alpine
+FROM node:14
 MAINTAINER JadsonLucena <jadsonlucena@gmail.com>
 
-RUN apk add --update-cache \
+RUN apt-get update && apt-get install -y \
     git \
     zip \
     unzip
