@@ -15,11 +15,9 @@ ENV NODE_ENV=production
 #RUN npm install -g npm@latest
 RUN npm install --production
 
-USER node
-
 #RUN npm run develop
-RUN mkdir -p /usr/src/app/.cache
-
 RUN NODE_ENV=production npm run build
+
+USER node
 
 CMD node ecosystem.config.js
