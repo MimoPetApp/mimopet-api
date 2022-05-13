@@ -1,10 +1,10 @@
 FROM node:14-alpine
 MAINTAINER JadsonLucena <jadsonlucena@gmail.com>
 
-RUN apk add --update-cache \
-    git \
-    zip \
-    unzip
+#RUN apk add --update-cache \
+#    git \
+#    zip \
+#    unzip
 
 WORKDIR /usr/src/app
 
