@@ -17,6 +17,8 @@ RUN npm install --production
 
 USER node
 
-RUN NODE_ENV=production npm build
+#RUN npm run develop
 
-CMD NODE_ENV=production npm start
+RUN NODE_ENV=production npm run build
+
+CMD node ecosystem.config.js
