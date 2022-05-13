@@ -1,0 +1,26 @@
+steps: # https://cloud.google.com/build/docs/deploying-builds/deploy-cloud-run?hl=pt-br#continuous_deployment
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '--no-cache', '-t', 'gcr.io/driven-pillar-349122/mimo-pet-api:$COMMIT_SHA', '.', '-f', 'Dockerfile']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/driven-pillar-349122/mimo-pet-api:$COMMIT_SHA']
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args: # https://cloud.google.com/sdk/gcloud/reference/run/deploy?hl=pt-br
+  - run
+  - deploy
+  - mimo-pet-api
+  - --image=gcr.io/driven-pillar-349122/mimo-pet-api:$COMMIT_SHA
+  - --service-account=635428748623-compute@developer.gserviceaccount.com
+  - --add-cloudsql-instances=driven-pillar-349122:us-central1:mimopet
+  - --region=us-central1
+  - --platform=managed
+  - --cpu=1
+  - --memory=2Gi
+  - --timeout=3600
+  - --min-instances=0
+  - --max-instances=1000
+  - --concurrency=80
+  - --timeout=1200
+  - --ingress=all
+  - --allow-unauthenticated
+  - --port=1337
