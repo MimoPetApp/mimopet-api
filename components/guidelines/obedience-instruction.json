@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_guidelines_obedience_instructions",
+  "info": {
+    "name": "Obedience Instruction",
+    "icon": "hand-pointer"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "collection": "exercise"
+    },
+    "data": {
+      "type": "json",
+      "required": false,
+      "private": true
+    }
+  }
+}

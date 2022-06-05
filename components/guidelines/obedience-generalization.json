@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_guidelines_obedience_generalizations",
+  "info": {
+    "name": "Obedience Generalization",
+    "icon": "brain"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "collection": "exercise"
+    },
+    "data": {
+      "type": "json",
+      "private": true
+    }
+  }
+}

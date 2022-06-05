@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "obedience_trainings",
+  "info": {
+    "name": "Obedience Training",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "basic",
+        "intermediary",
+        "advanced",
+        "upcoming"
+      ],
+      "required": true,
+      "default": "basic"
+    },
+    "data": {
+      "type": "json",
+      "private": true
+    },
+    "guidelines": {
+      "type": "dynamiczone",
+      "components": [
+        "guidelines.obedience-challenge",
+        "guidelines.obedience-generalization",
+        "guidelines.obedience-instruction"
+      ]
+    }
+  }
+}

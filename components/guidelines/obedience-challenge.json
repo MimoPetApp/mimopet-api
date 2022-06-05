@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_guidelines_obedience_challenges",
+  "info": {
+    "name": "Obedience Challenge",
+    "icon": "flag-checkered"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "collection": "exercise"
+    },
+    "data": {
+      "type": "json",
+      "private": true
+    }
+  }
+}

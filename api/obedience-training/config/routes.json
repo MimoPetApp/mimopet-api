@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/obedience-trainings",
+      "handler": "obedience-training.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/obedience-trainings/count",
+      "handler": "obedience-training.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/obedience-trainings/:id",
+      "handler": "obedience-training.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/obedience-trainings",
+      "handler": "obedience-training.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/obedience-trainings/:id",
+      "handler": "obedience-training.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/obedience-trainings/:id",
+      "handler": "obedience-training.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
