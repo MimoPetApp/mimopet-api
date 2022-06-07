@@ -5,6 +5,7 @@
  * to customize this controller
  */
 const { sanitizeEntity } = require("strapi-utils");
+const BADGES_THRESHOLD = 5;
 
 module.exports = {
   completeGuideline: async (ctx) => {
@@ -60,17 +61,18 @@ module.exports = {
     let entities = await strapi.query("obedience-training").find();
 
     return entities.map((entity) => {
-      const { total, instructionCount, generalizationCount, challengeCount } =
-        strapi.config.functions["obedience"].countExecutions(
-          entity,
-          ctx.state.user
-        );
-      entity.executions = total;
+      const counts = strapi.config.functions["obedience"].countExecutions(
+        entity,
+        ctx.state.user
+      );
+      entity.executions = counts.total;
+      entity.badges = Math.floor(entity.executions / BADGES_THRESHOLD);
+      entity.badge_progress = entity.executions % BADGES_THRESHOLD;
       strapi.config.functions["obedience"].addGuidelinesCount(
         entity.guidelines,
-        instructionCount,
-        generalizationCount,
-        challengeCount
+        counts.instructionCount,
+        counts.generalizationCount,
+        counts.challengeCount
       );
       return sanitizeEntity(entity, {
         model: strapi.models["obedience-training"],
@@ -91,6 +93,8 @@ module.exports = {
       ctx.state.user
     );
     entity.executions = counts.total;
+    entity.badges = Math.floor(entity.executions / BADGES_THRESHOLD);
+    entity.badge_progress = entity.executions % BADGES_THRESHOLD;
     strapi.config.functions["obedience"].addGuidelinesCount(
       entity.guidelines,
       counts.instructions,

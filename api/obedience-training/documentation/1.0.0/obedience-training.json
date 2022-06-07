@@ -524,7 +524,7 @@
         ]
       }
     },
-    "/obedience-trainings/{idObedience}/exercises/{idExercise}/complete/{guideline}": {
+    "/obedience-trainings/{idObedience}/guidelines/{guidelineType}/exercises/{idExercise}/complete": {
       "put": {
         "deprecated": false,
         "description": "Update a record",
@@ -605,7 +605,7 @@
             }
           },
           {
-            "name": "idExercise",
+            "name": "guidelineType",
             "in": "path",
             "description": "",
             "deprecated": false,
@@ -615,7 +615,7 @@
             }
           },
           {
-            "name": "guideline",
+            "name": "idExercise",
             "in": "path",
             "description": "",
             "deprecated": false,

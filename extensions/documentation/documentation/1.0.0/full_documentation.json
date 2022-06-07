@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "06/07/2022 9:50:25 AM"
+    "x-generation-date": "06/07/2022 2:00:33 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -2446,7 +2446,7 @@
         ]
       }
     },
-    "/obedience-trainings/{idObedience}/exercises/{idExercise}/complete/{guideline}": {
+    "/obedience-trainings/{idObedience}/guidelines/{guidelineType}/exercises/{idExercise}/complete": {
       "put": {
         "deprecated": false,
         "description": "Update a record",
@@ -2527,7 +2527,7 @@
             }
           },
           {
-            "name": "idExercise",
+            "name": "guidelineType",
             "in": "path",
             "description": "",
             "deprecated": false,
@@ -2537,7 +2537,7 @@
             }
           },
           {
-            "name": "guideline",
+            "name": "idExercise",
             "in": "path",
             "description": "",
             "deprecated": false,
