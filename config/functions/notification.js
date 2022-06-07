@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-const nodemailer = require('nodemailer');
-const sgTransport = require('nodemailer-sendgrid-transport');
+const nodemailer = require("nodemailer");
+const sgTransport = require("nodemailer-sendgrid-transport");
 
 // Create reusable transporter object using SMTP transport.
 /*const userEmail = process.env.GMAIL;
@@ -17,13 +17,13 @@ const transporter = nodemailer.createTransport({
   },
 });*/
 
-
-const transporter = nodemailer.createTransport(sgTransport({
-  auth: {
-    api_key: process.env.SENDGRID_API_KEY
-  },
-}));
-
+const transporter = nodemailer.createTransport(
+  sgTransport({
+    auth: {
+      api_key: process.env.SENDGRID_API_KEY,
+    },
+  })
+);
 
 module.exports = {
   sendEmail: (from, to, subject, text) => {
@@ -37,9 +37,9 @@ module.exports = {
     // Return a promise of the function that sends the email.
     try {
       return transporter.sendMail(options);
-    } catch(err) {
-      console.log(err);
-      return false
+    } catch (err) {
+      // console.log(err);
+      return false;
     }
   },
 };

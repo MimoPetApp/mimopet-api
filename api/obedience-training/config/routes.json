@@ -5,7 +5,7 @@
       "path": "/obedience-trainings",
       "handler": "obedience-training.find",
       "config": {
-        "policies": []
+        "policies": ["global::is-pet-owner"]
       }
     },
     {
@@ -21,7 +21,7 @@
       "path": "/obedience-trainings/:id",
       "handler": "obedience-training.findOne",
       "config": {
-        "policies": []
+        "policies": ["global::is-pet-owner"]
       }
     },
     {
@@ -46,6 +46,14 @@
       "handler": "obedience-training.delete",
       "config": {
         "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/obedience-trainings/:idObedience/exercises/:idExercise/complete/:guideline",
+      "handler": "obedience-training.completeGuideline",
+      "config": {
+        "policies": ["global::is-pet-owner"]
       }
     }
   ]

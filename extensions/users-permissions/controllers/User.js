@@ -1,6 +1,6 @@
-'use strict';
-const crypto = require('crypto');
-var jwt = require('jsonwebtoken');
+"use strict";
+const crypto = require("crypto");
+var jwt = require("jsonwebtoken");
 
 /**
  * User.js controller
@@ -8,12 +8,14 @@ var jwt = require('jsonwebtoken');
  * @description: A set of functions called "actions" for managing `User`.
  */
 
-const { sanitizeEntity } = require('strapi-utils');
-const { VariableContext } = require("twilio/lib/rest/serverless/v1/service/environment/variable");
+const { sanitizeEntity } = require("strapi-utils");
+const {
+  VariableContext,
+} = require("twilio/lib/rest/serverless/v1/service/environment/variable");
 
-const sanitizeUser = user =>
+const sanitizeUser = (user) =>
   sanitizeEntity(user, {
-    model: strapi.query('user', 'users-permissions').model,
+    model: strapi.query("user", "users-permissions").model,
   });
 
 module.exports = {
@@ -23,22 +25,27 @@ module.exports = {
       .query("user", "users-permissions")
       .findOne({ email });
     if (!user) {
-      return ctx.badRequest(null, [{ messages: [{ id: 'No authorization header was found' }] }]);
+      return ctx.badRequest(null, [
+        { messages: [{ id: "No authorization header was found" }] },
+      ]);
     }
-    const confirmationToken = (
-      `${crypto.randomInt(0, 10)}${crypto.randomInt(0, 10)}${crypto.randomInt(0, 10)}${crypto.randomInt(0, 10)}`
-    );
-    const emailRes = strapi.config.functions['notification'].sendEmail(
-      'noreply@mimopetapp.com',
+    const confirmationToken = `${crypto.randomInt(0, 10)}${crypto.randomInt(
+      0,
+      10
+    )}${crypto.randomInt(0, 10)}${crypto.randomInt(0, 10)}`;
+    const emailRes = strapi.config.functions["notification"].sendEmail(
+      "noreply@mimopetapp.com",
       user.email,
-      'Bem vindo',
+      "Bem vindo",
       `Seu código de confirmação de conta é: ${confirmationToken}`
     );
-    console.log(emailRes);
     if (!emailRes) return;
     user = await strapi
       .query("user", "users-permissions")
-      .update({ id: user.id }, { confirmationToken: confirmationToken, confirmed: false });
+      .update(
+        { id: user.id },
+        { confirmationToken: confirmationToken, confirmed: false }
+      );
     ctx.body = sanitizeUser(user);
   },
   async confirmVerifyUser(ctx) {
@@ -48,29 +55,31 @@ module.exports = {
       .findOne({ email });
 
     if (!user) {
-      return ctx.badRequest(null, [{ messages: [{ id: 'No authorization header was found' }] }]);
+      return ctx.badRequest(null, [
+        { messages: [{ id: "No authorization header was found" }] },
+      ]);
     }
     if (code == user.confirmationToken) {
-      user = await strapi
-      .query("user", "users-permissions")
-      .update(
+      user = await strapi.query("user", "users-permissions").update(
         { id: user.id },
         {
           confirmed: true,
           confirmationToken: "",
-          firstAccess: true
+          firstAccess: true,
         }
       );
     } else {
       ctx.response.status = 403;
-      return ctx.badRequest(null, [{ messages: [{ id: 'Invalid code' }] }]);
+      return ctx.badRequest(null, [{ messages: [{ id: "Invalid code" }] }]);
     }
     ctx.body = sanitizeUser(user);
   },
   async completeFirstAccess(ctx) {
     var user = ctx.state.user;
     if (!user) {
-      return ctx.badRequest(null, [{ messages: [{ id: 'No authorization header was found' }] }]);
+      return ctx.badRequest(null, [
+        { messages: [{ id: "No authorization header was found" }] },
+      ]);
     }
     user = await strapi
       .query("user", "users-permissions")
@@ -84,26 +93,27 @@ module.exports = {
       .findOne({ email });
 
     if (!user) {
-      return ctx.badRequest(null, [{ messages: [{ id: 'No authorization header was found' }] }]);
+      return ctx.badRequest(null, [
+        { messages: [{ id: "No authorization header was found" }] },
+      ]);
     }
-    const resetPasswordToken = (
-      `${crypto.randomInt(0, 10)}${crypto.randomInt(0, 10)}${crypto.randomInt(0, 10)}${crypto.randomInt(0, 10)}`
-    );
-    strapi.config.functions['notification'].sendEmail(
-      'noreply@mimopetapp.com',
+    const resetPasswordToken = `${crypto.randomInt(0, 10)}${crypto.randomInt(
+      0,
+      10
+    )}${crypto.randomInt(0, 10)}${crypto.randomInt(0, 10)}`;
+    strapi.config.functions["notification"].sendEmail(
+      "noreply@mimopetapp.com",
       user.email,
-      'Reset de senha',
+      "Reset de senha",
       `Seu código de reset de senha é: ${resetPasswordToken}`
     );
-    user = await strapi
-      .query("user", "users-permissions")
-      .update(
-        { id: user.id },
-        {
-          verifiedResetPasswordToken: false,
-          resetPasswordToken: resetPasswordToken,
-        }
-      );
+    user = await strapi.query("user", "users-permissions").update(
+      { id: user.id },
+      {
+        verifiedResetPasswordToken: false,
+        resetPasswordToken: resetPasswordToken,
+      }
+    );
 
     ctx.body = sanitizeUser(user);
   },
@@ -114,25 +124,25 @@ module.exports = {
       .findOne({ email });
 
     if (!user) {
-      return ctx.badRequest(null, [{ messages: [{ id: 'No authorization header was found' }] }]);
+      return ctx.badRequest(null, [
+        { messages: [{ id: "No authorization header was found" }] },
+      ]);
     }
     if (code == user.resetPasswordToken) {
-      user = await strapi
-      .query("user", "users-permissions")
-      .update(
+      user = await strapi.query("user", "users-permissions").update(
         { id: user.id },
         {
           verifiedResetPasswordToken: true,
-          resetPasswordToken: ""
+          resetPasswordToken: "",
         }
       );
       const token = jwt.sign(email, process.env.JWT_SECRET);
       ctx.body = {
-        token: token
-      }
+        token: token,
+      };
     } else {
       ctx.response.status = 403;
-      return ctx.badRequest(null, [{ messages: [{ id: 'Invalid code' }] }]);
+      return ctx.badRequest(null, [{ messages: [{ id: "Invalid code" }] }]);
     }
   },
   // REF: https://www.codegrepper.com/code-examples/whatever/strapi+change+user+password
@@ -147,27 +157,25 @@ module.exports = {
       return ctx.badRequest(
         null,
         formatError({
-          id: 'Auth.form.error.email.provide',
-          message: 'Please provide your username or your e-mail.',
+          id: "Auth.form.error.email.provide",
+          message: "Please provide your username or your e-mail.",
         })
-     );
+      );
     }
 
     // Generate new hash password
-    const passwordHash = await strapi.plugins['users-permissions'].services.user.hashPassword(
-      {
-        password: password
-      }
-    ); 
+    const passwordHash = await strapi.plugins[
+      "users-permissions"
+    ].services.user.hashPassword({
+      password: password,
+    });
 
-    user = await strapi
-      .query("user", "users-permissions")
-      .update(
-        { id: user.id },
-        {
-          password: passwordHash
-        }
-      );
+    user = await strapi.query("user", "users-permissions").update(
+      { id: user.id },
+      {
+        password: passwordHash,
+      }
+    );
     ctx.body = sanitizeUser(user);
   },
 };
