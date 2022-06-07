@@ -8,15 +8,15 @@ const { sanitizeEntity } = require("strapi-utils");
 
 module.exports = {
   completeGuideline: async (ctx) => {
-    const { idObedience, idExercise, guideline } = ctx.params;
+    const { idObedience, idExercise, guidelineType } = ctx.params;
     const guidelineOptions = [
       strapi.config.functions["enum"].OBEDIENCE.GUIDELINE.INSTRUCTION,
       strapi.config.functions["enum"].OBEDIENCE.GUIDELINE.GENERALIZATION,
       strapi.config.functions["enum"].OBEDIENCE.GUIDELINE.CHALLENGE,
     ];
-    if (!guidelineOptions.includes(guideline)) {
+    if (!guidelineOptions.includes(guidelineType)) {
       ctx.response.status = 400;
-      ctx.response.message = `Campo 'guideline' precisa está entre os valores [${guidelineOptions.join(
+      ctx.response.message = `Campo 'guidelineType' precisa está entre os valores [${guidelineOptions.join(
         " | "
       )}]`;
       return ctx.response;
@@ -31,7 +31,7 @@ module.exports = {
     obedience_data = [
       ...obedience_data,
       {
-        guideline: guideline,
+        guideline: guidelineType,
         user: ctx.state.user.email,
         pet: ctx.state.user.current_pet,
         exercise: {

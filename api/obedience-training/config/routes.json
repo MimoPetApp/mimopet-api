@@ -50,7 +50,7 @@
     },
     {
       "method": "PUT",
-      "path": "/obedience-trainings/:idObedience/exercises/:idExercise/complete/:guideline",
+      "path": "/obedience-trainings/:idObedience/guidelines/:guidelineType/exercises/:idExercise/complete",
       "handler": "obedience-training.completeGuideline",
       "config": {
         "policies": ["global::is-pet-owner"]
