@@ -11,6 +11,7 @@
   },
   "devDependencies": {},
   "dependencies": {
+    "@google-cloud/storage": "^6.1.0",
     "@strapi/provider-email-sendgrid": "^4.1.9",
     "jsonwebtoken": "^8.5.1",
     "knex": "0.21.18",
