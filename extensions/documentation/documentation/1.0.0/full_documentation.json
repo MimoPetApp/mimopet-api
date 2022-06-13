@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "06/07/2022 2:00:33 PM"
+    "x-generation-date": "06/07/2022 10:31:01 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -10169,6 +10169,9 @@
               ]
             }
           },
+          "label": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -10425,6 +10428,9 @@
           "data": {
             "type": "object"
           },
+          "label": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -10680,6 +10686,9 @@
                         },
                         "data": {
                           "type": "object"
+                        },
+                        "label": {
+                          "type": "string"
                         },
                         "published_at": {
                           "type": "string"
@@ -11092,6 +11101,9 @@
                         "data": {
                           "type": "object"
                         },
+                        "label": {
+                          "type": "string"
+                        },
                         "published_at": {
                           "type": "string"
                         },
@@ -11358,6 +11370,9 @@
                           "data": {
                             "type": "object"
                           },
+                          "label": {
+                            "type": "string"
+                          },
                           "published_at": {
                             "type": "string"
                           },
@@ -11372,10 +11387,14 @@
                     },
                     "data": {
                       "type": "object"
+                    },
+                    "guide": {
+                      "type": "string"
                     }
                   },
                   "required": [
-                    "id"
+                    "id",
+                    "guide"
                   ]
                 },
                 {
@@ -11430,6 +11449,9 @@
                           "data": {
                             "type": "object"
                           },
+                          "label": {
+                            "type": "string"
+                          },
                           "published_at": {
                             "type": "string"
                           },
@@ -11444,10 +11466,14 @@
                     },
                     "data": {
                       "type": "object"
+                    },
+                    "guide": {
+                      "type": "string"
                     }
                   },
                   "required": [
-                    "id"
+                    "id",
+                    "guide"
                   ]
                 },
                 {
@@ -11502,6 +11528,9 @@
                           "data": {
                             "type": "object"
                           },
+                          "label": {
+                            "type": "string"
+                          },
                           "published_at": {
                             "type": "string"
                           },
@@ -11516,10 +11545,14 @@
                     },
                     "data": {
                       "type": "object"
+                    },
+                    "guide": {
+                      "type": "string"
                     }
                   },
                   "required": [
-                    "id"
+                    "id",
+                    "guide"
                   ]
                 }
               ]
@@ -11612,6 +11645,9 @@
                           "data": {
                             "type": "object"
                           },
+                          "label": {
+                            "type": "string"
+                          },
                           "published_at": {
                             "type": "string"
                           },
@@ -11626,10 +11662,14 @@
                     },
                     "data": {
                       "type": "object"
+                    },
+                    "guide": {
+                      "type": "string"
                     }
                   },
                   "required": [
-                    "id"
+                    "id",
+                    "guide"
                   ]
                 },
                 {
@@ -11684,6 +11724,9 @@
                           "data": {
                             "type": "object"
                           },
+                          "label": {
+                            "type": "string"
+                          },
                           "published_at": {
                             "type": "string"
                           },
@@ -11698,10 +11741,14 @@
                     },
                     "data": {
                       "type": "object"
+                    },
+                    "guide": {
+                      "type": "string"
                     }
                   },
                   "required": [
-                    "id"
+                    "id",
+                    "guide"
                   ]
                 },
                 {
@@ -11756,6 +11803,9 @@
                           "data": {
                             "type": "object"
                           },
+                          "label": {
+                            "type": "string"
+                          },
                           "published_at": {
                             "type": "string"
                           },
@@ -11770,10 +11820,14 @@
                     },
                     "data": {
                       "type": "object"
+                    },
+                    "guide": {
+                      "type": "string"
                     }
                   },
                   "required": [
-                    "id"
+                    "id",
+                    "guide"
                   ]
                 }
               ]

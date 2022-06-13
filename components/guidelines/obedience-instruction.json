@@ -2,7 +2,8 @@
   "collectionName": "components_guidelines_obedience_instructions",
   "info": {
     "name": "Obedience Instruction",
-    "icon": "hand-pointer"
+    "icon": "hand-pointer",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -13,6 +14,10 @@
       "type": "json",
       "required": false,
       "private": true
+    },
+    "guide": {
+      "type": "text",
+      "required": true
     }
   }
 }

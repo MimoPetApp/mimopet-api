@@ -929,6 +929,9 @@
               ]
             }
           },
+          "label": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -1184,6 +1187,9 @@
           },
           "data": {
             "type": "object"
+          },
+          "label": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
