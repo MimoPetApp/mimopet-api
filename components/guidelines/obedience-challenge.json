@@ -12,6 +12,10 @@
     "data": {
       "type": "json",
       "private": true
+    },
+    "guide": {
+      "type": "text",
+      "required": true
     }
   }
 }

@@ -45,6 +45,10 @@
     "data": {
       "type": "json",
       "private": true
+    },
+    "label": {
+      "type": "string",
+      "required": false
     }
   }
 }

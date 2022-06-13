@@ -826,6 +826,9 @@
                         "data": {
                           "type": "object"
                         },
+                        "label": {
+                          "type": "string"
+                        },
                         "published_at": {
                           "type": "string"
                         },
@@ -1236,6 +1239,9 @@
                         },
                         "data": {
                           "type": "object"
+                        },
+                        "label": {
+                          "type": "string"
                         },
                         "published_at": {
                           "type": "string"
