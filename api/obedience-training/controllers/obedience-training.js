@@ -52,6 +52,30 @@ module.exports = {
         data: obedience_data,
       }
     );
+
+    // Timeline
+
+    const counts = strapi.config.functions["obedience"].countExecutions(
+      entity,
+      ctx.state.user
+    );
+    entity.executions = counts.total;
+    entity.badges = Math.floor(entity.executions / BADGES_THRESHOLD);
+    entity.badge_progress = entity.executions % BADGES_THRESHOLD;
+    if (entity.badge_progress === 0) {
+      await strapi.config.functions["mixin"].updatePetTimeline(
+        ctx.state.user.current_pet,
+        {
+          __component: "utils.timeline-item",
+          data: new Date(),
+          label: entity.title,
+          details: "badge",
+          type: "obedience",
+          status: "done",
+        }
+      );
+    }
+
     return sanitizeEntity(entity, {
       model: strapi.models["obedience-training"],
     });
