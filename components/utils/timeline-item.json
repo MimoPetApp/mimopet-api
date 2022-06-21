@@ -32,6 +32,7 @@
         "session",
         "training",
         "module",
+        "obedience",
         "other"
       ],
       "default": "other",
